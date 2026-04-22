@@ -229,6 +229,23 @@ export function Gallery() {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA hacia página de proyectos */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-12 flex justify-center"
+          >
+            <a
+              href="/proyectos"
+              className="inline-flex items-center gap-2.5 border border-brand-blue text-brand-blue px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase hover:bg-brand-blue hover:text-white transition-all duration-200 group"
+            >
+              Ver todos los proyectos
+              <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
