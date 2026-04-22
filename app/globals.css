@@ -30,23 +30,23 @@
   font-display: swap;
 }
 
-/* ─── Design tokens ─── */
+/* ─── Design tokens — Light mode ─── */
 @theme {
   /* Brand */
   --color-brand-blue: #044f97;
   --color-brand-blue-hover: #0660c0;
   --color-brand-gray: #a0a5a7;
 
-  /* Fondos oscuros */
-  --color-bg-base: #0a0d0f;
-  --color-bg-surface: #10141a;
-  --color-bg-elevated: #181d23;
-  --color-bg-border: #1e252d;
+  /* Fondos claros */
+  --color-bg-base:     #ffffff;
+  --color-bg-surface:  #f4f6f8;
+  --color-bg-elevated: #eaecef;
+  --color-bg-border:   #d6dbe1;
 
-  /* Texto */
-  --color-text-primary: #f0f2f4;
-  --color-text-secondary: #a0a5a7;
-  --color-text-muted: #5a6370;
+  /* Texto oscuro */
+  --color-text-primary:   #0f1923;
+  --color-text-secondary: #4a5568;
+  --color-text-muted:     #8a9199;
 
   /* Tipografías */
   --font-display: "Donovan Display", sans-serif;
@@ -55,7 +55,7 @@
 
 /* ─── Reset global ─── */
 html {
-  scroll-behavior: auto; /* Lenis lo maneja */
+  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -77,7 +77,7 @@ body {
   width: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-base);
+  background: var(--color-bg-surface);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-brand-blue);

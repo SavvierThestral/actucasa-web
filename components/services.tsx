@@ -232,22 +232,22 @@ export function Services() {
           className="object-cover object-center"
           loading="lazy"
         />
-        {/* Overlay gradiente oscuro */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-base via-bg-base/70 to-bg-base/20" />
+        {/* Overlay fijo oscuro — independiente del tema para legibilidad sobre imagen */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060c14] via-[#060c14]/75 to-[#060c14]/25" />
 
-        {/* Contenido sobre la imagen */}
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pb-20 pt-40 w-full">
+        {/* Contenido sobre la imagen — texto blanco siempre (fondo oscuro) */}
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pb-20 pt-40 w-full text-white">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-16 items-end">
             <div>
               <FadeIn>
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 border border-brand-blue/30 text-brand-blue">
+                  <div className="p-2.5 border border-white/30 text-white">
                     <Wrench size={20} weight="light" />
                   </div>
-                  <span className="section-label">Servicio 03</span>
+                  <span className="font-sans text-[0.7rem] tracking-[0.3em] uppercase text-white/60">Servicio 03</span>
                 </div>
                 <h3
-                  className="font-display font-bold leading-[0.92] tracking-[-0.025em] text-text-primary"
+                  className="font-display font-bold leading-[0.92] tracking-[-0.025em] text-white"
                   style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}
                 >
                   Estructuras de Hierro
@@ -256,7 +256,7 @@ export function Services() {
             </div>
 
             <FadeIn delay={0.15}>
-              <p className="font-sans text-text-secondary leading-relaxed text-[0.97rem] max-w-[46ch] mb-8">
+              <p className="font-sans text-white/70 leading-relaxed text-[0.97rem] max-w-[46ch] mb-8">
                 Soluciones estructurales en acero de alta resistencia,
                 diseñadas para proyectos que exigen precisión, durabilidad y
                 adaptabilidad a cualquier escala. Desde galpones hasta
@@ -273,9 +273,9 @@ export function Services() {
                 ].map((feat) => (
                   <li
                     key={feat}
-                    className="flex items-center gap-2 font-sans text-text-secondary text-sm"
+                    className="flex items-center gap-2 font-sans text-white/70 text-sm"
                   >
-                    <span className="w-3 h-[1px] bg-brand-blue flex-shrink-0" />
+                    <span className="w-3 h-[1px] bg-white/50 flex-shrink-0" />
                     {feat}
                   </li>
                 ))}
@@ -284,7 +284,7 @@ export function Services() {
               <MagneticButton className="self-start">
                 <a
                   href="#contacto"
-                  className="inline-flex items-center gap-2 border border-brand-blue text-brand-blue px-6 py-3 font-sans text-sm tracking-[0.06em] uppercase hover:bg-brand-blue hover:text-white transition-all duration-300 group"
+                  className="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 font-sans text-sm tracking-[0.06em] uppercase hover:bg-brand-blue-hover transition-colors duration-300 group"
                 >
                   Consultar
                   <ArrowUpRight

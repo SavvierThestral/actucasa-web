@@ -27,28 +27,24 @@ export function Nav() {
       <motion.header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(10, 13, 15, 0.92)" : "transparent",
+          backgroundColor: scrolled ? "rgba(255,255,255,0.94)" : "transparent",
           backdropFilter: scrolled ? "blur(12px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(30,37,45,0.8)" : "1px solid transparent",
+          borderBottom: scrolled
+            ? "1px solid rgba(214,219,225,0.8)"
+            : "1px solid transparent",
         }}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 h-[72px] flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="relative flex items-center gap-3 group">
-            <div className="relative w-10 h-10">
+          {/* Logo — solo imagen, sin texto */}
+          <Link href="/" className="relative flex items-center group">
+            <div className="relative w-11 h-11">
               <Image
                 src="/logo.webp"
-                alt="ACTuCasa logo"
+                alt="ACTuCasa"
                 fill
-                className="object-contain"
+                className="object-contain invert"
               />
             </div>
-            <span
-              className="text-text-primary font-display font-bold text-lg tracking-tight"
-              style={{ letterSpacing: "-0.02em" }}
-            >
-              ACTuCasa
-            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -63,9 +59,11 @@ export function Nav() {
                 <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-brand-blue group-hover:w-full transition-all duration-300" />
               </a>
             ))}
+
+            {/* Siempre azul sólido */}
             <a
               href="#contacto"
-              className="border border-brand-blue text-brand-blue px-5 py-2 font-sans text-sm tracking-wide hover:bg-brand-blue hover:text-white transition-all duration-300"
+              className="bg-brand-blue text-white px-5 py-2.5 font-sans text-sm tracking-wide hover:bg-brand-blue-hover transition-colors duration-200 active:scale-[0.97]"
             >
               Consultanos
             </a>
@@ -111,7 +109,7 @@ export function Nav() {
             initial={{ opacity: 0 }}
             animate={menuOpen ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.28 }}
-            className="mt-4 self-start border border-brand-blue text-brand-blue px-6 py-3 font-sans text-sm tracking-wide"
+            className="mt-4 self-start bg-brand-blue text-white px-6 py-3 font-sans text-sm tracking-wide"
           >
             Consultanos
           </motion.a>

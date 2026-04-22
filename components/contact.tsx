@@ -251,9 +251,9 @@ export function Contact() {
                 href="https://wa.me/5491100000000?text=Hola!%20Vi%20su%20web%20y%20quiero%20consultar%20sobre%20un%20proyecto"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 group border border-bg-border hover:border-green-600/50 p-5 transition-all duration-300 hover:bg-green-950/20"
+                className="flex items-center gap-4 group border border-bg-border hover:border-green-600/40 p-5 transition-all duration-300 hover:bg-green-50"
               >
-                <div className="p-3 bg-green-900/30 text-green-400 group-hover:bg-green-900/50 transition-colors">
+                <div className="p-3 bg-green-100 text-green-700 group-hover:bg-green-200 transition-colors">
                   <WhatsappLogo size={22} weight="fill" />
                 </div>
                 <div>
@@ -273,9 +273,9 @@ export function Contact() {
                 href="https://instagram.com/ac.tucasa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 group border border-bg-border hover:border-pink-600/40 p-5 transition-all duration-300 hover:bg-pink-950/10"
+                className="flex items-center gap-4 group border border-bg-border hover:border-pink-400/40 p-5 transition-all duration-300 hover:bg-pink-50"
               >
-                <div className="p-3 bg-pink-900/20 text-pink-400 group-hover:bg-pink-900/30 transition-colors">
+                <div className="p-3 bg-pink-100 text-pink-600 group-hover:bg-pink-200 transition-colors">
                   <InstagramLogo size={22} weight="fill" />
                 </div>
                 <div>
