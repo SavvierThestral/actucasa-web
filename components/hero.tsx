@@ -92,10 +92,22 @@ export function Hero() {
             priority
             quality={85}
           />
-          {/* Blend desde la izquierda (azul) hacia la foto */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#003d82] via-[#003d82]/50 to-transparent" />
-          {/* Vignette sutil en bordes */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#003d82]/40 via-transparent to-[#003d82]/20" />
+          {/* Difuminado suave con curva ease (múltiples stops) */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, #003d82 0%, #003d82 15%, rgba(0,61,130,0.92) 28%, rgba(0,61,130,0.72) 42%, rgba(0,61,130,0.42) 58%, rgba(0,61,130,0.16) 74%, rgba(0,61,130,0.04) 88%, transparent 100%)",
+            }}
+          />
+          {/* Vignette vertical sutil */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(0,61,130,0.25) 0%, transparent 30%, transparent 70%, rgba(0,61,130,0.35) 100%)",
+            }}
+          />
         </motion.div>
       </div>
 
