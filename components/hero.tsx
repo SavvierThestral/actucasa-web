@@ -1,9 +1,19 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { ArrowDown } from "@phosphor-icons/react";
+
+// ─────────────────────────────────────────────────────────────
+//  FOTO DEL HERO — Para agregar tu foto:
+//  1. Copiá tu imagen a la carpeta /public  (ej: hero-foto.jpg)
+//  2. Reemplazá HERO_PHOTO con "/hero-foto.jpg"
+//  Tamaño recomendado: 1200×900px mínimo, formato JPG o WebP
+// ─────────────────────────────────────────────────────────────
+const HERO_PHOTO =
+  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=85";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -12,6 +22,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "16%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.45], ["0%", "-6%"]);
 
@@ -68,15 +79,30 @@ export function Hero() {
           <rect width="100%" height="100%" fill="url(#hero-grid-minor)" />
           <rect width="100%" height="100%" fill="url(#hero-grid-major)" />
         </svg>
-
-        {/* Degradado sutil en la esquina derecha para profundidad */}
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#002766]/50" />
       </div>
 
-      {/* ── Contenido ── */}
+      {/* ── Foto derecha con parallax ── */}
+      <div className="hidden md:block absolute right-0 top-0 w-[46%] h-full overflow-hidden">
+        <motion.div style={{ y: imageY }} className="absolute inset-0 scale-[1.12]">
+          <Image
+            src={HERO_PHOTO}
+            alt="Proyecto ACTuCasa — steel framing en construcción"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={85}
+          />
+          {/* Blend desde la izquierda (azul) hacia la foto */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003d82] via-[#003d82]/50 to-transparent" />
+          {/* Vignette sutil en bordes */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#003d82]/40 via-transparent to-[#003d82]/20" />
+        </motion.div>
+      </div>
+
+      {/* ── Contenido izquierdo ── */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 flex flex-col justify-center w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 xl:px-32 pt-28 pb-20"
+        className="relative z-10 flex flex-col justify-center w-full md:w-[56%] px-6 md:px-16 lg:px-24 xl:px-32 pt-28 pb-20"
       >
         {/* Eyebrow */}
         <motion.p
