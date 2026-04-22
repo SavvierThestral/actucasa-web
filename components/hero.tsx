@@ -143,7 +143,8 @@ export function Hero() {
             initial={{ y: "105%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold leading-[0.88] tracking-[-0.03em] text-white/40"
+            className="font-display font-bold leading-[0.88] tracking-[-0.03em]"
+            style={{ color: "#B6A5B8" }}
             style={{ fontSize: "clamp(3.2rem, 7.5vw, 7.5rem)" }}
           >
             TU ESPACIO
