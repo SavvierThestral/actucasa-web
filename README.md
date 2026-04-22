@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ACTuCasa — Sitio web premium
 
-## Getting Started
+Sitio web de la empresa **ACTuCasa**, especializada en construcción en seco con steel framing, módulos habitacionales, oficinas anexas y estructuras de hierro.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** con App Router
+- **Tailwind CSS v4** (config CSS-first con `@theme`)
+- **Framer Motion 12** — animaciones, parallax, scroll-reveal, lightbox
+- **Lenis** — smooth scroll
+- **Phosphor Icons** — iconografía
+- **Donovan Display** (local) + **DM Sans** (Google Fonts) — tipografía
+
+## Instalación y uso local
 
 ```bash
+# 1. Instalar dependencias
+npm install
+
+# 2. Servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
+
+# 3. Build de producción
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura de componentes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+components/
+├── providers/smooth-scroll.tsx   # Lenis smooth scroll wrapper
+├── ui/
+│   ├── scroll-progress.tsx       # Barra de progreso de scroll
+│   ├── magnetic-button.tsx       # Botón con efecto magnético
+│   └── reveal-text.tsx           # Animación de revelado de texto por palabras
+├── nav.tsx                       # Navbar fija con blur on scroll + menú mobile
+├── hero.tsx                      # Hero asimétrico con parallax
+├── about.tsx                     # Sección nosotros con stats
+├── services.tsx                  # Servicios en zig-zag + card full-width
+├── gallery.tsx                   # Galería masonry con lightbox
+├── contact.tsx                   # Formulario + WhatsApp + Instagram
+└── footer.tsx                    # Footer completo
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Personalización rápida
 
-## Learn More
+### Número de WhatsApp
+Buscar y reemplazar `5491100000000` con el número real de la empresa (formato internacional sin `+`).
 
-To learn more about Next.js, take a look at the following resources:
+### Imágenes de galería
+Cada imagen en `components/gallery.tsx` tiene un comentario con la URL original de Unsplash. Para reemplazarlas con fotos propias, cambiar las rutas `src` y `srcFull`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Imágenes de servicios y hero
+Misma lógica en `components/hero.tsx`, `components/about.tsx`, y `components/services.tsx`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy en Vercel
 
-## Deploy on Vercel
+```bash
+# Instalar CLI de Vercel
+npm i -g vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Deploy
+vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Deploy a producción
+vercel --prod
+```
+
+El archivo `next.config.ts` ya tiene configurado el `remotePatterns` para imágenes de Unsplash.
+
+## Fuentes locales
+
+Los archivos `.ttf` de **Donovan Display** están en `public/fonts/` y se cargan vía `@font-face` en `app/globals.css`.

@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Donovan Display — fuente local de la marca ─── */
+@font-face {
+  font-family: "Donovan Display";
+  src: url("/fonts/DonovanSlimLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Donovan Display";
+  src: url("/fonts/DonovanSlimMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Donovan Display";
+  src: url("/fonts/DonovanSlimBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Donovan Display";
+  src: url("/fonts/DonovanSlimBoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Design tokens ─── */
+@theme {
+  /* Brand */
+  --color-brand-blue: #044f97;
+  --color-brand-blue-hover: #0660c0;
+  --color-brand-gray: #a0a5a7;
+
+  /* Fondos oscuros */
+  --color-bg-base: #0a0d0f;
+  --color-bg-surface: #10141a;
+  --color-bg-elevated: #181d23;
+  --color-bg-border: #1e252d;
+
+  /* Texto */
+  --color-text-primary: #f0f2f4;
+  --color-text-secondary: #a0a5a7;
+  --color-text-muted: #5a6370;
+
+  /* Tipografías */
+  --font-display: "Donovan Display", sans-serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Reset global ─── */
+html {
+  scroll-behavior: auto; /* Lenis lo maneja */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+}
+
+::selection {
+  background-color: var(--color-brand-blue);
+  color: #fff;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-blue);
+}
+
+/* ─── Utilidades globales ─── */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-brand-gray);
 }
