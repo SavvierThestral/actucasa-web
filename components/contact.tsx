@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState, FormEvent } from "react";
 
-import { MagneticButton } from "@/components/ui/magnetic-button";
 import {
   WhatsappLogo,
   InstagramLogo,
@@ -260,16 +259,20 @@ export function Contact() {
                   />
                 </div>
 
-                <MagneticButton className="self-start">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="inline-flex items-center gap-3 px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase transition-colors duration-300 disabled:opacity-60 active:scale-[0.98]"
-                    style={{ backgroundColor: "#62A0C7", color: "#ffffff" }}
-                  >
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase disabled:opacity-60 active:scale-[0.98] group self-start"
+                  style={{ backgroundColor: "#62A0C7", color: "#ffffff" }}
+                >
+                  <span
+                    className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"
+                    style={{ backgroundColor: "#ffffff" }}
+                  />
+                  <span className="relative z-10 inline-flex items-center gap-3 transition-colors duration-300 group-hover:text-[#055196]">
                     {loading ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
                         Enviando...
                       </>
                     ) : (
@@ -278,8 +281,8 @@ export function Contact() {
                         Enviar consulta
                       </>
                     )}
-                  </button>
-                </MagneticButton>
+                  </span>
+                </button>
               </form>
             )}
           </FadeIn>
