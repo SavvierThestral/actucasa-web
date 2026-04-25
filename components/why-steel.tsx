@@ -43,8 +43,8 @@ export function WhySteelFrame() {
               Steel Framing
             </motion.p>
             <h2
-              className="font-display font-bold leading-[0.9] tracking-[-0.03em] text-text-primary"
-              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)" }}
+              className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
+              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c" }}
             >
               <RevealText text="¿Por qué elegir steel frame?" />
             </h2>
@@ -67,8 +67,8 @@ export function WhySteelFrame() {
           </motion.div>
         </div>
 
-        {/* Razones — lista numerada editorial */}
-        <div className="flex flex-col">
+        {/* Razones — 3 tarjetas en columnas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-bg-border">
           {reasons.map((reason, i) => {
             const Icon = reason.icon;
             return (
@@ -82,36 +82,35 @@ export function WhySteelFrame() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 viewport={{ once: true, margin: "-6%" }}
-                className={`grid grid-cols-1 md:grid-cols-[120px_1fr_1fr] gap-6 md:gap-12 items-start py-12 ${
-                  i < reasons.length - 1 ? "border-b border-bg-border" : ""
-                } group`}
+                className={`flex flex-col p-10 md:p-12 ${
+                  i < reasons.length - 1
+                    ? "border-b md:border-b-0 md:border-r border-bg-border"
+                    : ""
+                }`}
               >
-                {/* Número grande */}
-                <div className="flex items-center gap-4 md:flex-col md:items-start md:gap-0">
+                {/* Número + icono */}
+                <div className="flex items-start justify-between mb-8">
                   <span
-                    className="font-display font-bold text-bg-elevated leading-none select-none transition-colors duration-300 group-hover:text-brand-blue/20"
-                    style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }}
+                    className="font-display font-bold text-brand-blue/20 leading-none select-none"
+                    style={{ fontSize: "3.5rem" }}
                   >
                     {reason.num}
                   </span>
+                  <div className="p-2.5 border border-brand-blue/25 text-brand-blue">
+                    <Icon size={20} weight="light" />
+                  </div>
                 </div>
 
-                {/* Título + icono */}
-                <div className="flex flex-col gap-4 md:pt-2">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 border border-brand-blue/25 text-brand-blue">
-                      <Icon size={20} weight="light" />
-                    </div>
-                  </div>
-                  <h3 className="font-display font-bold text-text-primary tracking-tight"
-                    style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)" }}
-                  >
-                    {reason.title}
-                  </h3>
-                </div>
+                {/* Título */}
+                <h3
+                  className="font-display font-bold tracking-tight mb-4"
+                  style={{ fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "#3c3c3c" }}
+                >
+                  {reason.title}
+                </h3>
 
                 {/* Descripción */}
-                <p className="font-sans text-text-secondary leading-relaxed text-[1rem] max-w-[48ch] md:pt-2">
+                <p className="font-sans text-text-secondary leading-relaxed text-[0.97rem]">
                   {reason.body}
                 </p>
               </motion.div>

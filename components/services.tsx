@@ -134,8 +134,8 @@ function ServiceRow({
           </div>
 
           <h3
-            className="font-display font-bold leading-[0.92] tracking-[-0.025em] text-text-primary mb-3"
-            style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}
+            className="font-display font-bold leading-[0.92] tracking-[-0.025em] mb-3"
+            style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", color: "#3c3c3c" }}
           >
             {service.title}
           </h3>
@@ -196,8 +196,8 @@ export function Services() {
               Lo que hacemos
             </motion.p>
             <h2
-              className="font-display font-bold leading-[0.9] tracking-[-0.03em] text-text-primary"
-              style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)" }}
+              className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
+              style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)", color: "#3c3c3c" }}
             >
               <RevealText text="Nuestros servicios" />
             </h2>
