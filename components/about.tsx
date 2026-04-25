@@ -45,7 +45,7 @@ export function About() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Label */}
         <FadeIn>
-          <p className="section-label mb-16">Nuestro equipo</p>
+          <p className="section-label mb-16">Conocé a nuestro equipo</p>
         </FadeIn>
 
         {/* Grid asimétrico: texto 3fr / imagen+stats 2fr */}
