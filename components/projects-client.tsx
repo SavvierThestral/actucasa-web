@@ -208,21 +208,6 @@ export function ProjectsClient() {
                       )}
                     </div>
 
-                    <p className="font-sans text-text-secondary text-sm leading-relaxed mb-4 flex-1">
-                      {project.description}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="font-sans text-[0.65rem] tracking-wide text-text-muted border border-bg-border px-2.5 py-1 uppercase"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </motion.article>
               ))}
