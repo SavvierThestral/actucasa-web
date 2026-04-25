@@ -219,7 +219,7 @@ export function Services() {
       <div className="relative min-h-[600px] flex items-end overflow-hidden border-t border-bg-border">
         {/* https://unsplash.com/photos/1570129477492-45c003edd2be — modern residential exterior */}
         <Image
-          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1920&q=80"
+          src="/viviendas-habitacionales.webp"
           alt="Módulo habitacional en steel framing — vivienda moderna terminada"
           fill
           className="object-cover object-center"

@@ -115,7 +115,7 @@ export function WhatModules() {
               <div className="relative aspect-[3/4] overflow-hidden">
                 {/* https://unsplash.com/photos/1570129477492-45c003edd2be — modular home */}
                 <Image
-                  src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80"
+                  src="/que-es-un-modulo.webp"
                   alt="Módulo habitacional en steel framing terminado — vivienda moderna"
                   fill
                   className="object-cover object-center"
