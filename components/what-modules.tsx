@@ -44,49 +44,42 @@ export function WhatModules() {
               className="font-display font-bold leading-[0.9] tracking-[-0.03em] text-text-primary mb-8"
               style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)" }}
             >
-              <RevealText text="¿Qué son los módulos habitacionales?" />
+              <RevealText text="Espacios completos, fabricados en taller y listos para habitar" />
             </h2>
 
             <FadeIn delay={0.1}>
-              <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[56ch] mb-6">
-                Los módulos habitacionales son unidades de vivienda completas
-                construidas con el sistema de{" "}
-                <span className="text-text-primary font-medium">
-                  steel framing
-                </span>
-                : perfiles de acero galvanizado de alta precisión que conforman
-                una estructura liviana, resistente y eficiente. Desde un
-                ambiente hasta una vivienda multifamiliar, cada módulo se diseña
-                a medida.
-              </p>
               <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[56ch]">
-                A diferencia de la obra tradicional, los módulos se fabrican con
-                piezas prefabricadas que llegan listas a la obra. El resultado:
-                menos tiempo de construcción, menos residuos y una calidad de
-                terminación superior que no depende de las condiciones del
-                clima.
+                Nuestros módulos son estructuras construidas íntegramente en{" "}
+                <span className="text-text-primary font-medium">
+                  steel frame
+                </span>{" "}
+                — perfiles de acero galvanizado — que se fabrican en un entorno
+                controlado y se entregan terminadas en tu terreno. No son
+                contenedores adaptados: son espacios diseñados desde cero con
+                todas las instalaciones, aislaciones y terminaciones de una
+                construcción permanente.
               </p>
             </FadeIn>
 
-            {/* Características clave */}
+            {/* Beneficios */}
             <FadeIn delay={0.18}>
-              <div className="mt-10 grid grid-cols-2 gap-0 border-t border-bg-border pt-10">
+              <div className="mt-10 space-y-0 border-t border-bg-border pt-10">
                 {[
-                  { value: "Ampliables", desc: "Crecen con tu familia" },
-                  { value: "Llave en mano", desc: "Terminación completa" },
-                  { value: "Instalaciones", desc: "Eléctricas y sanitarias" },
-                  { value: "A medida", desc: "Diseño personalizado" },
-                ].map((item, i) => (
-                  <div
-                    key={item.value}
-                    className={`py-5 pr-6 ${i % 2 === 0 ? "border-r border-bg-border" : "pl-6"} ${i < 2 ? "border-b border-bg-border" : ""}`}
-                  >
-                    <p className="font-display font-bold text-brand-blue text-lg leading-none mb-1">
-                      {item.value}
-                    </p>
-                    <p className="font-sans text-text-muted text-xs tracking-wide">
-                      {item.desc}
-                    </p>
+                  { title: "Rapidez de ejecución", desc: "Al fabricarse en taller, los plazos se reducen hasta un 60% respecto a la obra tradicional, sin depender del clima ni de imprevistos en obra." },
+                  { title: "Calidad controlada", desc: "Cada etapa del proceso se supervisa en planta, lo que garantiza terminaciones uniformes y cumplimiento de estándares constructivos." },
+                  { title: "Transportables y relocalizables", desc: "Los módulos se trasladan completos al terreno y pueden reubicarse si tu proyecto lo requiere." },
+                  { title: "Ampliables", desc: "Podés sumar módulos en el futuro para crecer sin demoler ni intervenir lo existente." },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4 py-4 border-b border-bg-border last:border-0">
+                    <span className="w-4 h-[1px] bg-brand-blue flex-shrink-0 mt-[0.6rem]" />
+                    <div>
+                      <p className="font-display font-bold text-brand-blue text-sm leading-none mb-1.5">
+                        {item.title}
+                      </p>
+                      <p className="font-sans text-text-secondary text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -115,7 +108,7 @@ export function WhatModules() {
                 viewport={{ once: true }}
                 className="absolute -bottom-6 -left-6 bg-brand-blue text-white px-6 py-4"
               >
-                <p className="font-display font-bold text-2xl leading-none">40%</p>
+                <p className="font-display font-bold text-2xl leading-none">60%</p>
                 <p className="font-sans text-white/80 text-xs mt-1 tracking-wide">
                   menos tiempo de obra
                 </p>

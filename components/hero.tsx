@@ -63,7 +63,7 @@ export function Hero() {
             className="font-serif leading-[1.05] text-text-primary"
             style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 700 }}
           >
-            Construimos espacios
+            Construcción modular
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-8">
@@ -74,7 +74,7 @@ export function Hero() {
             className="font-serif italic leading-[1.05] text-brand-blue"
             style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 700 }}
           >
-            que perduran.
+            en Steel Frame.
           </motion.h1>
         </div>
 
@@ -125,7 +125,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 border border-bg-border text-text-muted text-xs font-sans px-3 py-1.5 w-fit hover:border-brand-blue/30 hover:text-text-primary transition-all duration-200"
         >
           <InstagramLogo size={14} />
-          @AC.TUCASA
+          AC Tu Casa
         </motion.a>
 
         {/* Scroll indicator */}
