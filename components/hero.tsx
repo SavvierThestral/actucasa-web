@@ -16,9 +16,9 @@ const HERO_PHOTO =
   "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=85";
 
 const stats = [
-  { value: "+50", label: "Proyectos" },
-  { value: "8+", label: "Años" },
-  { value: "+200", label: "Clientes" },
+  { value: "+30", label: "Proyectos" },
+  { value: "22+", label: "Años" },
+  { value: "+50", label: "Clientes" },
 ];
 
 export function Hero() {
