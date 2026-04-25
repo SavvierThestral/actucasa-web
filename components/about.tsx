@@ -97,7 +97,7 @@ export function About() {
               <div className="relative aspect-[3/4] overflow-hidden">
                 {/* https://unsplash.com/photos/1581094794329-c8112a89af12 — construction workers on site */}
                 <Image
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80"
+                  src="/equipo.webp"
                   alt="Obra de construcción en steel framing — equipo trabajando en estructura"
                   fill
                   className="object-cover object-center"
