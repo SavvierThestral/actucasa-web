@@ -190,12 +190,13 @@ export function Gallery() {
             </motion.p>
           </div>
 
-          {/* Grid masonry */}
-          <div className="grid grid-cols-2 gap-3 md:gap-4 auto-rows-[280px] md:auto-rows-[380px]">
+          {/* Grid mosaico */}
+          <div className="grid grid-cols-2 gap-2 md:gap-3">
             {photos.map((photo, i) => (
               <motion.div
                 key={photo.id}
                 className={`${photo.span} relative overflow-hidden cursor-pointer group`}
+                style={{ aspectRatio: photo.span.includes("col-span-2") ? "16/7" : "4/3" }}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
