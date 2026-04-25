@@ -116,7 +116,7 @@ function ServiceRow({
 
           <h3
             className="leading-[1.1] mb-3"
-            style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(2rem, 3.5vw, 3.2rem)", color: "#3c3c3c", fontWeight: 900 }}
+            style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(1.375rem, 3.5vw, 2.575rem)", color: "#3c3c3c", fontWeight: 900 }}
           >
             {service.title}
           </h3>
@@ -178,7 +178,7 @@ export function Services() {
             </motion.p>
             <h2
               className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)", color: "#3c3c3c", fontWeight: 900 }}
+              style={{ fontSize: "clamp(1.975rem, 6vw, 4.875rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
               Nuestros servicios
             </h2>
@@ -233,7 +233,7 @@ export function Services() {
                 </div>
                 <h3
                   className="leading-[1.1] text-white"
-                  style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(2rem, 3.5vw, 3.2rem)", fontWeight: 900 }}
+                  style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(1.375rem, 3.5vw, 2.575rem)", fontWeight: 900 }}
                 >
                   Viviendas habitacionales
                 </h3>

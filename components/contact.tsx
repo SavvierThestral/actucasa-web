@@ -82,7 +82,7 @@ export function Contact() {
           </motion.p>
           <h2
             className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)", color: "#3c3c3c", fontWeight: 900 }}
+            style={{ fontSize: "clamp(1.975rem, 6vw, 4.875rem)", color: "#3c3c3c", fontWeight: 900 }}
           >
             Empezá tu proyecto
           </h2>

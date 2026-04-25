@@ -44,7 +44,7 @@ export function WhySteelFrame() {
             </motion.p>
             <h2
               className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c", fontWeight: 900 }}
+              style={{ fontSize: "clamp(1.775rem, 5.5vw, 4.375rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
               ¿Por qué elegir steel frame?
             </h2>
@@ -104,7 +104,7 @@ export function WhySteelFrame() {
                 {/* Título */}
                 <h3
                   className="leading-tight mb-4"
-                  style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "#3c3c3c", fontWeight: 900 }}
+                  style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(0.775rem, 2vw, 1.175rem)", color: "#3c3c3c", fontWeight: 900 }}
                 >
                   {reason.title}
                 </h3>

@@ -171,7 +171,7 @@ export function Gallery() {
               </motion.p>
               <h2
                 className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
-                style={{ fontSize: "clamp(2.4rem, 5vw, 4.8rem)", color: "#3c3c3c", fontWeight: 900 }}
+                style={{ fontSize: "clamp(1.775rem, 5vw, 4.175rem)", color: "#3c3c3c", fontWeight: 900 }}
               >
                 Obras realizadas
               </h2>
