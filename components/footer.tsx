@@ -27,9 +27,6 @@ export function Footer() {
               <div className="relative w-9 h-9">
                 <Image src="/logo.webp" alt="ACTuCasa" fill className="object-contain invert" />
               </div>
-              <span className="font-display font-bold text-text-primary text-lg tracking-tight" style={{ letterSpacing: "-0.02em" }}>
-                ACTuCasa
-              </span>
             </Link>
 
             <p className="font-sans text-text-muted text-sm leading-relaxed max-w-[30ch] mb-8">

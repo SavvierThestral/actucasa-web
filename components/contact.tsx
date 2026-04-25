@@ -81,8 +81,8 @@ export function Contact() {
             Hablemos
           </motion.p>
           <h2
-            className="font-display font-bold leading-[0.9] tracking-[-0.03em] text-text-primary"
-            style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)" }}
+            className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
+            style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)", color: "#3c3c3c", fontWeight: 900 }}
           >
             <RevealText text="Empezá tu proyecto" />
           </h2>
