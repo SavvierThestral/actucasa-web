@@ -379,7 +379,7 @@ export function Contact() {
                 {/* Tinte #72a7ab */}
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: "#72a7ab", opacity: 0.38, mixBlendMode: "screen" }}
+                  style={{ background: "#4a7fc4", opacity: 0.38, mixBlendMode: "screen" }}
                 />
               </a>
             </FadeIn>
