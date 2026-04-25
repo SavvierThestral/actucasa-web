@@ -14,22 +14,22 @@ import {
 
 const services = [
   {
-    id: "modulos",
-    icon: HouseLine,
+    id: "estructuras",
+    icon: Wrench,
     label: "Servicio 01",
-    title: "Viviendas habitacionales",
-    subtitle: "Viviendas modulares en steel frame para uso permanente",
+    title: "Estructuras de Hierro",
+    subtitle: "Soluciones estructurales en acero de alta resistencia",
     description:
-      "Módulos diseñados para vivir todos los días, con mayor confort y durabilidad que una casa construida de manera tradicional. Se entregan con todas las terminaciones interiores y exteriores, instalaciones certificadas y aislación termoacústica de alta prestación.",
+      "Diseñadas para proyectos que exigen precisión, durabilidad y adaptabilidad a cualquier escala. Desde galpones hasta estructuras comerciales complejas, fabricamos con los más altos estándares.",
     features: [
-      "Aislación térmica y acústica para confort en todas las estaciones del año.",
-      "Instalaciones eléctricas y sanitarias incluidas y con materiales certificados.",
-      "Terminaciones interiores y exteriores personalizables según el diseño de cada proyecto.",
-      "Posibilidad de combinar módulos para lograr viviendas de mayor superficie sin obra adicional.",
+      "Alta resistencia certificada.",
+      "Adaptable a cualquier escala.",
+      "Fabricación a medida.",
+      "Montaje eficiente.",
     ],
-    // https://unsplash.com/photos/1570129477492-45c003edd2be — modern residential exterior
-    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80",
-    imageAlt: "Módulo habitacional en steel framing — vivienda moderna terminada",
+    // https://unsplash.com/photos/1587300003388-59208cc962cb — steel structure industrial
+    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&q=80",
+    imageAlt: "Estructura de acero industrial — solución estructural de alta resistencia",
     reverse: false,
   },
   {
@@ -223,12 +223,12 @@ export function Services() {
         ))}
       </div>
 
-      {/* Servicio 3 — Estructuras de hierro, full-width con imagen de fondo */}
+      {/* Servicio 3 — Viviendas habitacionales, full-width con imagen de fondo */}
       <div className="relative min-h-[600px] flex items-end overflow-hidden border-t border-bg-border">
-        {/* https://unsplash.com/photos/1587300003388-59208cc962cb — steel structure industrial */}
+        {/* https://unsplash.com/photos/1570129477492-45c003edd2be — modern residential exterior */}
         <Image
-          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1920&q=80"
-          alt="Estructura de acero industrial — solución estructural de alta resistencia"
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1920&q=80"
+          alt="Módulo habitacional en steel framing — vivienda moderna terminada"
           fill
           className="object-cover object-center"
           loading="lazy"
@@ -243,34 +243,34 @@ export function Services() {
               <FadeIn>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2.5 border border-white/30 text-white">
-                    <Wrench size={20} weight="light" />
+                    <HouseLine size={20} weight="light" />
                   </div>
                   <span className="font-sans text-[0.7rem] tracking-[0.3em] uppercase text-white/60">Servicio 03</span>
                 </div>
                 <h3
                   className="font-display font-bold leading-[0.92] tracking-[-0.025em] text-white"
-                  style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}
+                  style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", fontWeight: 900 }}
                 >
-                  Estructuras de Hierro
+                  Viviendas habitacionales
                 </h3>
               </FadeIn>
             </div>
 
             <FadeIn delay={0.15}>
               <p className="font-sans text-white/70 leading-relaxed text-[0.97rem] max-w-[46ch] mb-8">
-                Soluciones estructurales en acero de alta resistencia,
-                diseñadas para proyectos que exigen precisión, durabilidad y
-                adaptabilidad a cualquier escala. Desde galpones hasta
-                estructuras comerciales complejas, fabricamos con los más
-                altos estándares.
+                Módulos diseñados para vivir todos los días, con mayor confort y
+                durabilidad que una casa construida de manera tradicional. Se
+                entregan con todas las terminaciones interiores y exteriores,
+                instalaciones certificadas y aislación termoacústica de alta
+                prestación.
               </p>
 
               <ul className="grid grid-cols-2 gap-3 mb-8">
                 {[
-                  "Alta resistencia certificada",
-                  "Adaptable a cualquier escala",
-                  "Fabricación a medida",
-                  "Montaje eficiente",
+                  "Aislación térmica y acústica",
+                  "Instalaciones certificadas",
+                  "Terminaciones personalizables",
+                  "Módulos combinables",
                 ].map((feat) => (
                   <li
                     key={feat}
