@@ -16,7 +16,9 @@ const filters: { label: string; value: "all" | ProjectCategory }[] = [
   { label: "Todos", value: "all" },
   { label: "Módulos", value: "modulo" },
   { label: "Oficinas", value: "oficina" },
-  { label: "Estructuras", value: "estructura" },
+  { label: "Remodelaciones", value: "remodelacion" },
+  { label: "Wood Frame", value: "wood-frame" },
+  { label: "Tradicional", value: "tradicional" },
 ];
 
 export function ProjectsClient() {

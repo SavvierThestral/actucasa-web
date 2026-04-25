@@ -3,7 +3,7 @@
 //
 //  Para cada proyecto completá:
 //    title       → nombre del proyecto
-//    category    → "modulo" | "oficina" | "estructura"
+//    category    → "modulo" | "oficina" | "remodelacion" | "wood-frame" | "tradicional"
 //    location    → barrio / ciudad
 //    year        → año de entrega
 //    area        → superficie en m² (opcional, "" para omitir)
@@ -12,7 +12,7 @@
 //    tags        → etiquetas que aparecen debajo de la card
 // ─────────────────────────────────────────────────────────────
 
-export type ProjectCategory = "modulo" | "oficina" | "estructura";
+export type ProjectCategory = "modulo" | "oficina" | "remodelacion" | "wood-frame" | "tradicional";
 
 export type Project = {
   id: number;
@@ -28,8 +28,10 @@ export type Project = {
 
 export const categoryLabels: Record<ProjectCategory, string> = {
   modulo: "Módulo habitacional",
-  oficina: "Oficina anexa",
-  estructura: "Estructura de hierro",
+  oficina: "Oficina modular",
+  remodelacion: "Remodelación",
+  "wood-frame": "Wood Frame",
+  tradicional: "Construcción tradicional",
 };
 
 // ─── AGREGA TUS PROYECTOS AQUÍ ───────────────────────────────
@@ -65,16 +67,16 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Galpón industrial San Martín",
-    category: "estructura",
+    category: "tradicional",
     location: "San Martín, GBA",
     year: "2023",
     area: "320m²",
     description:
-      "Estructura de acero de alta resistencia para uso industrial. Cubierta con chapa termopanel y portón seccional.",
+      "Estructura de alta resistencia para uso industrial. Cubierta con chapa termopanel y portón seccional.",
     // https://unsplash.com/photos/1587300003388-59208cc962cb
     image:
       "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80",
-    tags: ["Acero", "320m²", "Industrial"],
+    tags: ["Tradicional", "320m²", "Industrial"],
   },
   {
     id: 4,
@@ -106,16 +108,16 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    title: "Nave comercial La Matanza",
-    category: "estructura",
+    title: "Casa Remodelada La Matanza",
+    category: "remodelacion",
     location: "La Matanza, GBA Oeste",
     year: "2022",
     area: "580m²",
     description:
-      "Nave para almacenamiento y distribución. Estructura autoportante en acero con puente grúa de 5 toneladas.",
+      "Remodelación integral de vivienda existente. Renovación completa de interiores, fachada y distribución de ambientes.",
     // https://unsplash.com/photos/1460472178825-e5240623afd5
     image:
       "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&q=80",
-    tags: ["Nave", "580m²", "Puente grúa"],
+    tags: ["Remodelación", "580m²", "Integral"],
   },
 ];
