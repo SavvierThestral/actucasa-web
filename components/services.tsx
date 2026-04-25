@@ -160,8 +160,8 @@ function ServiceRow({
             href="#contacto"
             className="relative overflow-hidden inline-flex items-center gap-2 border border-brand-blue text-brand-blue px-6 py-3 font-sans text-sm tracking-[0.06em] uppercase group self-start"
           >
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-brand-blue" />
-            <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 group-active:translate-x-0 transition-transform duration-300 ease-out bg-brand-blue" />
+            <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-white group-active:text-white">
               Consultar
               <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
@@ -282,8 +282,8 @@ export function Services() {
                 href="#contacto"
                 className="relative overflow-hidden inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 font-sans text-sm tracking-[0.06em] uppercase group self-start"
               >
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white" />
-                <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-brand-blue">
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 group-active:translate-x-0 transition-transform duration-300 ease-out bg-white" />
+                <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-brand-blue group-active:text-brand-blue">
                   Consultar
                   <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>

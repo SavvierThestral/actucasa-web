@@ -101,8 +101,8 @@ export function Hero() {
             href="#servicios"
             className="relative overflow-hidden inline-flex items-center gap-2 bg-brand-blue text-white px-7 py-3.5 font-sans font-medium text-sm tracking-wide active:scale-[0.98] group"
           >
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white" />
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-brand-blue">
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 group-active:translate-x-0 transition-transform duration-300 ease-out bg-white" />
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-brand-blue group-active:text-brand-blue">
               Ver servicios
             </span>
           </a>

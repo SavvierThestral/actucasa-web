@@ -266,10 +266,10 @@ export function Contact() {
                   style={{ backgroundColor: "#62A0C7", color: "#ffffff" }}
                 >
                   <span
-                    className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"
+                    className="absolute inset-0 -translate-x-full group-hover:translate-x-0 group-active:translate-x-0 transition-transform duration-300 ease-out"
                     style={{ backgroundColor: "#ffffff" }}
                   />
-                  <span className="relative z-10 inline-flex items-center gap-3 transition-colors duration-300 group-hover:text-[#055196]">
+                  <span className="relative z-10 inline-flex items-center gap-3 transition-colors duration-300 group-hover:text-[#055196] group-active:text-[#055196]">
                     {loading ? (
                       <>
                         <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
