@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import { MagneticButton } from "@/components/ui/magnetic-button";
 import { InstagramLogo, ArrowDown } from "@phosphor-icons/react";
 import { instagramUrl, siteConfig } from "@/lib/config";
 
@@ -98,14 +97,15 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.82, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap gap-4 items-center mb-14"
         >
-          <MagneticButton>
-            <a
-              href="#servicios"
-              className="inline-flex items-center gap-2 bg-brand-blue text-white px-7 py-3.5 font-sans font-medium text-sm tracking-wide hover:bg-brand-blue-hover transition-colors duration-200 active:scale-[0.98]"
-            >
+          <a
+            href="#servicios"
+            className="relative overflow-hidden inline-flex items-center gap-2 bg-brand-blue text-white px-7 py-3.5 font-sans font-medium text-sm tracking-wide active:scale-[0.98] group"
+          >
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white" />
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-brand-blue">
               Ver servicios
-            </a>
-          </MagneticButton>
+            </span>
+          </a>
 
           <a
             href="#contacto"
