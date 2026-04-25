@@ -191,7 +191,7 @@ export function Gallery() {
           </div>
 
           {/* Grid mosaico */}
-          <div className="grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-3 lg:grid-rows-3 lg:auto-rows-[240px]">
+          <div className="grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-3 lg:auto-rows-[240px]">
             {photos.map((photo, i) => (
               <motion.div
                 key={photo.id}
