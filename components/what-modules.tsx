@@ -41,11 +41,15 @@ export function WhatModules() {
             </FadeIn>
 
             <h2
-              className="font-display font-bold leading-[0.9] tracking-[-0.03em] mb-8"
+              className="font-display font-bold leading-[0.9] tracking-[-0.03em] mb-4"
               style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
-              Espacios completos, fabricados en taller y listos para habitar
+              ¿Qué son los módulos?
             </h2>
+
+            <p className="font-sans text-text-secondary text-lg leading-snug max-w-[52ch] mb-8">
+              Espacios completos, fabricados en taller y listos para habitar
+            </p>
 
             <FadeIn delay={0.1}>
               <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[56ch]">
