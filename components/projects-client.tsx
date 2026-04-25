@@ -114,8 +114,8 @@ export function ProjectsClient() {
       {/* ── Filtros + grilla ── */}
       <section className="bg-bg-base py-16 md:py-24 min-h-[60vh]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-          {/* Filtros */}
-          <div className="flex flex-wrap gap-3 mb-14">
+          {/* Filtros — sticky */}
+          <div className="sticky top-0 z-30 bg-bg-base/95 backdrop-blur-sm border-b border-bg-border -mx-6 md:-mx-10 lg:-mx-16 px-6 md:px-10 lg:px-16 py-4 mb-10 flex flex-wrap gap-3">
             {filters.map((f) => (
               <button
                 key={f.value}
