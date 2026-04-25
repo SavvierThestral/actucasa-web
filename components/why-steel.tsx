@@ -31,7 +31,7 @@ export function WhySteelFrame() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
 
         {/* Header — dos columnas */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 md:gap-20 items-end mb-20 pb-16 border-b border-bg-border">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 md:gap-20 items-end mb-12 pb-12 border-b border-bg-border">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
@@ -68,7 +68,7 @@ export function WhySteelFrame() {
         </div>
 
         {/* Razones — 3 tarjetas en columnas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-bg-border">
+        <div className="grid grid-cols-1 md:grid-cols-3">
           {reasons.map((reason, i) => {
             const Icon = reason.icon;
             return (
