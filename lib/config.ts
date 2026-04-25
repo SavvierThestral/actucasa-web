@@ -12,6 +12,13 @@ export const siteConfig = {
 
   instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE || "ac.tucasa",
 
+  email: process.env.NEXT_PUBLIC_EMAIL || "ac-tucasa@hotmail.com",
+  phone: process.env.NEXT_PUBLIC_PHONE || "+54 9 2932 578585",
+  address: process.env.NEXT_PUBLIC_ADDRESS || "Villa Gral. Arias, Pcia. de Buenos Aires",
+  mapsUrl: process.env.NEXT_PUBLIC_MAPS_URL || "https://maps.app.goo.gl/BK11sAg4Qv1TCDth7",
+  mapsEmbed: process.env.NEXT_PUBLIC_MAPS_EMBED ||
+    "https://maps.google.com/maps?q=Villa+General+Arias,+Buenos+Aires,+Argentina&z=13&output=embed",
+
   googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? undefined,
 } as const;
 

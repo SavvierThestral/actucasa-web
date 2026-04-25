@@ -9,6 +9,9 @@ import {
   InstagramLogo,
   PaperPlaneTilt,
   CheckCircle,
+  EnvelopeSimple,
+  Phone,
+  MapPin,
 } from "@phosphor-icons/react";
 import { whatsappUrl, instagramUrl, siteConfig } from "@/lib/config";
 
@@ -58,11 +61,12 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="bg-bg-base border-t border-bg-border py-12 md:py-20 relative overflow-hidden"
+      className="border-t border-[#3a78b5]/20 py-12 md:py-20 relative overflow-hidden"
+      style={{ backgroundColor: "#055196" }}
     >
       {/* Textura */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage: "url(/bg-texture.png)",
           backgroundSize: "cover",
@@ -78,12 +82,13 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="section-label mb-6"
+            style={{ color: "#62A0C7" }}
           >
             Hablemos
           </motion.p>
           <h2
             className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(1.975rem, 6vw, 4.875rem)", color: "#3c3c3c", fontWeight: 900 }}
+            style={{ fontSize: "clamp(1.975rem, 6vw, 4.875rem)", color: "#ffffff", fontWeight: 900 }}
           >
             Empezá tu proyecto
           </h2>
@@ -100,17 +105,18 @@ export function Contact() {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col items-start gap-4 py-12"
               >
-                <CheckCircle size={48} weight="light" className="text-brand-blue" />
-                <h3 className="font-display font-bold text-3xl text-text-primary tracking-tight">
+                <CheckCircle size={48} weight="light" style={{ color: "#62A0C7" }} />
+                <h3 className="font-display font-bold text-3xl tracking-tight" style={{ color: "#ffffff" }}>
                   Mensaje enviado
                 </h3>
-                <p className="font-sans text-text-secondary max-w-[40ch]">
+                <p className="font-sans max-w-[40ch]" style={{ color: "#62A0C7" }}>
                   Gracias por contactarnos. Te respondemos en menos de 24
                   horas hábiles.
                 </p>
                 <button
                   onClick={() => setSent(false)}
-                  className="mt-4 font-sans text-sm text-brand-blue underline underline-offset-4"
+                  className="mt-4 font-sans text-sm underline underline-offset-4"
+                  style={{ color: "#62A0C7" }}
                 >
                   Enviar otro mensaje
                 </button>
@@ -122,7 +128,8 @@ export function Contact() {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="nombre"
-                      className="font-sans text-xs text-text-muted tracking-wide uppercase"
+                      className="font-sans text-xs tracking-wide uppercase"
+                      style={{ color: "#62A0C7" }}
                     >
                       Nombre completo
                     </label>
@@ -132,13 +139,21 @@ export function Contact() {
                       type="text"
                       required
                       placeholder="Juan García"
-                      className="bg-bg-surface border border-bg-border text-text-primary font-sans text-sm px-4 py-3.5 placeholder:text-text-muted focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200"
+                      style={{
+                        backgroundColor: "#044282",
+                        border: "1px solid rgba(98,160,199,0.3)",
+                        color: "#ffffff",
+                      }}
+                      onFocus={(e) => (e.target.style.borderColor = "#62A0C7")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(98,160,199,0.3)")}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="email"
-                      className="font-sans text-xs text-text-muted tracking-wide uppercase"
+                      className="font-sans text-xs tracking-wide uppercase"
+                      style={{ color: "#62A0C7" }}
                     >
                       Email
                     </label>
@@ -148,7 +163,14 @@ export function Contact() {
                       type="email"
                       required
                       placeholder="juan@ejemplo.com"
-                      className="bg-bg-surface border border-bg-border text-text-primary font-sans text-sm px-4 py-3.5 placeholder:text-text-muted focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200"
+                      style={{
+                        backgroundColor: "#044282",
+                        border: "1px solid rgba(98,160,199,0.3)",
+                        color: "#ffffff",
+                      }}
+                      onFocus={(e) => (e.target.style.borderColor = "#62A0C7")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(98,160,199,0.3)")}
                     />
                   </div>
                 </div>
@@ -157,7 +179,8 @@ export function Contact() {
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="telefono"
-                    className="font-sans text-xs text-text-muted tracking-wide uppercase"
+                    className="font-sans text-xs tracking-wide uppercase"
+                    style={{ color: "#62A0C7" }}
                   >
                     Teléfono (opcional)
                   </label>
@@ -166,7 +189,14 @@ export function Contact() {
                     name="telefono"
                     type="tel"
                     placeholder="+54 9 11 XXXX XXXX"
-                    className="bg-bg-surface border border-bg-border text-text-primary font-sans text-sm px-4 py-3.5 placeholder:text-text-muted focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                    className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200"
+                    style={{
+                      backgroundColor: "#044282",
+                      border: "1px solid rgba(98,160,199,0.3)",
+                      color: "#ffffff",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#62A0C7")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(98,160,199,0.3)")}
                   />
                 </div>
 
@@ -174,7 +204,8 @@ export function Contact() {
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="servicio"
-                    className="font-sans text-xs text-text-muted tracking-wide uppercase"
+                    className="font-sans text-xs tracking-wide uppercase"
+                    style={{ color: "#62A0C7" }}
                   >
                     Servicio de interés
                   </label>
@@ -183,13 +214,20 @@ export function Contact() {
                     name="servicio"
                     required
                     defaultValue=""
-                    className="bg-bg-surface border border-bg-border text-text-primary font-sans text-sm px-4 py-3.5 focus:outline-none focus:border-brand-blue transition-colors duration-200 appearance-none cursor-pointer"
+                    className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200 appearance-none cursor-pointer"
+                    style={{
+                      backgroundColor: "#044282",
+                      border: "1px solid rgba(98,160,199,0.3)",
+                      color: "#ffffff",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#62A0C7")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(98,160,199,0.3)")}
                   >
-                    <option value="" disabled className="text-text-muted">
+                    <option value="" disabled style={{ color: "#62A0C7", backgroundColor: "#044282" }}>
                       Seleccioná un servicio
                     </option>
                     {SERVICES.map((s) => (
-                      <option key={s} value={s}>
+                      <option key={s} value={s} style={{ backgroundColor: "#044282" }}>
                         {s}
                       </option>
                     ))}
@@ -200,7 +238,8 @@ export function Contact() {
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="mensaje"
-                    className="font-sans text-xs text-text-muted tracking-wide uppercase"
+                    className="font-sans text-xs tracking-wide uppercase"
+                    style={{ color: "#62A0C7" }}
                   >
                     Contanos tu proyecto
                   </label>
@@ -210,7 +249,14 @@ export function Contact() {
                     rows={5}
                     required
                     placeholder="Describí brevemente lo que necesitás construir..."
-                    className="bg-bg-surface border border-bg-border text-text-primary font-sans text-sm px-4 py-3.5 placeholder:text-text-muted focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
+                    className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200 resize-none"
+                    style={{
+                      backgroundColor: "#044282",
+                      border: "1px solid rgba(98,160,199,0.3)",
+                      color: "#ffffff",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#62A0C7")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(98,160,199,0.3)")}
                   />
                 </div>
 
@@ -218,7 +264,8 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center gap-3 bg-brand-blue text-white px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase hover:bg-brand-blue-hover transition-colors duration-300 disabled:opacity-60 active:scale-[0.98]"
+                    className="inline-flex items-center gap-3 px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase transition-colors duration-300 disabled:opacity-60 active:scale-[0.98]"
+                    style={{ backgroundColor: "#62A0C7", color: "#ffffff" }}
                   >
                     {loading ? (
                       <>
@@ -238,68 +285,121 @@ export function Contact() {
           </FadeIn>
 
           {/* ── Info de contacto ── */}
-          <div className="flex flex-col gap-10 lg:pt-2">
+          <div className="flex flex-col gap-6 lg:pt-2">
+
+            {/* Datos de contacto */}
             <FadeIn delay={0.2}>
-              <p className="font-sans text-text-secondary leading-relaxed text-[0.97rem] max-w-[38ch]">
-                Preferís hablar directamente? Escribinos por WhatsApp o
-                seguinos en Instagram para ver nuestros trabajos en detalle.
-              </p>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="flex items-center gap-3 group"
+                  >
+                    <div
+                      className="p-2 flex-shrink-0 transition-colors duration-200"
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#62A0C7" }}
+                    >
+                      <EnvelopeSimple size={18} weight="light" />
+                    </div>
+                    <span className="font-sans text-sm transition-colors duration-200" style={{ color: "#62A0C7" }}>
+                      {siteConfig.email}
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                    className="flex items-center gap-3 group"
+                  >
+                    <div
+                      className="p-2 flex-shrink-0 transition-colors duration-200"
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#62A0C7" }}
+                    >
+                      <Phone size={18} weight="light" />
+                    </div>
+                    <span className="font-sans text-sm transition-colors duration-200" style={{ color: "#62A0C7" }}>
+                      {siteConfig.phone}
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={siteConfig.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group"
+                  >
+                    <div
+                      className="p-2 flex-shrink-0 transition-colors duration-200"
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#62A0C7" }}
+                    >
+                      <MapPin size={18} weight="light" />
+                    </div>
+                    <span className="font-sans text-sm transition-colors duration-200" style={{ color: "#62A0C7" }}>
+                      {siteConfig.address}
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </FadeIn>
+
+            {/* Mapa */}
+            <FadeIn delay={0.28}>
+              <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden" style={{ height: "200px" }}>
+                <iframe
+                  src={siteConfig.mapsEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: "grayscale(100%) invert(1) brightness(0.75)" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación ACTuCasa"
+                />
+                {/* Filtro de color #7D9DC4 */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ background: "#7D9DC4", opacity: 0.22, mixBlendMode: "screen" }}
+                />
+              </a>
             </FadeIn>
 
             {/* WhatsApp */}
-            <FadeIn delay={0.3}>
+            <FadeIn delay={0.34}>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 group border border-bg-border hover:border-green-600/40 p-5 transition-all duration-300 hover:bg-green-50"
+                className="flex items-center gap-4 group p-4 transition-all duration-300"
+                style={{ border: "1px solid rgba(98,160,199,0.25)", backgroundColor: "rgba(4,66,130,0.5)" }}
               >
-                <div className="p-3 bg-green-100 text-green-700 group-hover:bg-green-200 transition-colors">
-                  <WhatsappLogo size={22} weight="fill" />
+                <div className="p-2.5 bg-green-600/20 text-green-400 transition-colors">
+                  <WhatsappLogo size={20} weight="fill" />
                 </div>
                 <div>
-                  <p className="font-sans font-medium text-text-primary text-sm">
-                    WhatsApp
-                  </p>
-                  <p className="font-sans text-text-muted text-xs mt-0.5">
-                    Respuesta en minutos
-                  </p>
+                  <p className="font-sans font-medium text-sm" style={{ color: "#ffffff" }}>WhatsApp</p>
+                  <p className="font-sans text-xs mt-0.5" style={{ color: "#62A0C7" }}>Respuesta en minutos</p>
                 </div>
               </a>
             </FadeIn>
 
             {/* Instagram */}
-            <FadeIn delay={0.38}>
+            <FadeIn delay={0.4}>
               <a
                 href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 group border border-bg-border hover:border-pink-400/40 p-5 transition-all duration-300 hover:bg-pink-50"
+                className="flex items-center gap-4 group p-4 transition-all duration-300"
+                style={{ border: "1px solid rgba(98,160,199,0.25)", backgroundColor: "rgba(4,66,130,0.5)" }}
               >
-                <div className="p-3 bg-pink-100 text-pink-600 group-hover:bg-pink-200 transition-colors">
-                  <InstagramLogo size={22} weight="fill" />
+                <div className="p-2.5 bg-pink-600/20 text-pink-400 transition-colors">
+                  <InstagramLogo size={20} weight="fill" />
                 </div>
                 <div>
-                  <p className="font-sans font-medium text-text-primary text-sm">
-                    @{siteConfig.instagramHandle}
-                  </p>
-                  <p className="font-sans text-text-muted text-xs mt-0.5">
-                    Proyectos y novedades
-                  </p>
+                  <p className="font-sans font-medium text-sm" style={{ color: "#ffffff" }}>@{siteConfig.instagramHandle}</p>
+                  <p className="font-sans text-xs mt-0.5" style={{ color: "#62A0C7" }}>Proyectos y novedades</p>
                 </div>
               </a>
-            </FadeIn>
-
-            {/* Separador */}
-            <FadeIn delay={0.44}>
-              <div className="border-t border-bg-border pt-8">
-                <p className="section-label mb-2">Zona de trabajo</p>
-                <p className="font-sans text-text-secondary text-sm leading-relaxed">
-                  Buenos Aires y Gran Buenos Aires.
-                  <br />
-                  Consultanos por proyectos en otras provincias.
-                </p>
-              </div>
             </FadeIn>
           </div>
         </div>
