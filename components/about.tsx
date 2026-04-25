@@ -31,7 +31,7 @@ export function About() {
   return (
     <section
       id="nosotros"
-      className="relative bg-bg-base py-14 md:py-20 overflow-hidden"
+      className="relative bg-bg-base pt-8 md:pt-12 pb-14 md:pb-20 overflow-hidden"
     >
       {/* Fondo texturizado */}
       <div
