@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowCircleRight } from "@phosphor-icons/react";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 const b = (text: string) => (
   <strong className="font-medium text-text-primary">{text}</strong>
@@ -110,7 +111,7 @@ export function WhatModules() {
 
           {/* Columna derecha — imagen */}
           <FadeIn delay={0.15}>
-            <div className="relative">
+            <TiltCard className="relative">
               <div className="relative aspect-[3/4] overflow-hidden">
                 {/* https://unsplash.com/photos/1570129477492-45c003edd2be — modular home */}
                 <Image
@@ -135,7 +136,7 @@ export function WhatModules() {
                   menos tiempo de obra
                 </p>
               </motion.div>
-            </div>
+            </TiltCard>
           </FadeIn>
         </div>
       </div>
