@@ -55,7 +55,7 @@ export function Hero() {
         </motion.div>
 
         {/* Headline serif editorial */}
-        <div className="mb-7 overflow-hidden">
+        <div className="mb-2 overflow-hidden">
           <motion.h1
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
