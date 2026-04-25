@@ -370,16 +370,16 @@ export function Contact() {
                   src={siteConfig.mapsEmbed}
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "grayscale(100%) brightness(0.18) contrast(1.2)" }}
+                  style={{ border: 0, filter: "grayscale(100%) brightness(0.55) contrast(1.1)" }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación ACTuCasa"
                 />
-                {/* Tinte azul para cohesión con la sección */}
+                {/* Tinte #72a7ab */}
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: "#72a7ab", opacity: 0.18, mixBlendMode: "screen" }}
+                  style={{ background: "#72a7ab", opacity: 0.38, mixBlendMode: "screen" }}
                 />
               </a>
             </FadeIn>
