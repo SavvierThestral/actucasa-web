@@ -20,49 +20,49 @@ const photos: Photo[] = [
     src: "/gallery/img_4754.webp",
     srcFull: "/gallery/img_4754.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1",
+    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-2 lg:row-span-1",
   },
   {
     id: 2,
     src: "/gallery/img_1505.webp",
     srcFull: "/gallery/img_1505.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1",
+    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-1 lg:row-span-2",
   },
   {
     id: 3,
     src: "/gallery/img_3097.webp",
     srcFull: "/gallery/img_3097.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2",
+    span: "col-span-2 aspect-[16/7] lg:aspect-auto lg:col-span-1 lg:row-span-1",
   },
   {
     id: 4,
     src: "/gallery/img_5860.webp",
     srcFull: "/gallery/img_5860.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1",
+    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-1 lg:row-span-1",
   },
   {
     id: 5,
     src: "/gallery/img_6556.webp",
     srcFull: "/gallery/img_6556.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1",
+    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-1 lg:row-span-1",
   },
   {
     id: 6,
     src: "/gallery/img_5556.webp",
     srcFull: "/gallery/img_5556.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2",
+    span: "col-span-2 aspect-[16/7] lg:aspect-auto lg:col-span-1 lg:row-span-1",
   },
   {
     id: 7,
     src: "/gallery/img_8255.webp",
     srcFull: "/gallery/img_8255.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2",
+    span: "col-span-2 aspect-[16/7] lg:aspect-auto lg:col-span-1 lg:row-span-1",
   },
 ];
 
@@ -191,12 +191,11 @@ export function Gallery() {
           </div>
 
           {/* Grid mosaico */}
-          <div className="grid grid-cols-2 gap-2 md:gap-3">
+          <div className="grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-3 lg:grid-rows-3 lg:auto-rows-[240px]">
             {photos.map((photo, i) => (
               <motion.div
                 key={photo.id}
                 className={`${photo.span} relative overflow-hidden cursor-pointer group`}
-                style={{ aspectRatio: photo.span.includes("col-span-2") ? "16/7" : "4/3" }}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{

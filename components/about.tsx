@@ -45,7 +45,7 @@ export function About() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Label */}
         <FadeIn>
-          <p className="section-label mb-16">Conocé a nuestro equipo</p>
+          <p className="section-label mb-16">Conocé a</p>
         </FadeIn>
 
         {/* Grid asimétrico: texto 3fr / imagen+stats 2fr */}
@@ -56,7 +56,7 @@ export function About() {
               className="font-display font-bold leading-[0.9] tracking-[-0.03em] mb-10"
               style={{ fontSize: "clamp(1.775rem, 5.5vw, 4.375rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
-              La precisión que construye el futuro.
+              Nuestro equipo
             </h2>
 
             <FadeIn delay={0.1} className="space-y-5">
