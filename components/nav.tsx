@@ -27,16 +27,19 @@ export function Nav() {
       <motion.header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
         style={{
-          backgroundColor: scrolled ? "rgba(255,255,255,0.94)" : "transparent",
+          /* Azul cuando está arriba, blanco al scrollear */
+          backgroundColor: scrolled
+            ? "rgba(255,255,255,0.95)"
+            : "rgba(4,79,151,1)",
           backdropFilter: scrolled ? "blur(12px)" : "none",
           borderBottom: scrolled
             ? "1px solid rgba(214,219,225,0.8)"
-            : "1px solid transparent",
+            : "1px solid rgba(255,255,255,0.08)",
         }}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 h-[72px] flex items-center justify-between">
 
-          {/* Logo — blanco en hero, oscuro al scrollear */}
+          {/* Logo — blanco en azul, invertido en blanco */}
           <Link href="/" className="relative flex items-center group">
             <div className="relative w-11 h-11">
               <Image
@@ -59,7 +62,7 @@ export function Nav() {
                 className={`font-sans text-sm tracking-wide transition-colors duration-300 relative group ${
                   scrolled
                     ? "text-text-secondary hover:text-text-primary"
-                    : "text-white/80 hover:text-white"
+                    : "text-white/85 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -71,7 +74,7 @@ export function Nav() {
               </Link>
             ))}
 
-            {/* Botón Consultanos — azul al scrollear, blanco en hero */}
+            {/* Consultanos: blanco sobre azul, azul sobre blanco */}
             <a
               href="#contacto"
               className={`px-5 py-2.5 font-sans text-sm tracking-wide transition-all duration-300 active:scale-[0.97] ${
@@ -97,7 +100,7 @@ export function Nav() {
         </div>
       </motion.header>
 
-      {/* Mobile menu — siempre blanco sin importar el scroll */}
+      {/* Mobile menu */}
       <motion.div
         initial={false}
         animate={menuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}

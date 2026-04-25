@@ -49,7 +49,6 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-3 mb-10"
         >
-          <span className="w-8 h-[1.5px] bg-brand-blue" />
           <span className="font-sans text-[0.68rem] tracking-[0.28em] uppercase text-text-muted">
             Construcción en Seco&nbsp;·&nbsp;Argentina
           </span>
