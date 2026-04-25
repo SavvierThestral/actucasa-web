@@ -2,13 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { CheckCircle } from "@phosphor-icons/react";
 import { RevealText } from "@/components/ui/reveal-text";
-
-const stats = [
-  { value: "50+", label: "Proyectos entregados" },
-  { value: "5+", label: "Años de experiencia" },
-  { value: "100%", label: "Construcción en seco" },
-];
 
 function FadeIn({
   children,
@@ -50,7 +45,7 @@ export function About() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Label */}
         <FadeIn>
-          <p className="section-label mb-16">Sobre nosotros</p>
+          <p className="section-label mb-16">Nuestro equipo</p>
         </FadeIn>
 
         {/* Grid asimétrico: texto 3fr / imagen+stats 2fr */}
@@ -66,41 +61,34 @@ export function About() {
 
             <FadeIn delay={0.1} className="space-y-5">
               <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[55ch]">
-                En ACTuCasa entendemos que construir no es solo levantar
-                paredes — es crear espacios que resistan el tiempo. Por eso
-                trabajamos exclusivamente con{" "}
-                <span className="text-text-primary font-medium">
-                  steel framing
-                </span>
-                : un sistema de construcción en seco que combina precisión
-                industrial con eficiencia energética superior.
+                AC TuCasa nació de una visión para revolucionar la forma en que
+                habitamos los espacios. Aplicando la tecnología del{" "}
+                <span className="text-text-primary font-medium">Steel Frame</span>{" "}
+                con su alto confort térmico y la eficiencia en construcción.
               </p>
               <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[55ch]">
-                Cada estructura se fabrica con tolerancias milimétricas,
-                reduciendo residuos, acelerando los tiempos de obra y
-                garantizando un resultado estético que no compromete la
-                durabilidad.
+                Nuestro compromiso con la calidad garantiza que cada unidad
+                modular cumpla con los requisitos de sus propietarios,
+                brindando un entorno de vida seguro, eficiente y sofisticado.
               </p>
             </FadeIn>
 
-            {/* Stats en línea */}
-            <div className="mt-16 grid grid-cols-3 gap-0 border-t border-bg-border pt-10">
-              {stats.map((stat, i) => (
-                <FadeIn key={stat.label} delay={0.15 + i * 0.08}>
-                  <div className="pr-8 border-r border-bg-border last:border-r-0 last:pr-0">
-                    <p
-                      className="font-display font-bold text-brand-blue leading-none tracking-tight mb-2"
-                      style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
-                    >
-                      {stat.value}
-                    </p>
-                    <p className="font-sans text-text-muted text-xs tracking-wide leading-tight">
-                      {stat.label}
-                    </p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+            {/* Bullets de valor */}
+            <FadeIn delay={0.18}>
+              <ul className="mt-10 space-y-3">
+                {[
+                  "Materiales certificados y durables",
+                  "Diseño adaptado a cada cliente",
+                  "Tiempos de entrega cumplidos",
+                  "Acompañamiento post-obra",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 font-sans text-text-secondary text-[0.97rem]">
+                    <CheckCircle size={20} weight="fill" className="text-brand-blue flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
           </div>
 
           {/* Columna derecha — imagen con offset */}
