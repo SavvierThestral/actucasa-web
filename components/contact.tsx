@@ -297,7 +297,7 @@ export function Contact() {
                   >
                     <div
                       className="p-2 flex-shrink-0 transition-colors duration-200"
-                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#62A0C7" }}
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#ffffff" }}
                     >
                       <EnvelopeSimple size={18} weight="light" />
                     </div>
@@ -315,7 +315,7 @@ export function Contact() {
                   >
                     <div
                       className="p-2 flex-shrink-0 transition-colors duration-200"
-                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#62A0C7" }}
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#ef4444" }}
                     >
                       <MapPin size={18} weight="light" />
                     </div>
