@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useCallback } from "react";
-import { RevealText } from "@/components/ui/reveal-text";
+
 import { X, ArrowLeft, ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 
 type Photo = {
@@ -173,7 +173,7 @@ export function Gallery() {
                 className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2.4rem, 5vw, 4.8rem)", color: "#3c3c3c", fontWeight: 900 }}
               >
-                <RevealText text="Obras realizadas" />
+                Obras realizadas
               </h2>
             </div>
 

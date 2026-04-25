@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { RevealText } from "@/components/ui/reveal-text";
+
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import {
   HouseLine,
@@ -199,7 +199,7 @@ export function Services() {
               className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
               style={{ fontSize: "clamp(2.6rem, 6vw, 5.5rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
-              <RevealText text="Nuestros servicios" />
+              Nuestros servicios
             </h2>
           </div>
           <motion.p

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle } from "@phosphor-icons/react";
-import { RevealText } from "@/components/ui/reveal-text";
+
 
 function FadeIn({
   children,
@@ -56,7 +56,7 @@ export function About() {
               className="font-display font-bold leading-[0.9] tracking-[-0.03em] mb-10"
               style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
-              <RevealText text="La precisión que construye el futuro." />
+              La precisión que construye el futuro.
             </h2>
 
             <FadeIn delay={0.1} className="space-y-5">

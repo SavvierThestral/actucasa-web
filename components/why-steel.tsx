@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RevealText } from "@/components/ui/reveal-text";
+
 import { Lightning, Shield, Leaf } from "@phosphor-icons/react";
 
 const reasons = [
@@ -46,7 +46,7 @@ export function WhySteelFrame() {
               className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
               style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
-              <RevealText text="¿Por qué elegir steel frame?" />
+              ¿Por qué elegir steel frame?
             </h2>
           </div>
 
