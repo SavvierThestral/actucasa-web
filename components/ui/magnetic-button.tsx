@@ -27,8 +27,8 @@ export function MagneticButton({
     const rect = ref.current.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
-    x.set((e.clientX - cx) * strength);
-    y.set((e.clientY - cy) * strength);
+    x.set((e.clientX - cx) * -strength);
+    y.set((e.clientY - cy) * -strength);
   }
 
   function onMouseLeave() {
