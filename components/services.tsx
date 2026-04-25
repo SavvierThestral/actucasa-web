@@ -222,7 +222,7 @@ export function Services() {
           src="/viviendas-habitacionales.webp"
           alt="Módulo habitacional en steel framing — vivienda moderna terminada"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center scale-75 origin-center"
           loading="lazy"
         />
         {/* Overlay fijo oscuro — independiente del tema para legibilidad sobre imagen */}
