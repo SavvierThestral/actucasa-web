@@ -63,7 +63,7 @@ export function Hero() {
             className="font-serif leading-[1.05] text-text-primary"
             style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 700 }}
           >
-            Construcción modular
+            Construcción modular en
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-8">
@@ -74,7 +74,7 @@ export function Hero() {
             className="font-serif italic leading-[1.05] text-brand-blue"
             style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 700 }}
           >
-            en Steel Frame.
+            Steel Frame.
           </motion.h1>
         </div>
 
