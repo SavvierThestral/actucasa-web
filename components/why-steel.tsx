@@ -127,13 +127,7 @@ export function WhySteelFrame() {
                   <div className={`p-2.5 border flex-shrink-0 ${reason.borderClass} ${reason.iconClass}`}>
                     <Icon size={20} weight="light" />
                   </div>
-                  <span
-                    className={`font-display font-bold leading-none select-none flex-shrink-0 ${reason.numClass}`}
-                    style={{ fontSize: "1.5rem" }}
-                  >
-                    {reason.num}
-                  </span>
-                  <div className="ml-1">
+                  <div>
                     <p className={`font-display font-bold leading-none ${reason.statClass}`} style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)" }}>
                       {reason.stat}
                     </p>
