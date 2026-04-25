@@ -340,6 +340,42 @@ export function Contact() {
                     </span>
                   </a>
                 </li>
+                <li>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group"
+                  >
+                    <div
+                      className="p-2 flex-shrink-0 transition-colors duration-200"
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#4ade80" }}
+                    >
+                      <WhatsappLogo size={18} weight="fill" />
+                    </div>
+                    <span className="font-sans text-sm transition-colors duration-200" style={{ color: "#62A0C7" }}>
+                      WhatsApp
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group"
+                  >
+                    <div
+                      className="p-2 flex-shrink-0 transition-colors duration-200"
+                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#f472b6" }}
+                    >
+                      <InstagramLogo size={18} weight="fill" />
+                    </div>
+                    <span className="font-sans text-sm transition-colors duration-200" style={{ color: "#62A0C7" }}>
+                      @{siteConfig.instagramHandle}
+                    </span>
+                  </a>
+                </li>
               </ul>
             </FadeIn>
 
@@ -364,43 +400,6 @@ export function Contact() {
               </a>
             </FadeIn>
 
-            {/* WhatsApp */}
-            <FadeIn delay={0.34}>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group p-4 transition-all duration-300"
-                style={{ border: "1px solid rgba(98,160,199,0.25)", backgroundColor: "rgba(4,66,130,0.5)" }}
-              >
-                <div className="p-2.5 bg-green-600/20 text-green-400 transition-colors">
-                  <WhatsappLogo size={20} weight="fill" />
-                </div>
-                <div>
-                  <p className="font-sans font-medium text-sm" style={{ color: "#ffffff" }}>WhatsApp</p>
-                  <p className="font-sans text-xs mt-0.5" style={{ color: "#62A0C7" }}>Respuesta en minutos</p>
-                </div>
-              </a>
-            </FadeIn>
-
-            {/* Instagram */}
-            <FadeIn delay={0.4}>
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group p-4 transition-all duration-300"
-                style={{ border: "1px solid rgba(98,160,199,0.25)", backgroundColor: "rgba(4,66,130,0.5)" }}
-              >
-                <div className="p-2.5 bg-pink-600/20 text-pink-400 transition-colors">
-                  <InstagramLogo size={20} weight="fill" />
-                </div>
-                <div>
-                  <p className="font-sans font-medium text-sm" style={{ color: "#ffffff" }}>@{siteConfig.instagramHandle}</p>
-                  <p className="font-sans text-xs mt-0.5" style={{ color: "#62A0C7" }}>Proyectos y novedades</p>
-                </div>
-              </a>
-            </FadeIn>
           </div>
         </div>
       </div>
