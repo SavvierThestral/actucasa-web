@@ -80,7 +80,7 @@ export function WhySteelFrame() {
               className="font-display font-bold leading-[0.9] tracking-[-0.03em]"
               style={{ fontSize: "clamp(1.775rem, 5.5vw, 4.375rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
-              ¿Por qué elegir steel frame?
+              ¿Qué es steel frame y por qué elegirlo?
             </h2>
           </div>
 
