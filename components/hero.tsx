@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { InstagramLogo, ArrowDown } from "@phosphor-icons/react";
+import { instagramUrl, siteConfig } from "@/lib/config";
 
 // ─────────────────────────────────────────────────────────────
 //  FOTO DEL HERO — Para agregar tu foto:
@@ -116,7 +117,7 @@ export function Hero() {
 
         {/* Instagram link */}
         <motion.a
-          href="https://instagram.com/ac.tucasa"
+          href={instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0 }}

@@ -10,6 +10,7 @@ import {
   PaperPlaneTilt,
   CheckCircle,
 } from "@phosphor-icons/react";
+import { whatsappUrl, instagramUrl, siteConfig } from "@/lib/config";
 
 const SERVICES = [
   "Módulo habitacional",
@@ -248,7 +249,7 @@ export function Contact() {
             {/* WhatsApp */}
             <FadeIn delay={0.3}>
               <a
-                href="https://wa.me/5491100000000?text=Hola!%20Vi%20su%20web%20y%20quiero%20consultar%20sobre%20un%20proyecto"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group border border-bg-border hover:border-green-600/40 p-5 transition-all duration-300 hover:bg-green-50"
@@ -270,7 +271,7 @@ export function Contact() {
             {/* Instagram */}
             <FadeIn delay={0.38}>
               <a
-                href="https://instagram.com/ac.tucasa"
+                href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group border border-bg-border hover:border-pink-400/40 p-5 transition-all duration-300 hover:bg-pink-50"
@@ -280,7 +281,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-sans font-medium text-text-primary text-sm">
-                    @ac.tucasa
+                    @{siteConfig.instagramHandle}
                   </p>
                   <p className="font-sans text-text-muted text-xs mt-0.5">
                     Proyectos y novedades

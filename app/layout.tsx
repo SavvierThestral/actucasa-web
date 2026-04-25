@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display, Merriweather } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
+import { siteConfig, instagramUrl } from "@/lib/config";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
+const BASE_URL = siteConfig.siteUrl;
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
     creator: "@actucasa",
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? undefined,
+    google: siteConfig.googleVerification,
   },
 };
 
@@ -107,9 +108,7 @@ const jsonLd = {
         width: 120,
         height: 120,
       },
-      sameAs: [
-        "https://www.instagram.com/ac.tucasa",
-      ],
+      sameAs: [instagramUrl],
     },
     {
       "@type": "LocalBusiness",

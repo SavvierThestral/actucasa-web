@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { InstagramLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { whatsappUrlPlain, instagramUrl, siteConfig } from "@/lib/config";
 
 const services = [
   { label: "Módulos habitacionales", href: "/#servicios" },
@@ -35,7 +36,7 @@ export function Footer() {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://instagram.com/ac.tucasa"
+                href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram ACTuCasa"
@@ -44,7 +45,7 @@ export function Footer() {
                 <InstagramLogo size={18} />
               </a>
               <a
-                href="https://wa.me/5491100000000"
+                href={whatsappUrlPlain}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp ACTuCasa"
@@ -101,17 +102,17 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://instagram.com/ac.tucasa"
+                  href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
                 >
-                  @ac.tucasa
+                  @{siteConfig.instagramHandle}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/5491100000000"
+                  href={whatsappUrlPlain}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
