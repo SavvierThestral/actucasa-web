@@ -14,36 +14,48 @@ const reasons: {
   icon: React.ElementType;
   title: string;
   body: ReactNode;
+  stat: string;
+  statLabel: string;
   numClass: string;
   iconClass: string;
   borderClass: string;
+  statClass: string;
 }[] = [
   {
     num: "01",
     icon: Lightning,
     title: "Construcción rápida",
     body: <>Los perfiles llegan {b("prefabricados")} a obra. Reducimos hasta un {b("40%")} los tiempos frente a construcción tradicional con hormigón y ladrillos.</>,
+    stat: "−40%",
+    statLabel: "tiempo vs. construcción tradicional",
     numClass: "text-amber-500/25",
     iconClass: "text-amber-500",
     borderClass: "border-amber-500/30",
+    statClass: "text-amber-500",
   },
   {
     num: "02",
     icon: Shield,
     title: "Durabilidad superior",
     body: <>Acero galvanizado con {b("protección anticorrosión")} que garantiza más de {b("50 años")} de vida estructural, resistente a {b("sismos")}, viento e insectos.</>,
+    stat: "+50",
+    statLabel: "años de vida útil garantizada",
     numClass: "text-brand-blue/20",
     iconClass: "text-brand-blue",
     borderClass: "border-brand-blue/25",
+    statClass: "text-brand-blue",
   },
   {
     num: "03",
     icon: Leaf,
     title: "Construcción sustentable",
     body: <>El acero es {b("100% reciclable")}. Menor generación de {b("escombros")} en obra y mayor {b("eficiencia energética")} en el edificio terminado.</>,
+    stat: "100%",
+    statLabel: "materiales reciclables",
     numClass: "text-green-700/25",
     iconClass: "text-green-700",
     borderClass: "border-green-700/30",
+    statClass: "text-green-700",
   },
 ];
 
@@ -111,7 +123,7 @@ export function WhySteelFrame() {
                 }`}
               >
                 {/* Número + icono */}
-                <div className="flex items-start justify-between mb-8">
+                <div className="flex items-start justify-between mb-6">
                   <span
                     className={`font-display font-bold leading-none select-none ${reason.numClass}`}
                     style={{ fontSize: "3.5rem" }}
@@ -121,6 +133,16 @@ export function WhySteelFrame() {
                   <div className={`p-2.5 border ${reason.borderClass} ${reason.iconClass}`}>
                     <Icon size={20} weight="light" />
                   </div>
+                </div>
+
+                {/* Stat */}
+                <div className="mb-6">
+                  <p className={`font-display font-bold leading-none ${reason.statClass}`} style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)" }}>
+                    {reason.stat}
+                  </p>
+                  <p className="font-sans text-text-muted text-xs mt-1.5 tracking-wide">
+                    {reason.statLabel}
+                  </p>
                 </div>
 
                 {/* Título */}

@@ -130,7 +130,7 @@ export function WhatModules() {
                 viewport={{ once: true }}
                 className="absolute -bottom-6 -left-6 bg-brand-blue text-white px-6 py-4"
               >
-                <p className="font-display font-bold text-2xl leading-none">60%</p>
+                <p className="font-display font-bold text-2xl leading-none">40%</p>
                 <p className="font-sans text-white/80 text-xs mt-1 tracking-wide">
                   menos tiempo de obra
                 </p>
