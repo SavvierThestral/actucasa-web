@@ -42,7 +42,7 @@ export function WhatModules() {
 
             <h2
               className="font-display font-bold leading-[0.9] tracking-[-0.03em] mb-8"
-              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c" }}
+              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
               <RevealText text="Espacios completos, fabricados en taller y listos para habitar" />
             </h2>

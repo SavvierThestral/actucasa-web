@@ -54,7 +54,7 @@ export function About() {
           <div>
             <h2
               className="font-display font-bold leading-[0.9] tracking-[-0.03em] mb-10"
-              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c" }}
+              style={{ fontSize: "clamp(2.4rem, 5.5vw, 5rem)", color: "#3c3c3c", fontWeight: 900 }}
             >
               <RevealText text="La precisión que construye el futuro." />
             </h2>

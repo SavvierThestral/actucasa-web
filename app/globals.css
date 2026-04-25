@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/feh7sid.css");
 @import "tailwindcss";
 
 /* ─── Donovan Display — fuente local de la marca ─── */
@@ -49,7 +50,7 @@
   --color-text-muted:     #8a9199;
 
   /* Tipografías */
-  --font-display: "Donovan Display", sans-serif;
+  --font-display: "early-sans-variable", sans-serif;
   --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
   --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
