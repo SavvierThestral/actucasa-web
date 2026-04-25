@@ -1,27 +1,32 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 import { Lightning, Shield, Leaf } from "@phosphor-icons/react";
 
-const reasons = [
+const b = (text: string) => (
+  <strong className="font-medium text-text-primary">{text}</strong>
+);
+
+const reasons: { num: string; icon: React.ElementType; title: string; body: ReactNode }[] = [
   {
     num: "01",
     icon: Lightning,
     title: "Construcción rápida",
-    body: "Los perfiles llegan prefabricados a obra. Reducimos hasta un 40% los tiempos frente a construcción tradicional con hormigón y ladrillos.",
+    body: <>Los perfiles llegan {b("prefabricados")} a obra. Reducimos hasta un {b("40%")} los tiempos frente a construcción tradicional con hormigón y ladrillos.</>,
   },
   {
     num: "02",
     icon: Shield,
     title: "Durabilidad superior",
-    body: "Acero galvanizado con protección anticorrosión que garantiza más de 50 años de vida estructural, resistente a sismos, viento e insectos.",
+    body: <>Acero galvanizado con {b("protección anticorrosión")} que garantiza más de {b("50 años")} de vida estructural, resistente a {b("sismos")}, viento e insectos.</>,
   },
   {
     num: "03",
     icon: Leaf,
     title: "Construcción sustentable",
-    body: "El acero es 100% reciclable. Menor generación de escombros en obra y mayor eficiencia energética en el edificio terminado.",
+    body: <>El acero es {b("100% reciclable")}. Menor generación de {b("escombros")} en obra y mayor {b("eficiencia energética")} en el edificio terminado.</>,
   },
 ];
 
@@ -57,12 +62,12 @@ export function WhySteelFrame() {
             viewport={{ once: true }}
           >
             <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] mb-4 max-w-[48ch]">
-              El steel framing redefine la construcción moderna: precisión
-              milimétrica, menor desperdicio y durabilidad incomparable.
+              El steel framing redefine la construcción moderna: <strong className="font-medium text-text-primary">precisión
+              milimétrica</strong>, menor desperdicio y <strong className="font-medium text-text-primary">durabilidad incomparable</strong>.
             </p>
             <p className="font-sans text-text-muted leading-relaxed text-sm max-w-[48ch]">
               Soluciones de acero estructural diseñadas para construir mejor,
-              más rápido y con décadas de vida útil garantizada.
+              más rápido y con <strong className="font-medium text-text-primary">décadas de vida útil garantizada</strong>.
             </p>
           </motion.div>
         </div>

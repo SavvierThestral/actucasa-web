@@ -61,7 +61,7 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.95, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="font-display leading-[1.05] text-text-primary"
-            style={{ fontSize: "clamp(2.175rem, 6vw, 4.575rem)", fontWeight: 900 }}
+            style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 900 }}
           >
             Construcción modular en
           </motion.h1>
@@ -85,9 +85,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
           className="font-sans text-text-secondary text-base leading-relaxed max-w-[44ch] mb-10"
         >
-          Módulos habitacionales, estructuras de hierro y ampliaciones en steel
-          framing. Soluciones para quienes quieren construir su propio espacio
-          con precisión, eficiencia y calidad garantizada.
+          Módulos habitacionales, estructuras de hierro y ampliaciones en{" "}
+          <strong className="font-medium text-text-primary">steel framing</strong>. Soluciones para quienes quieren construir su propio espacio
+          con <strong className="font-medium text-text-primary">precisión, eficiencia y calidad garantizada</strong>.
         </motion.p>
 
         {/* CTAs */}

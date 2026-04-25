@@ -19,7 +19,7 @@ export function Footer() {
   return (
     <footer className="bg-bg-surface border-t border-bg-border">
       {/* Main footer grid */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-16 md:py-20">
+      <div className="hidden md:block max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 md:gap-8">
           {/* Columna brand */}
           <div>

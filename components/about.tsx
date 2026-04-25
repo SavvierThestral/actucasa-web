@@ -61,15 +61,15 @@ export function About() {
 
             <FadeIn delay={0.1} className="space-y-5">
               <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[55ch]">
-                AC TuCasa nació de una visión para revolucionar la forma en que
+                AC TuCasa nació de una visión para <strong className="font-medium text-text-primary">revolucionar</strong> la forma en que
                 habitamos los espacios. Aplicando la tecnología del{" "}
-                <span className="text-text-primary font-medium">Steel Frame</span>{" "}
-                con su alto confort térmico y la eficiencia en construcción.
+                <strong className="font-medium text-text-primary">Steel Frame</strong>{" "}
+                con su <strong className="font-medium text-text-primary">alto confort térmico</strong> y la eficiencia en construcción.
               </p>
               <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[55ch]">
-                Nuestro compromiso con la calidad garantiza que cada unidad
+                Nuestro compromiso con la <strong className="font-medium text-text-primary">calidad</strong> garantiza que cada unidad
                 modular cumpla con los requisitos de sus propietarios,
-                brindando un entorno de vida seguro, eficiente y sofisticado.
+                brindando un entorno de vida <strong className="font-medium text-text-primary">seguro, eficiente y sofisticado</strong>.
               </p>
             </FadeIn>
 

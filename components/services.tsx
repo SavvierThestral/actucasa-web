@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -11,20 +12,34 @@ import {
   ArrowCircleRight,
 } from "@phosphor-icons/react";
 
-const services = [
+const b = (text: string) => (
+  <strong className="font-medium text-text-primary">{text}</strong>
+);
+
+const services: {
+  id: string;
+  icon: React.ElementType;
+  label: string;
+  title: string;
+  subtitle: string;
+  description: ReactNode;
+  features: ReactNode[];
+  image: string;
+  imageAlt: string;
+  reverse: boolean;
+}[] = [
   {
     id: "oficinas",
     icon: Briefcase,
     label: "Servicio 01",
     title: "Oficinas modulares",
     subtitle: "Oficinas modulares listas para operar",
-    description:
-      "Espacios de trabajo profesionales que se fabrican en taller y se instalan en tu predio sin obra húmeda. Ideales para empresas que necesitan ampliar su infraestructura o expandirse en otros sitios de forma rápida, ordenada y sin frenar su operación.",
+    description: <>Espacios de trabajo profesionales que se fabrican en {b("taller")} y se instalan en tu predio {b("sin obra húmeda")}. Ideales para empresas que necesitan {b("ampliar su infraestructura")} o expandirse en otros sitios de forma rápida, ordenada y sin frenar su operación.</>,
     features: [
-      "Distribución flexible: open space, oficinas privadas o configuraciones mixtas según tu operación.",
-      "Preparadas para cableado estructurado, red de datos y sistema de climatización.",
-      "Relocalizables: si tu operación cambia de ubicación, la oficina se mueve con vos.",
-      "Entrega en plazos cortos para que puedas empezar a operar lo antes posible.",
+      <>{b("Distribución flexible")}: open space, oficinas privadas o configuraciones mixtas según tu operación.</>,
+      <>Preparadas para {b("cableado estructurado")}, red de datos y sistema de climatización.</>,
+      <>{b("Relocalizables")}: si tu operación cambia de ubicación, la oficina se mueve con vos.</>,
+      <>Entrega en {b("plazos cortos")} para que puedas empezar a operar lo antes posible.</>,
     ],
     // https://unsplash.com/photos/1497366216548-37526070297c — modern open office space
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
@@ -131,9 +146,9 @@ function ServiceRow({
 
           {/* Features list */}
           <ul className="space-y-3 mb-10">
-            {service.features.map((feat) => (
+            {service.features.map((feat, i) => (
               <li
-                key={feat}
+                key={i}
                 className="flex items-center gap-3 font-sans text-text-secondary text-sm"
               >
                 <ArrowCircleRight size={18} className="text-brand-blue flex-shrink-0" />
@@ -242,11 +257,11 @@ export function Services() {
 
             <FadeIn delay={0.15}>
               <p className="font-sans text-white/70 leading-relaxed text-[0.97rem] max-w-[46ch] mb-8">
-                Módulos diseñados para vivir todos los días, con mayor confort y
+                Módulos diseñados para <strong className="font-medium text-white">vivir todos los días</strong>, con mayor confort y
                 durabilidad que una casa construida de manera tradicional. Se
-                entregan con todas las terminaciones interiores y exteriores,
-                instalaciones certificadas y aislación termoacústica de alta
-                prestación.
+                entregan con <strong className="font-medium text-white">todas las terminaciones</strong> interiores y exteriores,
+                <strong className="font-medium text-white"> instalaciones certificadas</strong> y aislación termoacústica de <strong className="font-medium text-white">alta
+                prestación</strong>.
               </p>
 
               <ul className="grid grid-cols-2 gap-3 mb-8">
