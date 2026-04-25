@@ -122,27 +122,25 @@ export function WhySteelFrame() {
                     : ""
                 }`}
               >
-                {/* Número + icono */}
-                <div className="flex items-start justify-between mb-6">
+                {/* Ícono + número + stat en la misma fila */}
+                <div className="flex items-center gap-3 mb-8">
+                  <div className={`p-2.5 border flex-shrink-0 ${reason.borderClass} ${reason.iconClass}`}>
+                    <Icon size={20} weight="light" />
+                  </div>
                   <span
-                    className={`font-display font-bold leading-none select-none ${reason.numClass}`}
-                    style={{ fontSize: "3.5rem" }}
+                    className={`font-display font-bold leading-none select-none flex-shrink-0 ${reason.numClass}`}
+                    style={{ fontSize: "1.5rem" }}
                   >
                     {reason.num}
                   </span>
-                  <div className={`p-2.5 border ${reason.borderClass} ${reason.iconClass}`}>
-                    <Icon size={20} weight="light" />
+                  <div className="ml-1">
+                    <p className={`font-display font-bold leading-none ${reason.statClass}`} style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)" }}>
+                      {reason.stat}
+                    </p>
+                    <p className="font-sans text-text-muted text-[0.67rem] mt-1 tracking-wide leading-tight">
+                      {reason.statLabel}
+                    </p>
                   </div>
-                </div>
-
-                {/* Stat */}
-                <div className="mb-6">
-                  <p className={`font-display font-bold leading-none ${reason.statClass}`} style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)" }}>
-                    {reason.stat}
-                  </p>
-                  <p className="font-sans text-text-muted text-xs mt-1.5 tracking-wide">
-                    {reason.statLabel}
-                  </p>
                 </div>
 
                 {/* Título */}
