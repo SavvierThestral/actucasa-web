@@ -60,8 +60,8 @@ export function Hero() {
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.95, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif leading-[1.05] text-text-primary"
-            style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 700 }}
+            className="font-display leading-[1.05] text-text-primary"
+            style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 900 }}
           >
             Construcción modular en
           </motion.h1>
