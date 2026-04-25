@@ -13,7 +13,7 @@ const b = (text: string) => (
 const benefits: { title: string; desc: ReactNode }[] = [
   {
     title: "Rapidez de ejecución",
-    desc: <>Al fabricarse en {b("taller")}, los plazos se reducen hasta un {b("60%")} respecto a la obra tradicional, sin depender del clima ni de imprevistos en obra.</>,
+    desc: <>Al fabricarse en {b("taller")}, los plazos se reducen hasta un {b("40%")} respecto a la obra tradicional, sin depender del clima ni de imprevistos en obra.</>,
   },
   {
     title: "Calidad controlada",
