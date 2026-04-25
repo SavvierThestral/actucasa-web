@@ -7,31 +7,11 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import {
   HouseLine,
   Briefcase,
-  Wrench,
   ArrowUpRight,
   ArrowCircleRight,
 } from "@phosphor-icons/react";
 
 const services = [
-  {
-    id: "estructuras",
-    icon: Wrench,
-    label: "Servicio 01",
-    title: "Estructuras de Hierro",
-    subtitle: "Soluciones estructurales en acero de alta resistencia",
-    description:
-      "Diseñadas para proyectos que exigen precisión, durabilidad y adaptabilidad a cualquier escala. Desde galpones hasta estructuras comerciales complejas, fabricamos con los más altos estándares.",
-    features: [
-      "Alta resistencia certificada.",
-      "Adaptable a cualquier escala.",
-      "Fabricación a medida.",
-      "Montaje eficiente.",
-    ],
-    // https://unsplash.com/photos/1587300003388-59208cc962cb — steel structure industrial
-    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&q=80",
-    imageAlt: "Estructura de acero industrial — solución estructural de alta resistencia",
-    reverse: false,
-  },
   {
     id: "oficinas",
     icon: Briefcase,
