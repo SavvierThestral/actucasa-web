@@ -379,7 +379,7 @@ export function Contact() {
                 {/* Tinte azul para cohesión con la sección */}
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: "#62A0C7", opacity: 0.18, mixBlendMode: "screen" }}
+                  style={{ background: "#72a7ab", opacity: 0.18, mixBlendMode: "screen" }}
                 />
               </a>
             </FadeIn>
