@@ -20,7 +20,7 @@ export function Footer() {
     <footer className="bg-bg-surface border-t border-bg-border">
       {/* Main footer grid */}
       <div className="hidden md:block max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 md:gap-8">
           {/* Columna brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-3 mb-6">
@@ -94,39 +94,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contacto */}
-          <div>
-            <p className="font-sans text-xs text-text-muted tracking-[0.2em] uppercase mb-5">
-              Contacto
-            </p>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href={instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
-                >
-                  @{siteConfig.instagramHandle}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={whatsappUrlPlain}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
-                >
-                  WhatsApp
-                </a>
-              </li>
-              <li className="font-sans text-sm text-text-muted leading-relaxed">
-                Buenos Aires,
-                <br />
-                Argentina
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
