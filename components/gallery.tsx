@@ -20,49 +20,49 @@ const photos: Photo[] = [
     src: "/gallery/img_4754.webp",
     srcFull: "/gallery/img_4754.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 row-span-1 md:row-span-2",
+    span: "col-span-1",
   },
   {
     id: 2,
     src: "/gallery/img_1505.webp",
     srcFull: "/gallery/img_1505.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-1 md:row-span-2",
+    span: "col-span-1",
   },
   {
     id: 3,
     src: "/gallery/img_3097.webp",
     srcFull: "/gallery/img_3097.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-1",
+    span: "col-span-2",
   },
   {
     id: 4,
     src: "/gallery/img_5860.webp",
     srcFull: "/gallery/img_5860.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-1",
+    span: "col-span-1",
   },
   {
     id: 5,
     src: "/gallery/img_6556.webp",
     srcFull: "/gallery/img_6556.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-1",
+    span: "col-span-1",
   },
   {
     id: 6,
     src: "/gallery/img_5556.webp",
     srcFull: "/gallery/img_5556.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 row-span-1 md:row-span-2",
+    span: "col-span-2",
   },
   {
     id: 7,
     src: "/gallery/img_8255.webp",
     srcFull: "/gallery/img_8255.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-1 md:row-span-2",
+    span: "col-span-2",
   },
 ];
 
@@ -191,7 +191,7 @@ export function Gallery() {
           </div>
 
           {/* Grid masonry */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[240px]">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 auto-rows-[280px] md:auto-rows-[380px]">
             {photos.map((photo, i) => (
               <motion.div
                 key={photo.id}

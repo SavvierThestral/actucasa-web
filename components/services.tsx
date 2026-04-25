@@ -41,7 +41,7 @@ const services: {
       "Entrega en plazos cortos para que puedas empezar a operar lo antes posible.",
     ],
     // https://unsplash.com/photos/1497366216548-37526070297c — modern open office space
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+    image: "/oficina.webp",
     imageAlt: "Oficina profesional moderna — espacio de trabajo diseñado con steel framing",
     reverse: true,
   },
