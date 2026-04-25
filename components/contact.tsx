@@ -57,7 +57,7 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="bg-bg-base border-t border-bg-border py-20 md:py-36 relative overflow-hidden"
+      className="bg-bg-base border-t border-bg-border py-12 md:py-20 relative overflow-hidden"
     >
       {/* Textura */}
       <div

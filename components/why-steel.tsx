@@ -27,7 +27,7 @@ const reasons = [
 
 export function WhySteelFrame() {
   return (
-    <section className="bg-bg-surface border-t border-bg-border py-24 md:py-36 overflow-hidden">
+    <section className="bg-bg-surface border-t border-bg-border py-14 md:py-20 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
 
         {/* Header — dos columnas */}

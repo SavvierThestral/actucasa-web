@@ -29,7 +29,7 @@ function FadeIn({
 
 export function WhatModules() {
   return (
-    <section className="bg-bg-base py-24 md:py-36 border-t border-bg-border overflow-hidden">
+    <section className="bg-bg-base py-14 md:py-20 border-t border-bg-border overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
 
         {/* Grid asimétrico 3fr / 2fr */}

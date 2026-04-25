@@ -154,7 +154,7 @@ export function Gallery() {
     <>
       <section
         id="proyectos"
-        className="bg-bg-surface border-t border-bg-border py-20 md:py-32"
+        className="bg-bg-surface border-t border-bg-border py-12 md:py-20"
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
           {/* Header */}

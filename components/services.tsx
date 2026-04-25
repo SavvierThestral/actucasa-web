@@ -164,7 +164,7 @@ export function Services() {
   return (
     <section id="servicios" className="bg-bg-base">
       {/* Header de sección */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-20 md:py-28">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 items-end border-b border-bg-border pb-16">
           <div>
             <motion.p
@@ -216,7 +216,7 @@ export function Services() {
         {/* Overlay fijo oscuro — independiente del tema para legibilidad sobre imagen */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#060c14] via-[#060c14]/75 to-[#060c14]/25" />
         {/* Número watermark */}
-        <div className="absolute bottom-6 right-8 font-display font-bold text-white/10 text-[8rem] leading-none select-none z-10">
+        <div className="absolute bottom-6 right-6 font-display font-bold text-white/15 text-[5rem] leading-none select-none z-10">
           02
         </div>
 
