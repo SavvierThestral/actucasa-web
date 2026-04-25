@@ -308,22 +308,6 @@ export function Contact() {
                 </li>
                 <li>
                   <a
-                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-3 group"
-                  >
-                    <div
-                      className="p-2 flex-shrink-0 transition-colors duration-200"
-                      style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#62A0C7" }}
-                    >
-                      <Phone size={18} weight="light" />
-                    </div>
-                    <span className="font-sans text-sm transition-colors duration-200" style={{ color: "#62A0C7" }}>
-                      {siteConfig.phone}
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
                     href={siteConfig.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
