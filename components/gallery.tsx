@@ -20,14 +20,14 @@ const photos: Photo[] = [
     src: "/gallery/img_4754.webp",
     srcFull: "/gallery/img_4754.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 row-span-2",
+    span: "col-span-2 row-span-1 md:row-span-2",
   },
   {
     id: 2,
     src: "/gallery/img_1505.webp",
     srcFull: "/gallery/img_1505.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-2",
+    span: "col-span-1 row-span-1 md:row-span-2",
   },
   {
     id: 3,
@@ -55,14 +55,14 @@ const photos: Photo[] = [
     src: "/gallery/img_6556.webp",
     srcFull: "/gallery/img_6556.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 row-span-2",
+    span: "col-span-2 row-span-1 md:row-span-2",
   },
   {
     id: 7,
     src: "/gallery/img_8255.webp",
     srcFull: "/gallery/img_8255.webp",
     alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 row-span-2",
+    span: "col-span-1 row-span-1 md:row-span-2",
   },
 ];
 
