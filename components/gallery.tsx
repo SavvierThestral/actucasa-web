@@ -195,7 +195,7 @@ export function Gallery() {
             {photos.map((photo, i) => (
               <motion.div
                 key={photo.id}
-                className={`${photo.span} relative overflow-hidden cursor-pointer group`}
+                className={`${photo.span} relative overflow-hidden cursor-pointer group bg-zinc-900`}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -210,7 +210,7 @@ export function Gallery() {
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.06]"
+                  className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.04]"
                   loading="lazy"
                 />
 
