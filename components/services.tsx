@@ -179,8 +179,8 @@ export function Services() {
   return (
     <section id="servicios" className="bg-bg-base">
       {/* Header de sección */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 items-end border-b border-bg-border pb-16">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pt-12 md:pt-16 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 items-end">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
