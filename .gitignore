@@ -65,10 +65,17 @@ next-env.d.ts
 *.swo
 *~
 
-# sensible — fotos TV (no subir al repo)
+# fotos TV y proyectos — cargar directo al servidor, no al repo
 /public/tv/*.jpg
 /public/tv/*.jpeg
 /public/tv/*.png
 /public/tv/*.webp
 /public/tv/*.avif
 !/public/tv/.gitkeep
+
+/public/proyectos/*.jpg
+/public/proyectos/*.jpeg
+/public/proyectos/*.png
+/public/proyectos/*.webp
+/public/proyectos/*.avif
+!/public/proyectos/.gitkeep

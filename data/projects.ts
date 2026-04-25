@@ -1,18 +1,22 @@
 // ─────────────────────────────────────────────────────────────
-//  PROYECTOS — Editá este archivo para agregar tus obras.
+//  PROYECTOS — Completá cada entrada con sus datos y fotos.
 //
-//  Para cada proyecto completá:
-//    title       → nombre del proyecto
+//  Campos:
 //    category    → "modulo" | "oficina" | "remodelacion" | "wood-frame" | "tradicional"
-//    location    → barrio / ciudad
-//    year        → año de entrega
-//    area        → superficie en m² (opcional, "" para omitir)
-//    description → descripción corta visible en la card
-//    image       → URL de la foto (Unsplash, hosting propio, etc.)
-//    tags        → etiquetas que aparecen debajo de la card
+//    location    → barrio / ciudad (ej: "Tigre, GBA Norte")
+//    year        → año de entrega (ej: "2024")
+//    area        → superficie (ej: "85m²") — dejá "" para no mostrar
+//    description → texto corto visible en la card (1-2 oraciones)
+//    image       → copiá la foto a /public/proyectos/ y ponés "/proyectos/nombre.jpg"
+//    tags        → etiquetas debajo de la card
 // ─────────────────────────────────────────────────────────────
 
-export type ProjectCategory = "modulo" | "oficina" | "remodelacion" | "wood-frame" | "tradicional";
+export type ProjectCategory =
+  | "modulo"
+  | "oficina"
+  | "remodelacion"
+  | "wood-frame"
+  | "tradicional";
 
 export type Project = {
   id: number;
@@ -34,90 +38,82 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   tradicional: "Construcción tradicional",
 };
 
-// ─── AGREGA TUS PROYECTOS AQUÍ ───────────────────────────────
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Casa unifamiliar Palermo",
-    category: "modulo",
-    location: "Palermo, CABA",
-    year: "2024",
-    area: "85m²",
-    description:
-      "Módulo habitacional completo en steel frame. Dos dormitorios, living-comedor y baño. Obra terminada en 90 días.",
-    // https://unsplash.com/photos/1570129477492-45c003edd2be
-    image:
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
-    tags: ["Steel Frame", "85m²", "90 días"],
+    title: "Proyecto V",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/proyecto-v.jpg",
+    tags: [],
   },
   {
     id: 2,
-    title: "Oficina home-office Belgrano",
-    category: "oficina",
-    location: "Belgrano, CABA",
-    year: "2024",
-    area: "24m²",
-    description:
-      "Anexo de oficina en jardín trasero. Aislación acústica premium, instalación eléctrica trifásica y ventilación.",
-    // https://unsplash.com/photos/1497366216548-37526070297c
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    tags: ["Oficina", "24m²", "Aislación acústica"],
+    title: "Roca",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/roca.jpg",
+    tags: [],
   },
   {
     id: 3,
-    title: "Galpón industrial San Martín",
-    category: "tradicional",
-    location: "San Martín, GBA",
-    year: "2023",
-    area: "320m²",
-    description:
-      "Estructura de alta resistencia para uso industrial. Cubierta con chapa termopanel y portón seccional.",
-    // https://unsplash.com/photos/1587300003388-59208cc962cb
-    image:
-      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80",
-    tags: ["Tradicional", "320m²", "Industrial"],
+    title: "Pinar",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/pinar.jpg",
+    tags: [],
   },
   {
     id: 4,
-    title: "Dúplex Caballito",
-    category: "modulo",
-    location: "Caballito, CABA",
-    year: "2023",
-    area: "120m²",
-    description:
-      "Dúplex en planta alta sobre vivienda existente. Estructura en steel frame, terminaciones de primera calidad.",
-    // https://unsplash.com/photos/1486325212027-8081e485255e
-    image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
-    tags: ["Steel Frame", "Dúplex", "120m²"],
+    title: "Sauce",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/sauce.jpg",
+    tags: [],
   },
   {
     id: 5,
-    title: "Estudio profesional Martínez",
-    category: "oficina",
-    location: "Martínez, GBA Norte",
-    year: "2023",
-    area: "36m²",
-    description:
-      "Estudio profesional con sala de reuniones. Piso de porcelanato, cielorraso americano y aire central.",
-    // https://unsplash.com/photos/1524758631624-e2822e304c36
-    image:
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
-    tags: ["Oficina", "36m²", "Reuniones"],
+    title: "Lavanda",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/lavanda.jpg",
+    tags: [],
   },
   {
     id: 6,
-    title: "Casa Remodelada La Matanza",
-    category: "remodelacion",
-    location: "La Matanza, GBA Oeste",
-    year: "2022",
-    area: "580m²",
-    description:
-      "Remodelación integral de vivienda existente. Renovación completa de interiores, fachada y distribución de ambientes.",
-    // https://unsplash.com/photos/1460472178825-e5240623afd5
-    image:
-      "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&q=80",
-    tags: ["Remodelación", "580m²", "Integral"],
+    title: "Milano",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/milano.jpg",
+    tags: [],
+  },
+  {
+    id: 7,
+    title: "Rubik",
+    category: "modulo",       // ← cambiar según corresponda
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/rubik.jpg",
+    tags: [],
   },
 ];
