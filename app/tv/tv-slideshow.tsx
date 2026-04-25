@@ -109,7 +109,7 @@ export function TvSlideshow() {
       style={{ cursor: cursorVisible ? "default" : "none" }}
     >
       {/* Imagen con crossfade */}
-      <AnimatePresence mode="crossfade">
+      <AnimatePresence mode="sync">
         <motion.div
           key={slide.id}
           initial={{ opacity: 0 }}
