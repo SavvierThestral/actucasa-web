@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 import { Lightning, Shield, Leaf } from "@phosphor-icons/react";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 const b = (text: string) => (
   <strong className="font-medium text-text-primary">{text}</strong>
@@ -116,12 +117,13 @@ export function WhySteelFrame() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 viewport={{ once: true, margin: "-6%" }}
-                className={`flex flex-col p-10 md:p-12 ${
+                className={`${
                   i < reasons.length - 1
                     ? "border-b md:border-b-0 md:border-r border-bg-border"
                     : ""
                 }`}
               >
+              <TiltCard className="flex flex-col p-10 md:p-12 h-full">
                 {/* Ícono + número + stat en la misma fila */}
                 <div className="flex items-center gap-3 mb-8">
                   <div className={`p-2.5 border flex-shrink-0 ${reason.borderClass} ${reason.iconClass}`}>
@@ -149,6 +151,7 @@ export function WhySteelFrame() {
                 <p className="font-sans text-text-secondary leading-relaxed text-[0.97rem]">
                   {reason.body}
                 </p>
+              </TiltCard>
               </motion.div>
             );
           })}
