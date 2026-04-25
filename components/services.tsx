@@ -15,7 +15,7 @@ const services = [
   {
     id: "oficinas",
     icon: Briefcase,
-    label: "Servicio 02",
+    label: "Servicio 01",
     title: "Oficinas modulares",
     subtitle: "Oficinas modulares listas para operar",
     description:
@@ -102,7 +102,7 @@ function ServiceRow({
 
       {/* Contenido */}
       <div
-        className={`flex flex-col justify-center px-8 md:px-12 lg:px-16 py-16 md:py-0 bg-bg-base ${
+        className={`flex flex-col justify-center px-10 md:px-16 lg:px-24 py-20 md:py-12 bg-bg-base ${
           isReverse ? "md:order-1" : ""
         }`}
       >
@@ -215,6 +215,10 @@ export function Services() {
         />
         {/* Overlay fijo oscuro — independiente del tema para legibilidad sobre imagen */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#060c14] via-[#060c14]/75 to-[#060c14]/25" />
+        {/* Número watermark */}
+        <div className="absolute bottom-6 right-8 font-display font-bold text-white/10 text-[8rem] leading-none select-none z-10">
+          02
+        </div>
 
         {/* Contenido sobre la imagen — texto blanco siempre (fondo oscuro) */}
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pb-20 pt-40 w-full text-white">
@@ -225,7 +229,7 @@ export function Services() {
                   <div className="p-2.5 border border-white/30 text-white">
                     <HouseLine size={20} weight="light" />
                   </div>
-                  <span className="font-sans text-[0.7rem] tracking-[0.3em] uppercase text-white/60">Servicio 03</span>
+                  <span className="font-sans text-[0.7rem] tracking-[0.3em] uppercase text-white/60">Servicio 02</span>
                 </div>
                 <h3
                   className="font-display font-bold leading-[0.92] tracking-[-0.025em] text-white"
