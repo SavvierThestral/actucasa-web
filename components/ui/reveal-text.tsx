@@ -23,14 +23,14 @@ export function RevealText({
         <span key={i} className="inline-block overflow-hidden">
           <motion.span
             className="inline-block"
-            initial={{ y: "110%", opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: "110%" }}
+            whileInView={{ y: 0 }}
             transition={{
               duration: 0.75,
               delay: delay + i * stagger,
               ease: [0.16, 1, 0.3, 1],
             }}
-            viewport={{ once: true, margin: "-10%" }}
+            viewport={{ once: true, margin: "0%" }}
           >
             {word}
           </motion.span>
