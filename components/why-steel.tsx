@@ -103,8 +103,8 @@ export function WhySteelFrame() {
 
                 {/* Título */}
                 <h3
-                  className="font-display font-bold tracking-tight mb-4"
-                  style={{ fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "#3c3c3c", fontWeight: 900 }}
+                  className="leading-tight mb-4"
+                  style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "#3c3c3c", fontWeight: 900 }}
                 >
                   {reason.title}
                 </h3>

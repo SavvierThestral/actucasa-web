@@ -115,8 +115,8 @@ function ServiceRow({
           </div>
 
           <h3
-            className="font-display font-bold leading-[0.92] tracking-[-0.025em] mb-3"
-            style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", color: "#3c3c3c", fontWeight: 900 }}
+            className="leading-[1.1] mb-3"
+            style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(2rem, 3.5vw, 3.2rem)", color: "#3c3c3c", fontWeight: 900 }}
           >
             {service.title}
           </h3>
@@ -232,8 +232,8 @@ export function Services() {
                   <span className="font-sans text-[0.7rem] tracking-[0.3em] uppercase text-white/60">Servicio 02</span>
                 </div>
                 <h3
-                  className="font-display font-bold leading-[0.92] tracking-[-0.025em] text-white"
-                  style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", fontWeight: 900 }}
+                  className="leading-[1.1] text-white"
+                  style={{ fontFamily: "var(--font-merriweather)", fontSize: "clamp(2rem, 3.5vw, 3.2rem)", fontWeight: 900 }}
                 >
                   Viviendas habitacionales
                 </h3>
