@@ -17,51 +17,52 @@ type Photo = {
 const photos: Photo[] = [
   {
     id: 1,
-    // https://unsplash.com/photos/1460472178825-e5240623afd5 — modern steel architecture
-    src: "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&q=80",
-    srcFull: "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=1600&q=90",
-    alt: "Arquitectura moderna en steel framing — fachada contemporánea",
-    span: "col-span-2 row-span-2",
+    src: "/gallery/img_4754.webp",
+    srcFull: "/gallery/img_4754.webp",
+    alt: "Obra realizada — ACTuCasa",
+    span: "col-span-2 row-span-1",
   },
   {
     id: 2,
-    // https://unsplash.com/photos/1486325212027-8081e485255e — building facade
-    src: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
-    srcFull: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=90",
-    alt: "Fachada de edificio con estructura de acero — proyecto residencial",
-    span: "col-span-1 row-span-1",
+    src: "/gallery/img_1505.webp",
+    srcFull: "/gallery/img_1505.webp",
+    alt: "Obra realizada — ACTuCasa",
+    span: "col-span-1 row-span-2",
   },
   {
     id: 3,
-    // https://unsplash.com/photos/1524758631624-e2822e304c36 — interior office
-    src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
-    srcFull: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=90",
-    alt: "Interior de oficina moderna anexa — espacio de trabajo diseñado en steel frame",
-    span: "col-span-1 row-span-1",
+    src: "/gallery/img_3097.webp",
+    srcFull: "/gallery/img_3097.webp",
+    alt: "Obra realizada — ACTuCasa",
+    span: "col-span-1 row-span-2",
   },
   {
     id: 4,
-    // https://unsplash.com/photos/1467232004584-a241de8bcf5d — construction frame interior
-    src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-    srcFull: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1600&q=90",
-    alt: "Estructura de steel frame en construcción — esqueleto metálico en proceso",
+    src: "/gallery/img_5556.webp",
+    srcFull: "/gallery/img_5556.webp",
+    alt: "Obra realizada — ACTuCasa",
     span: "col-span-1 row-span-2",
   },
   {
     id: 5,
-    // https://unsplash.com/photos/1558618666-fcd25c85cd64 — residential build
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    srcFull: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=90",
-    alt: "Módulo habitacional terminado — vivienda en construcción seca",
-    span: "col-span-1 row-span-1",
+    src: "/gallery/img_8255.webp",
+    srcFull: "/gallery/img_8255.webp",
+    alt: "Obra realizada — ACTuCasa",
+    span: "col-span-2 row-span-1",
   },
   {
     id: 6,
-    // https://unsplash.com/photos/1503387762-592deb58ef4e — architectural detail
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-    srcFull: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=90",
-    alt: "Detalle estructural de hierro — precisión en construcción industrializada",
-    span: "col-span-1 row-span-1",
+    src: "/gallery/img_5860.webp",
+    srcFull: "/gallery/img_5860.webp",
+    alt: "Obra realizada — ACTuCasa",
+    span: "col-span-1 row-span-2",
+  },
+  {
+    id: 7,
+    src: "/gallery/img_6556.webp",
+    srcFull: "/gallery/img_6556.webp",
+    alt: "Obra realizada — ACTuCasa",
+    span: "col-span-1 row-span-2",
   },
 ];
 
