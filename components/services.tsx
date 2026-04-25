@@ -36,10 +36,10 @@ const services: {
     subtitle: "Oficinas modulares listas para operar",
     description: <>Espacios de trabajo profesionales que se fabrican en {b("taller")} y se instalan en tu predio {b("sin obra húmeda")}. Ideales para empresas que necesitan {b("ampliar su infraestructura")} o expandirse en otros sitios de forma rápida, ordenada y sin frenar su operación.</>,
     features: [
-      <>{b("Distribución flexible")}: open space, oficinas privadas o configuraciones mixtas según tu operación.</>,
-      <>Preparadas para {b("cableado estructurado")}, red de datos y sistema de climatización.</>,
-      <>{b("Relocalizables")}: si tu operación cambia de ubicación, la oficina se mueve con vos.</>,
-      <>Entrega en {b("plazos cortos")} para que puedas empezar a operar lo antes posible.</>,
+      "Distribución flexible: open space, oficinas privadas o configuraciones mixtas según tu operación.",
+      "Preparadas para cableado estructurado, red de datos y sistema de climatización.",
+      "Relocalizables: si tu operación cambia de ubicación, la oficina se mueve con vos.",
+      "Entrega en plazos cortos para que puedas empezar a operar lo antes posible.",
     ],
     // https://unsplash.com/photos/1497366216548-37526070297c — modern open office space
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
