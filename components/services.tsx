@@ -9,6 +9,7 @@ import {
   Briefcase,
   Wrench,
   ArrowUpRight,
+  ArrowCircleRight,
 } from "@phosphor-icons/react";
 
 const services = [
@@ -155,7 +156,7 @@ function ServiceRow({
                 key={feat}
                 className="flex items-center gap-3 font-sans text-text-secondary text-sm"
               >
-                <span className="w-4 h-[1px] bg-brand-blue flex-shrink-0" />
+                <ArrowCircleRight size={18} className="text-brand-blue flex-shrink-0" />
                 {feat}
               </li>
             ))}
@@ -275,7 +276,7 @@ export function Services() {
                     key={feat}
                     className="flex items-center gap-2 font-sans text-white/70 text-sm"
                   >
-                    <span className="w-3 h-[1px] bg-white/50 flex-shrink-0" />
+                    <ArrowCircleRight size={18} className="text-white/60 flex-shrink-0" />
                     {feat}
                   </li>
                 ))}

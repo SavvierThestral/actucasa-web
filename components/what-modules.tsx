@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowCircleRight } from "@phosphor-icons/react";
 
 
 function FadeIn({
@@ -75,7 +76,7 @@ export function WhatModules() {
                   { title: "Ampliables", desc: "Podés sumar módulos en el futuro para crecer sin demoler ni intervenir lo existente." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4 py-4 border-b border-bg-border last:border-0">
-                    <span className="w-4 h-[1px] bg-brand-blue flex-shrink-0 mt-[0.6rem]" />
+                    <ArrowCircleRight size={20} className="text-brand-blue flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-display font-bold text-brand-blue text-sm leading-none mb-1.5">
                         {item.title}
