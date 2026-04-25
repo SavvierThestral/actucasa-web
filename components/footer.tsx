@@ -3,16 +3,15 @@ import Link from "next/link";
 import { InstagramLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 const services = [
-  { label: "Módulos habitacionales", href: "#servicios" },
-  { label: "Oficinas anexas", href: "#servicios" },
-  { label: "Estructuras de hierro", href: "#servicios" },
+  { label: "Módulos habitacionales", href: "/#servicios" },
+  { label: "Oficinas modulares", href: "/#servicios" },
 ];
 
 const nav = [
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Proyectos", href: "/proyectos" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 export function Footer() {
