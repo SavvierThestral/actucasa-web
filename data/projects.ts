@@ -358,4 +358,15 @@ export const projects: Project[] = [
     image: "/proyectos/sunset.jpg",
     tags: [],
   },
+  {
+    id: 30,
+    title: "Martín Pescador",
+    category: "modulo",
+    location: "",
+    year: "",
+    area: "",
+    description: "",
+    image: "/proyectos/martin-pescador.jpg",
+    tags: [],
+  },
 ];
