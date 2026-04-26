@@ -132,13 +132,10 @@ export default async function ProjectPage({
         {/* Galería */}
         <section className="bg-bg-surface py-12 md:py-16">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-            {photos.length > 0 ? (
-              <ProjectGalleryClient photos={photos} title={project.title} />
-            ) : (
-              <p className="font-sans text-text-muted text-sm text-center py-16">
-                Fotos próximamente.
-              </p>
-            )}
+            <ProjectGalleryClient
+              photos={photos.length > 0 ? photos : [project.image]}
+              title={project.title}
+            />
           </div>
         </section>
 
