@@ -11,59 +11,16 @@ type Photo = {
   src: string;
   srcFull: string;
   alt: string;
-  span: string;
 };
 
 const photos: Photo[] = [
-  {
-    id: 1,
-    src: "/gallery/img_4754.webp",
-    srcFull: "/gallery/img_4754.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-2 lg:row-span-1",
-  },
-  {
-    id: 2,
-    src: "/gallery/img_1505.webp",
-    srcFull: "/gallery/img_1505.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-1 lg:row-span-2",
-  },
-  {
-    id: 3,
-    src: "/gallery/img_3097.webp",
-    srcFull: "/gallery/img_3097.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 aspect-[16/7] lg:aspect-auto lg:col-span-1 lg:row-span-1",
-  },
-  {
-    id: 4,
-    src: "/gallery/img_5860.webp",
-    srcFull: "/gallery/img_5860.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-1 lg:row-span-1",
-  },
-  {
-    id: 5,
-    src: "/gallery/img_6556.webp",
-    srcFull: "/gallery/img_6556.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-1 aspect-[4/3] lg:aspect-auto lg:col-span-1 lg:row-span-1",
-  },
-  {
-    id: 6,
-    src: "/gallery/img_5556.webp",
-    srcFull: "/gallery/img_5556.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 aspect-[16/7] lg:aspect-auto lg:col-span-1 lg:row-span-1",
-  },
-  {
-    id: 7,
-    src: "/gallery/img_8255.webp",
-    srcFull: "/gallery/img_8255.webp",
-    alt: "Obra realizada — ACTuCasa",
-    span: "col-span-2 aspect-[16/7] lg:aspect-auto lg:col-span-1 lg:row-span-1",
-  },
+  { id: 1, src: "/gallery/img_4754.webp", srcFull: "/gallery/img_4754.webp", alt: "Obra realizada — ACTuCasa" },
+  { id: 2, src: "/gallery/img_1505.webp", srcFull: "/gallery/img_1505.webp", alt: "Obra realizada — ACTuCasa" },
+  { id: 3, src: "/gallery/img_3097.webp", srcFull: "/gallery/img_3097.webp", alt: "Obra realizada — ACTuCasa" },
+  { id: 4, src: "/gallery/img_5860.webp", srcFull: "/gallery/img_5860.webp", alt: "Obra realizada — ACTuCasa" },
+  { id: 5, src: "/gallery/img_6556.webp", srcFull: "/gallery/img_6556.webp", alt: "Obra realizada — ACTuCasa" },
+  { id: 6, src: "/gallery/img_5556.webp", srcFull: "/gallery/img_5556.webp", alt: "Obra realizada — ACTuCasa" },
+  { id: 7, src: "/gallery/img_8255.webp", srcFull: "/gallery/img_8255.webp", alt: "Obra realizada — ACTuCasa" },
 ];
 
 function Lightbox({
@@ -190,12 +147,12 @@ export function Gallery() {
             </motion.p>
           </div>
 
-          {/* Grid mosaico */}
-          <div className="grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-3 lg:auto-rows-[240px]">
+          {/* Masonry — celdas se adaptan al aspect ratio de cada foto */}
+          <div className="columns-2 gap-2 md:gap-3 lg:columns-3">
             {photos.map((photo, i) => (
               <motion.div
                 key={photo.id}
-                className={`${photo.span} relative overflow-hidden cursor-pointer group bg-zinc-900`}
+                className="break-inside-avoid mb-2 md:mb-3 relative overflow-hidden cursor-pointer group"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -209,13 +166,16 @@ export function Gallery() {
                 <Image
                   src={photo.src}
                   alt={photo.alt}
-                  fill
-                  className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.04]"
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                  className="transition-transform duration-700 group-hover:scale-[1.04]"
                   loading="lazy"
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-base/90 via-bg-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-base/80 via-bg-base/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-4 md:p-6">
                   <div className="flex items-end justify-between w-full">
                     <p className="font-sans text-white text-sm leading-tight max-w-[80%]">
                       {photo.alt}
