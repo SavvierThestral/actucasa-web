@@ -73,13 +73,14 @@ next-env.d.ts
 /public/tv/*.avif
 !/public/tv/.gitkeep
 
-# fotos de proyectos — solo covers/ va al repo, el resto se sirve aparte
+# fotos de proyectos — JPG/PNG/HEIC originales no van al repo, solo WebP
 /public/proyectos/**/*.jpg
 /public/proyectos/**/*.jpeg
+/public/proyectos/**/*.JPG
+/public/proyectos/**/*.JPEG
 /public/proyectos/**/*.png
+/public/proyectos/**/*.PNG
 /public/proyectos/**/*.heic
 /public/proyectos/**/*.HEIC
 /public/proyectos/**/*.avif
-/public/proyectos/**/*.webp
-!/public/proyectos/covers/*.webp
 !/public/proyectos/.gitkeep

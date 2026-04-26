@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ProjectGalleryClient } from "@/components/project-gallery-client";
 import { projects, categoryLabels } from "@/data/projects";
-import { MapPin, CalendarBlank, ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { MapPin, CalendarBlank, ArrowLeft, ArrowUpRight, Ruler, Tag } from "@phosphor-icons/react/dist/ssr";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
 
@@ -79,6 +79,13 @@ export default async function ProjectPage({
 
   const photos = getPhotos(project.folder);
 
+  const ficha = [
+    { label: "Tipo", value: categoryLabels[project.category], icon: "tag" },
+    { label: "Zona", value: project.location, icon: "pin" },
+    { label: "Año", value: project.year, icon: "cal" },
+    { label: "Superficie", value: project.area, icon: "ruler" },
+  ].filter((f) => f.value);
+
   return (
     <>
       <ScrollProgress />
@@ -105,26 +112,6 @@ export default async function ProjectPage({
                   {project.title}
                 </h1>
               </div>
-
-              <div className="flex flex-wrap gap-6 md:text-right">
-                {project.location && (
-                  <div className="flex items-center gap-2 font-sans text-text-secondary text-sm">
-                    <MapPin size={14} weight="fill" className="text-brand-blue" />
-                    {project.location}
-                  </div>
-                )}
-                {project.year && (
-                  <div className="flex items-center gap-2 font-sans text-text-secondary text-sm">
-                    <CalendarBlank size={14} weight="fill" className="text-brand-blue" />
-                    {project.year}
-                  </div>
-                )}
-                {project.area && (
-                  <div className="font-sans text-text-secondary text-sm font-medium">
-                    {project.area}
-                  </div>
-                )}
-              </div>
             </div>
           </div>
         </section>
@@ -138,6 +125,50 @@ export default async function ProjectPage({
             />
           </div>
         </section>
+
+        {/* Ficha técnica + descripción */}
+        {(ficha.length > 0 || project.description) && (
+          <section className="bg-bg-base border-t border-bg-border py-14 md:py-20">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-12 md:gap-20 items-start">
+
+                {/* Ficha técnica */}
+                {ficha.length > 0 && (
+                  <div>
+                    <p className="section-label mb-6">Ficha técnica</p>
+                    <dl className="divide-y divide-bg-border">
+                      {ficha.map((f) => (
+                        <div key={f.label} className="flex items-start justify-between gap-4 py-4">
+                          <dt className="flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-text-muted min-w-[80px]">
+                            {f.icon === "pin" && <MapPin size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
+                            {f.icon === "cal" && <CalendarBlank size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
+                            {f.icon === "ruler" && <Ruler size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
+                            {f.icon === "tag" && <Tag size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
+                            {f.label}
+                          </dt>
+                          <dd className="font-sans text-sm text-text-primary font-medium text-right">
+                            {f.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                )}
+
+                {/* Descripción */}
+                {project.description && (
+                  <div>
+                    <p className="section-label mb-6">Descripción</p>
+                    <p className="font-sans text-text-secondary leading-relaxed text-[0.97rem]">
+                      {project.description}
+                    </p>
+                  </div>
+                )}
+
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="bg-bg-base border-t border-bg-border py-16">
