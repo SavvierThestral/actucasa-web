@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ProjectGalleryClient } from "@/components/project-gallery-client";
 import { projects, categoryLabels } from "@/data/projects";
-import { MapPin, CalendarBlank, ArrowLeft, ArrowUpRight, Ruler, Tag } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
 
@@ -80,119 +80,120 @@ export default async function ProjectPage({
   const photos = getPhotos(project.folder);
 
   const ficha = [
-    { label: "Tipo", value: categoryLabels[project.category], icon: "tag" },
-    { label: "Zona", value: project.location, icon: "pin" },
-    { label: "Año", value: project.year, icon: "cal" },
-    { label: "Superficie", value: project.area, icon: "ruler" },
+    { label: "Tipo", value: categoryLabels[project.category] },
+    { label: "Zona", value: project.location },
+    { label: "Año", value: project.year },
+    { label: "Superficie", value: project.area },
   ].filter((f) => f.value);
+
+  // Subtitle line: "Zona · Año · Superficie"
+  const subtitle = [project.location, project.year, project.area]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <>
       <ScrollProgress />
       <Nav />
-      <main>
-        {/* Header */}
-        <section className="pt-36 pb-12 bg-bg-base border-b border-bg-border">
+      <main className="bg-bg-base min-h-screen">
+
+        {/* Back link */}
+        <div className="pt-28 pb-0">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
             <Link
               href="/proyectos"
-              className="inline-flex items-center gap-2 font-sans text-xs text-text-muted hover:text-brand-blue transition-colors mb-8 tracking-wide"
+              className="inline-flex items-center gap-2 font-sans text-xs text-text-muted hover:text-brand-blue transition-colors tracking-wide"
             >
-              <ArrowLeft size={14} />
+              <ArrowLeft size={13} />
               Todos los proyectos
             </Link>
+          </div>
+        </div>
 
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-              <div>
-                <p className="section-label mb-4">{categoryLabels[project.category]}</p>
+        {/* Main: galería izquierda + info derecha */}
+        <section className="py-8 md:py-12">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.45fr_1fr] gap-10 lg:gap-16 items-start">
+
+              {/* ── Galería (sticky en desktop) ── */}
+              <div className="lg:sticky lg:top-24">
+                <ProjectGalleryClient
+                  photos={photos.length > 0 ? photos : [project.image]}
+                  title={project.title}
+                />
+              </div>
+
+              {/* ── Panel de info ── */}
+              <div className="flex flex-col">
+
+                {/* Encabezado */}
+                <p className="section-label mb-3">{categoryLabels[project.category]}</p>
                 <h1
-                  className="font-display font-bold leading-[0.95] tracking-[-0.02em] text-text-primary"
-                  style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 900 }}
+                  className="font-display font-black leading-[0.95] tracking-[-0.025em] text-text-primary"
+                  style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
                 >
                   {project.title}
                 </h1>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Galería */}
-        <section className="bg-bg-surface py-12 md:py-16">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-            <ProjectGalleryClient
-              photos={photos.length > 0 ? photos : [project.image]}
-              title={project.title}
-            />
-          </div>
-        </section>
+                {subtitle && (
+                  <p className="font-sans text-sm text-text-muted mt-3 tracking-wide">
+                    {subtitle}
+                  </p>
+                )}
 
-        {/* Ficha técnica + descripción */}
-        {(ficha.length > 0 || project.description) && (
-          <section className="bg-bg-base border-t border-bg-border py-14 md:py-20">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-12 md:gap-20 items-start">
-
-                {/* Ficha técnica */}
+                {/* Ficha técnica — grilla con bordes */}
                 {ficha.length > 0 && (
-                  <div>
-                    <p className="section-label mb-6">Ficha técnica</p>
-                    <dl className="divide-y divide-bg-border">
-                      {ficha.map((f) => (
-                        <div key={f.label} className="flex items-start justify-between gap-4 py-4">
-                          <dt className="flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-text-muted min-w-[80px]">
-                            {f.icon === "pin" && <MapPin size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
-                            {f.icon === "cal" && <CalendarBlank size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
-                            {f.icon === "ruler" && <Ruler size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
-                            {f.icon === "tag" && <Tag size={13} weight="fill" className="text-brand-blue flex-shrink-0" />}
-                            {f.label}
-                          </dt>
-                          <dd className="font-sans text-sm text-text-primary font-medium text-right">
-                            {f.value}
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
+                  <div
+                    className="mt-8 grid grid-cols-2 border-t border-l"
+                    style={{ borderColor: "var(--color-bg-border)" }}
+                  >
+                    {ficha.map((f) => (
+                      <div
+                        key={f.label}
+                        className="border-b border-r px-5 py-4"
+                        style={{ borderColor: "var(--color-bg-border)" }}
+                      >
+                        <p className="font-sans text-[10px] tracking-[0.18em] uppercase text-text-muted mb-1.5">
+                          {f.label}
+                        </p>
+                        <p className="font-sans text-sm font-semibold text-text-primary">
+                          {f.value}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 )}
 
                 {/* Descripción */}
                 {project.description && (
-                  <div>
-                    <p className="section-label mb-6">Descripción</p>
-                    <p className="font-sans text-text-secondary leading-relaxed text-[0.97rem]">
+                  <div
+                    className="mt-8 pt-8 border-t"
+                    style={{ borderColor: "var(--color-bg-border)" }}
+                  >
+                    <p className="section-label mb-4">Descripción</p>
+                    <p className="font-sans text-text-secondary leading-relaxed text-[0.96rem]">
                       {project.description}
                     </p>
                   </div>
                 )}
 
+                {/* Link volver al final en mobile */}
+                <div className="mt-10 lg:hidden">
+                  <Link
+                    href="/proyectos"
+                    className="inline-flex items-center gap-2 font-sans text-xs text-text-muted hover:text-brand-blue transition-colors tracking-wide"
+                  >
+                    <ArrowLeft size={13} />
+                    Ver todos los proyectos
+                  </Link>
+                </div>
+
               </div>
             </div>
-          </section>
-        )}
-
-        {/* CTA */}
-        <section className="bg-bg-base border-t border-bg-border py-16">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="font-display font-bold text-text-primary text-2xl tracking-tight mb-1">
-                ¿Te interesa un proyecto similar?
-              </p>
-              <p className="font-sans text-text-secondary text-sm">
-                Consultanos sin compromiso.
-              </p>
-            </div>
-            <a
-              href="/#contacto"
-              className="relative overflow-hidden inline-flex items-center gap-2.5 bg-brand-blue text-white px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase group"
-            >
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white" />
-              <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-brand-blue">
-                Contactar
-                <ArrowUpRight size={16} />
-              </span>
-            </a>
           </div>
         </section>
+
+
       </main>
       <Footer />
     </>
