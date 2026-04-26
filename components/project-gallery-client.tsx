@@ -1,73 +1,14 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState, useCallback } from "react";
-import { X, ArrowLeft, ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 
-function Lightbox({
-  src,
-  alt,
-  idx,
-  total,
-  onClose,
-  onPrev,
-  onNext,
-}: {
-  src: string;
-  alt: string;
-  idx: number;
-  total: number;
-  onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-[200] bg-bg-base/95 backdrop-blur-sm flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.94, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.94, opacity: 0 }}
-        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className="relative max-w-5xl w-full max-h-[85vh] aspect-video"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <Image src={src} alt={alt} fill className="object-contain" quality={95} />
-      </motion.div>
+const WATERMARK = "@ac.tucasa";
 
-      <button
-        onClick={onClose}
-        className="absolute top-6 right-6 text-white/70 hover:text-white p-2 transition-colors"
-        aria-label="Cerrar"
-      >
-        <X size={24} />
-      </button>
-      <button
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        className="absolute left-4 md:left-8 text-white/70 hover:text-white p-3 border border-white/20 hover:border-white/50 transition-all"
-        aria-label="Anterior"
-      >
-        <ArrowLeft size={20} />
-      </button>
-      <button
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        className="absolute right-4 md:right-8 text-white/70 hover:text-white p-3 border border-white/20 hover:border-white/50 transition-all"
-        aria-label="Siguiente"
-      >
-        <ArrowRight size={20} />
-      </button>
-      <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-sans text-white/40 text-xs tracking-widest">
-        {idx + 1} / {total}
-      </p>
-    </motion.div>
-  );
+function prevent(e: React.SyntheticEvent) {
+  e.preventDefault();
 }
 
 export function ProjectGalleryClient({
@@ -77,61 +18,146 @@ export function ProjectGalleryClient({
   photos: string[];
   title: string;
 }) {
-  const [selected, setSelected] = useState<number | null>(null);
+  const [current, setCurrent] = useState(0);
+  const thumbsRef = useRef<HTMLDivElement>(null);
 
-  const navigate = useCallback(
-    (dir: 1 | -1) => {
-      if (selected === null) return;
-      setSelected((selected + dir + photos.length) % photos.length);
-    },
-    [selected, photos.length]
-  );
+  const prev = () =>
+    setCurrent((c) => (c - 1 + photos.length) % photos.length);
+  const next = () => setCurrent((c) => (c + 1) % photos.length);
+
+  // Scroll thumbnail into view when current changes
+  useEffect(() => {
+    const container = thumbsRef.current;
+    if (!container) return;
+    const thumb = container.children[current] as HTMLElement;
+    if (thumb) thumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [current]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  });
+
+  const protectProps = {
+    onContextMenu: prevent,
+    onDragStart: prevent,
+    draggable: false as const,
+  };
 
   return (
-    <>
-      <div className="columns-2 gap-2 md:gap-3 lg:columns-3">
-        {photos.map((src, i) => (
+    <div className="select-none" onContextMenu={prevent}>
+      {/* ── Foto principal ── */}
+      <div
+        className="relative w-full overflow-hidden bg-zinc-950"
+        style={{ aspectRatio: "16/10" }}
+        {...protectProps}
+      >
+        <AnimatePresence mode="wait">
           <motion.div
-            key={src}
-            className="break-inside-avoid mb-2 md:mb-3 relative overflow-hidden cursor-pointer group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: (i % 9) * 0.05, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, margin: "-5%" }}
-            onClick={() => setSelected(i)}
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="absolute inset-0"
           >
             <Image
-              src={src}
-              alt={`${title} — foto ${i + 1}`}
-              width={0}
-              height={0}
-              sizes="(max-width: 768px) 50vw, 33vw"
-              style={{ width: "100%", height: "auto", display: "block" }}
-              className="transition-transform duration-700 group-hover:scale-[1.04]"
-              loading="lazy"
+              src={photos[current]}
+              alt={`${title} — foto ${current + 1}`}
+              fill
+              className="object-contain"
+              style={{ pointerEvents: "none" }}
+              quality={90}
+              priority={current === 0}
+              draggable={false}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-base/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-3">
-              <div className="p-1.5 border border-white/30 text-white">
-                <ArrowUpRight size={14} />
-              </div>
-            </div>
           </motion.div>
-        ))}
+        </AnimatePresence>
+
+        {/* Marca de agua */}
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+          aria-hidden
+        >
+          <span
+            className="font-sans text-white font-light tracking-[0.25em] uppercase"
+            style={{
+              fontSize: "clamp(0.8rem, 2vw, 1.1rem)",
+              opacity: 0.13,
+              transform: "rotate(-18deg)",
+              whiteSpace: "nowrap",
+              letterSpacing: "0.3em",
+            }}
+          >
+            {WATERMARK}
+          </span>
+        </div>
+
+        {/* Flechas */}
+        {photos.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              aria-label="Anterior"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              aria-label="Siguiente"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </>
+        )}
+
+        {/* Contador */}
+        <div className="absolute bottom-4 right-5 z-10 font-sans text-white/50 text-xs tracking-widest pointer-events-none select-none">
+          {current + 1} / {photos.length}
+        </div>
       </div>
 
-      <AnimatePresence>
-        {selected !== null && (
-          <Lightbox
-            src={photos[selected]}
-            alt={`${title} — foto ${selected + 1}`}
-            idx={selected}
-            total={photos.length}
-            onClose={() => setSelected(null)}
-            onPrev={() => navigate(-1)}
-            onNext={() => navigate(1)}
-          />
-        )}
-      </AnimatePresence>
-    </>
+      {/* ── Thumbnails ── */}
+      {photos.length > 1 && (
+        <div
+          ref={thumbsRef}
+          className="flex gap-2 mt-3 overflow-x-auto pb-1"
+          style={{ scrollbarWidth: "none" }}
+          {...protectProps}
+        >
+          {photos.map((src, i) => (
+            <button
+              key={src}
+              onClick={() => setCurrent(i)}
+              className={`relative flex-shrink-0 overflow-hidden transition-all duration-200 ${
+                i === current
+                  ? "ring-2 ring-brand-blue opacity-100"
+                  : "opacity-50 hover:opacity-80"
+              }`}
+              style={{ width: 80, height: 60 }}
+              aria-label={`Foto ${i + 1}`}
+              {...protectProps}
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                className="object-cover"
+                style={{ pointerEvents: "none" }}
+                loading="lazy"
+                draggable={false}
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
