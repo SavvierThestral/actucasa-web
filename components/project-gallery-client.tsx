@@ -59,127 +59,140 @@ export function ProjectGalleryClient({
 
   return (
     <div className="select-none" onContextMenu={prevent}>
-      {/* ── Foto principal ── */}
-      <div className="relative w-full overflow-hidden bg-white" {...protectProps}>
-        <Image
-          src={photos[current]}
-          alt={`${title} — foto ${current + 1}`}
-          width={0}
-          height={0}
-          sizes="(max-width: 1024px) 100vw, 60vw"
-          quality={90}
-          priority={current === 0}
-          draggable={false}
-          className="w-full h-auto block"
-          style={{
-            pointerEvents: "none",
-            opacity: visible ? 1 : 0,
-            transition: "opacity 0.18s ease",
-            maxHeight: "58vh",
-            objectFit: "contain",
-          }}
-        />
+      {/* ── Foto principal + flechas ── */}
+      <div className="flex items-stretch bg-white" {...protectProps}>
 
-        {/* Marca de agua */}
-        <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-          aria-hidden
-        >
-          <span
-            className="font-sans text-white font-bold tracking-[0.3em] uppercase"
-            style={{
-              fontSize: "clamp(1.1rem, 4vw, 2.2rem)",
-              opacity: 0.15,
-              transform: "rotate(-18deg)",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {WATERMARK}
-          </span>
-        </div>
-
-        {/* Flechas */}
+        {/* Flecha izquierda */}
         {photos.length > 1 && (
-          <>
-            <button
-              onClick={prev}
-              className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-white hover:bg-white/90 text-zinc-700 hover:text-zinc-900 transition-all duration-200 shadow-sm"
-              aria-label="Anterior"
-            >
-              <ArrowLeft size={18} />
-            </button>
-            <button
-              onClick={next}
-              className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-white hover:bg-white/90 text-zinc-700 hover:text-zinc-900 transition-all duration-200 shadow-sm"
-              aria-label="Siguiente"
-            >
-              <ArrowRight size={18} />
-            </button>
-          </>
+          <button
+            onClick={prev}
+            className="flex-shrink-0 flex items-center justify-center px-2.5 bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-800 transition-all duration-200"
+            style={{ minWidth: 40 }}
+            aria-label="Anterior"
+          >
+            <ArrowLeft size={17} />
+          </button>
         )}
 
-        {/* Contador */}
-        <div className="absolute bottom-3 right-4 z-10 font-sans text-white text-xs tracking-widest pointer-events-none select-none bg-black/30 px-2 py-0.5 backdrop-blur-sm">
-          {current + 1} / {photos.length}
+        {/* Imagen + overlays */}
+        <div className="relative flex-1 min-w-0 overflow-hidden" {...protectProps}>
+          <Image
+            src={photos[current]}
+            alt={`${title} — foto ${current + 1}`}
+            width={0}
+            height={0}
+            sizes="(max-width: 1024px) 100vw, 55vw"
+            quality={90}
+            priority={current === 0}
+            draggable={false}
+            className="w-full h-auto block"
+            style={{
+              pointerEvents: "none",
+              opacity: visible ? 1 : 0,
+              transition: "opacity 0.18s ease",
+              maxHeight: "58vh",
+              objectFit: "contain",
+            }}
+          />
+
+          {/* Marca de agua */}
+          <div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+            aria-hidden
+          >
+            <span
+              className="font-sans text-white font-semibold tracking-[0.25em] uppercase"
+              style={{
+                fontSize: "clamp(0.6rem, 1.8vw, 1rem)",
+                opacity: 0.28,
+                transform: "rotate(-18deg)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {WATERMARK}
+            </span>
+          </div>
+
+          {/* Dots sobre la foto */}
+          {photos.length > 1 && (
+            <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
+              {photos.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  aria-label={`Foto ${i + 1}`}
+                  className="transition-all duration-200"
+                  style={{
+                    width: i === current ? 16 : 5,
+                    height: 5,
+                    borderRadius: 3,
+                    backgroundColor: i === current ? "#ffffff" : "rgba(255,255,255,0.45)",
+                  }}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Contador */}
+          <div className="absolute bottom-2.5 right-3 z-10 font-sans text-white text-[10px] tracking-widest pointer-events-none select-none bg-black/30 px-1.5 py-0.5 backdrop-blur-sm">
+            {current + 1} / {photos.length}
+          </div>
         </div>
 
-        {/* ── Dots sobre la foto ── */}
+        {/* Flecha derecha */}
         {photos.length > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
-            {photos.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                aria-label={`Foto ${i + 1}`}
-                className="transition-all duration-200"
-                style={{
-                  width: i === current ? 18 : 6,
-                  height: 6,
-                  borderRadius: 3,
-                  backgroundColor: i === current ? "#ffffff" : "rgba(255,255,255,0.45)",
-                }}
-              />
-            ))}
-          </div>
+          <button
+            onClick={next}
+            className="flex-shrink-0 flex items-center justify-center px-2.5 bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-800 transition-all duration-200"
+            style={{ minWidth: 40 }}
+            aria-label="Siguiente"
+          >
+            <ArrowRight size={17} />
+          </button>
         )}
       </div>
 
-      {/* ── Thumbnails ── */}
+      {/* ── Thumbnails (ventana de 5 alrededor de la foto actual) ── */}
       {photos.length > 1 && (
-        <>
-          <div
-            ref={thumbsRef}
-            className="flex gap-2 mt-3 overflow-x-auto pb-1"
-            style={{ scrollbarWidth: "none" }}
-            {...protectProps}
-          >
-            {photos.map((src, i) => (
-              <button
-                key={src}
-                onClick={() => goTo(i)}
-                className={`relative flex-shrink-0 overflow-hidden transition-all duration-200 ${
-                  i === current
-                    ? "ring-2 ring-brand-blue opacity-100"
-                    : "opacity-50 hover:opacity-80"
-                }`}
-                style={{ width: 72, height: 54 }}
-                aria-label={`Foto ${i + 1}`}
-                {...protectProps}
-              >
-                <Image
-                  src={src}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  style={{ pointerEvents: "none" }}
-                  loading="lazy"
-                  draggable={false}
-                />
-              </button>
-            ))}
-          </div>
-
-        </>
+        <div
+          ref={thumbsRef}
+          className="flex gap-1.5 mt-2 overflow-x-auto pb-1"
+          style={{ scrollbarWidth: "none" }}
+          {...protectProps}
+        >
+          {(() => {
+            const WINDOW = 5;
+            const start = Math.max(0, Math.min(current - 2, photos.length - WINDOW));
+            const slice = photos.slice(start, start + WINDOW);
+            return slice.map((src, j) => {
+              const i = start + j;
+              return (
+                <button
+                  key={src}
+                  onClick={() => goTo(i)}
+                  className={`relative flex-shrink-0 overflow-hidden transition-all duration-200 ${
+                    i === current
+                      ? "ring-2 ring-brand-blue opacity-100"
+                      : "opacity-50 hover:opacity-80"
+                  }`}
+                  style={{ width: 54, height: 40 }}
+                  aria-label={`Foto ${i + 1}`}
+                  {...protectProps}
+                >
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    style={{ pointerEvents: "none" }}
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </button>
+              );
+            });
+          })()}
+        </div>
       )}
     </div>
   );
