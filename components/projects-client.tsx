@@ -15,7 +15,7 @@ import { ArrowUpRight, MapPin, CalendarBlank } from "@phosphor-icons/react";
 const filters: { label: string; value: "all" | ProjectCategory }[] = [
   { label: "Todos", value: "all" },
   { label: "Módulos", value: "modulo" },
-  { label: "Oficinas", value: "oficina" },
+  { label: "Steel Frame", value: "steel-frame" },
   { label: "Remodelaciones", value: "remodelacion" },
   { label: "Wood Frame", value: "wood-frame" },
   { label: "Tradicional", value: "tradicional" },
