@@ -54,7 +54,7 @@ export function ProjectGalleryClient({
       {/* ── Foto principal ── */}
       <div
         className="relative w-full overflow-hidden bg-zinc-100"
-        style={{ aspectRatio: "4/3" }}
+        style={{ aspectRatio: "4/3", maxHeight: "52vh" }}
         {...protectProps}
       >
         <AnimatePresence mode="wait">
