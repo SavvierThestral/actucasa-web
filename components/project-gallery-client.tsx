@@ -59,8 +59,8 @@ export function ProjectGalleryClient({
 
   return (
     <div className="select-none" onContextMenu={prevent}>
-      {/* ── Foto principal — sin ratio fijo, la celda toma la forma de la foto ── */}
-      <div className="relative w-full overflow-hidden" {...protectProps}>
+      {/* ── Foto principal ── */}
+      <div className="relative w-full overflow-hidden bg-white" {...protectProps}>
         <Image
           src={photos[current]}
           alt={`${title} — foto ${current + 1}`}
@@ -75,6 +75,8 @@ export function ProjectGalleryClient({
             pointerEvents: "none",
             opacity: visible ? 1 : 0,
             transition: "opacity 0.18s ease",
+            maxHeight: "58vh",
+            objectFit: "contain",
           }}
         />
 
@@ -101,14 +103,14 @@ export function ProjectGalleryClient({
           <>
             <button
               onClick={prev}
-              className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/65 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-white hover:bg-white/90 text-zinc-700 hover:text-zinc-900 transition-all duration-200 shadow-sm"
               aria-label="Anterior"
             >
               <ArrowLeft size={18} />
             </button>
             <button
               onClick={next}
-              className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/65 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-white hover:bg-white/90 text-zinc-700 hover:text-zinc-900 transition-all duration-200 shadow-sm"
               aria-label="Siguiente"
             >
               <ArrowRight size={18} />
