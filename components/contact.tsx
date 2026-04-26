@@ -373,15 +373,11 @@ export function Contact() {
                   src={siteConfig.mapsEmbed}
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "grayscale(100%) brightness(0.55) contrast(1.1)" }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación ACTuCasa"
-                />
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{ background: "#4a7fc4", opacity: 0.38, mixBlendMode: "screen" }}
                 />
               </div>
               <a
