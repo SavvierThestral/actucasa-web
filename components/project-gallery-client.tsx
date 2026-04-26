@@ -125,37 +125,57 @@ export function ProjectGalleryClient({
 
       {/* ── Thumbnails ── */}
       {photos.length > 1 && (
-        <div
-          ref={thumbsRef}
-          className="flex gap-2 mt-3 overflow-x-auto pb-1"
-          style={{ scrollbarWidth: "none" }}
-          {...protectProps}
-        >
-          {photos.map((src, i) => (
-            <button
-              key={src}
-              onClick={() => setCurrent(i)}
-              className={`relative flex-shrink-0 overflow-hidden transition-all duration-200 ${
-                i === current
-                  ? "ring-2 ring-brand-blue opacity-100"
-                  : "opacity-50 hover:opacity-80"
-              }`}
-              style={{ width: 80, height: 60 }}
-              aria-label={`Foto ${i + 1}`}
-              {...protectProps}
-            >
-              <Image
-                src={src}
-                alt=""
-                fill
-                className="object-cover"
-                style={{ pointerEvents: "none" }}
-                loading="lazy"
-                draggable={false}
+        <>
+          <div
+            ref={thumbsRef}
+            className="flex gap-2 mt-3 overflow-x-auto pb-1"
+            style={{ scrollbarWidth: "none" }}
+            {...protectProps}
+          >
+            {photos.map((src, i) => (
+              <button
+                key={src}
+                onClick={() => setCurrent(i)}
+                className={`relative flex-shrink-0 overflow-hidden transition-all duration-200 ${
+                  i === current
+                    ? "ring-2 ring-brand-blue opacity-100"
+                    : "opacity-50 hover:opacity-80"
+                }`}
+                style={{ width: 80, height: 60 }}
+                aria-label={`Foto ${i + 1}`}
+                {...protectProps}
+              >
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  style={{ pointerEvents: "none" }}
+                  loading="lazy"
+                  draggable={false}
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* ── Dots ── */}
+          <div className="flex justify-center gap-1.5 mt-3">
+            {photos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                aria-label={`Foto ${i + 1}`}
+                className="transition-all duration-200"
+                style={{
+                  width: i === current ? 20 : 6,
+                  height: 6,
+                  borderRadius: 3,
+                  backgroundColor: i === current ? "var(--color-brand-blue)" : "var(--color-bg-border)",
+                }}
               />
-            </button>
-          ))}
-        </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
