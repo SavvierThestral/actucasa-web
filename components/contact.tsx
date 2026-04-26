@@ -368,7 +368,7 @@ export function Contact() {
 
             {/* Mapa */}
             <FadeIn delay={0.28}>
-              <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden" style={{ height: "200px" }}>
+              <div className="relative overflow-hidden" style={{ height: "220px" }}>
                 <iframe
                   src={siteConfig.mapsEmbed}
                   width="100%"
@@ -379,11 +379,18 @@ export function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación ACTuCasa"
                 />
-                {/* Tinte #72a7ab */}
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{ background: "#4a7fc4", opacity: 0.38, mixBlendMode: "screen" }}
                 />
+              </div>
+              <a
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-sans text-xs text-white/40 hover:text-white/70 transition-colors mt-2"
+              >
+                Abrir en Google Maps ↗
               </a>
             </FadeIn>
 
