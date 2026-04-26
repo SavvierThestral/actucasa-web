@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 
@@ -19,13 +18,22 @@ export function ProjectGalleryClient({
   title: string;
 }) {
   const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(true);
   const thumbsRef = useRef<HTMLDivElement>(null);
 
-  const prev = () =>
-    setCurrent((c) => (c - 1 + photos.length) % photos.length);
-  const next = () => setCurrent((c) => (c + 1) % photos.length);
+  const goTo = (i: number) => {
+    if (i === current) return;
+    setVisible(false);
+    setTimeout(() => {
+      setCurrent(i);
+      setVisible(true);
+    }, 180);
+  };
 
-  // Scroll thumbnail into view when current changes
+  const prev = () => goTo((current - 1 + photos.length) % photos.length);
+  const next = () => goTo((current + 1) % photos.length);
+
+  // Scroll thumbnail into view
   useEffect(() => {
     const container = thumbsRef.current;
     if (!container) return;
@@ -51,33 +59,24 @@ export function ProjectGalleryClient({
 
   return (
     <div className="select-none" onContextMenu={prevent}>
-      {/* ── Foto principal ── */}
-      <div
-        className="relative w-full overflow-hidden bg-zinc-100"
-        style={{ aspectRatio: "4/3", maxHeight: "52vh" }}
-        {...protectProps}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={photos[current]}
-              alt={`${title} — foto ${current + 1}`}
-              fill
-              className="object-cover"
-              style={{ pointerEvents: "none" }}
-              quality={90}
-              priority={current === 0}
-              draggable={false}
-            />
-          </motion.div>
-        </AnimatePresence>
+      {/* ── Foto principal — sin ratio fijo, la celda toma la forma de la foto ── */}
+      <div className="relative w-full overflow-hidden" {...protectProps}>
+        <Image
+          src={photos[current]}
+          alt={`${title} — foto ${current + 1}`}
+          width={0}
+          height={0}
+          sizes="(max-width: 1024px) 100vw, 60vw"
+          quality={90}
+          priority={current === 0}
+          draggable={false}
+          className="w-full h-auto block"
+          style={{
+            pointerEvents: "none",
+            opacity: visible ? 1 : 0,
+            transition: "opacity 0.18s ease",
+          }}
+        />
 
         {/* Marca de agua */}
         <div
@@ -88,7 +87,7 @@ export function ProjectGalleryClient({
             className="font-sans text-white font-bold tracking-[0.3em] uppercase"
             style={{
               fontSize: "clamp(1.1rem, 4vw, 2.2rem)",
-              opacity: 0.28,
+              opacity: 0.15,
               transform: "rotate(-18deg)",
               whiteSpace: "nowrap",
             }}
@@ -102,25 +101,45 @@ export function ProjectGalleryClient({
           <>
             <button
               onClick={prev}
-              className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/65 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
               aria-label="Anterior"
             >
-              <ArrowLeft size={20} />
+              <ArrowLeft size={18} />
             </button>
             <button
               onClick={next}
-              className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
+              className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 p-2.5 bg-black/40 hover:bg-black/65 text-white/80 hover:text-white transition-all duration-200 backdrop-blur-sm"
               aria-label="Siguiente"
             >
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </button>
           </>
         )}
 
         {/* Contador */}
-        <div className="absolute bottom-4 right-5 z-10 font-sans text-white/50 text-xs tracking-widest pointer-events-none select-none">
+        <div className="absolute bottom-3 right-4 z-10 font-sans text-white text-xs tracking-widest pointer-events-none select-none bg-black/30 px-2 py-0.5 backdrop-blur-sm">
           {current + 1} / {photos.length}
         </div>
+
+        {/* ── Dots sobre la foto ── */}
+        {photos.length > 1 && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
+            {photos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                aria-label={`Foto ${i + 1}`}
+                className="transition-all duration-200"
+                style={{
+                  width: i === current ? 18 : 6,
+                  height: 6,
+                  borderRadius: 3,
+                  backgroundColor: i === current ? "#ffffff" : "rgba(255,255,255,0.45)",
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* ── Thumbnails ── */}
@@ -135,13 +154,13 @@ export function ProjectGalleryClient({
             {photos.map((src, i) => (
               <button
                 key={src}
-                onClick={() => setCurrent(i)}
+                onClick={() => goTo(i)}
                 className={`relative flex-shrink-0 overflow-hidden transition-all duration-200 ${
                   i === current
                     ? "ring-2 ring-brand-blue opacity-100"
                     : "opacity-50 hover:opacity-80"
                 }`}
-                style={{ width: 80, height: 60 }}
+                style={{ width: 72, height: 54 }}
                 aria-label={`Foto ${i + 1}`}
                 {...protectProps}
               >
@@ -158,23 +177,6 @@ export function ProjectGalleryClient({
             ))}
           </div>
 
-          {/* ── Dots ── */}
-          <div className="flex justify-center gap-1.5 mt-3">
-            {photos.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                aria-label={`Foto ${i + 1}`}
-                className="transition-all duration-200"
-                style={{
-                  width: i === current ? 20 : 6,
-                  height: 6,
-                  borderRadius: 3,
-                  backgroundColor: i === current ? "var(--color-brand-blue)" : "var(--color-bg-border)",
-                }}
-              />
-            ))}
-          </div>
         </>
       )}
     </div>
