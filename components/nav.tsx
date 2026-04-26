@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -100,44 +100,47 @@ export function Nav() {
         </div>
       </motion.header>
 
-      {/* Mobile menu */}
-      <motion.div
-        initial={false}
-        animate={menuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
-        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed inset-0 z-40 bg-white/97 backdrop-blur-md flex flex-col pt-24 px-8 md:hidden ${
-          menuOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col gap-6">
-          {links.map((link, i) => (
-            <motion.div
-              key={link.href}
-              initial={{ opacity: 0, x: -20 }}
-              animate={menuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-              transition={{ delay: i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Link
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="font-display font-bold text-3xl text-text-primary tracking-tight"
-              >
-                {link.label}
-              </Link>
-            </motion.div>
-          ))}
-          <motion.a
-            href="#contacto"
-            onClick={() => setMenuOpen(false)}
-            initial={{ opacity: 0 }}
-            animate={menuOpen ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.28 }}
-            className="mt-4 self-start bg-brand-blue text-white px-6 py-3 font-sans text-sm tracking-wide"
+      {/* Mobile menu — montado/desmontado para no bloquear interacciones */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-white/97 backdrop-blur-md flex flex-col pt-24 px-8 md:hidden"
           >
-            Consultanos
-          </motion.a>
-        </nav>
-      </motion.div>
+            <nav className="flex flex-col gap-6">
+              {links.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="font-display font-bold text-3xl text-text-primary tracking-tight"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.a
+                href="#contacto"
+                onClick={() => setMenuOpen(false)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.28 }}
+                className="mt-4 self-start bg-brand-blue text-white px-6 py-3 font-sans text-sm tracking-wide"
+              >
+                Consultanos
+              </motion.a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
