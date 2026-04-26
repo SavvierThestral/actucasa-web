@@ -158,9 +158,10 @@ export function ProjectsClient() {
                     ease: [0.16, 1, 0.3, 1],
                   }}
                   className="group flex flex-col"
+                  style={{ cursor: "pointer" }}
                 >
                   {/* Imagen */}
-                  <div className="relative aspect-[4/3] overflow-hidden mb-5 bg-bg-surface">
+                  <Link href={`/proyectos/${project.slug}`} className="block relative aspect-[4/3] overflow-hidden mb-5 bg-bg-surface">
                     <Image
                       src={project.image}
                       alt={`${project.title} — ${categoryLabels[project.category]}`}
@@ -184,13 +185,15 @@ export function ProjectsClient() {
                     <div className="absolute top-4 left-4 bg-brand-blue text-white font-sans text-[0.65rem] tracking-[0.15em] uppercase px-2.5 py-1">
                       {categoryLabels[project.category]}
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Contenido */}
                   <div className="flex flex-col flex-1">
-                    <h2 className="font-display font-bold text-text-primary text-xl tracking-tight mb-2 leading-tight">
-                      {project.title}
-                    </h2>
+                    <Link href={`/proyectos/${project.slug}`}>
+                      <h2 className="font-display font-bold text-text-primary text-xl tracking-tight mb-2 leading-tight hover:text-brand-blue transition-colors duration-200">
+                        {project.title}
+                      </h2>
+                    </Link>
 
                     <div className="flex items-center gap-4 mb-3">
                       <span className="flex items-center gap-1.5 font-sans text-text-muted text-xs">

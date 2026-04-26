@@ -1,16 +1,3 @@
-// ─────────────────────────────────────────────────────────────
-//  PROYECTOS — Completá cada entrada con sus datos y fotos.
-//
-//  Campos:
-//    category    → "modulo" | "oficina" | "remodelacion" | "wood-frame" | "tradicional" | "steel-frame"
-//    location    → barrio / ciudad (ej: "Tigre, GBA Norte")
-//    year        → año de entrega (ej: "2024")
-//    area        → superficie (ej: "85m²") — dejá "" para no mostrar
-//    description → texto corto visible en la card (1-2 oraciones)
-//    image       → portada del proyecto en /public/proyectos/
-//    tags        → etiquetas debajo de la card
-// ─────────────────────────────────────────────────────────────
-
 export type ProjectCategory =
   | "modulo"
   | "oficina"
@@ -21,6 +8,7 @@ export type ProjectCategory =
 
 export type Project = {
   id: number;
+  slug: string;
   title: string;
   category: ProjectCategory;
   location: string;
@@ -28,6 +16,7 @@ export type Project = {
   area: string;
   description: string;
   image: string;
+  folder: string;
   tags: string[];
 };
 
@@ -44,6 +33,7 @@ export const projects: Project[] = [
   // ── Módulos ────────────────────────────────────────────────
   {
     id: 17,
+    slug: "entre-arbustos",
     title: "Entre Arbustos",
     category: "modulo",
     location: "",
@@ -51,10 +41,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/entre-arbustos.webp",
+    folder: "modulos/entre arbustos/entre arbustos web",
     tags: [],
   },
   {
     id: 18,
+    slug: "entre-pinos",
     title: "Entre Pinos",
     category: "modulo",
     location: "",
@@ -62,10 +54,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/entre-pinos.webp",
+    folder: "modulos/entre pinos/ENTRE PINOS web",
     tags: [],
   },
   {
     id: 19,
+    slug: "fresno",
     title: "Fresno",
     category: "modulo",
     location: "",
@@ -73,21 +67,25 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/fresno.webp",
+    folder: "modulos/fresno/fresno web",
     tags: [],
   },
   {
     id: 30,
+    slug: "martin-pescador",
     title: "Martín Pescador",
     category: "modulo",
     location: "",
     year: "",
     area: "",
     description: "",
-    image: "/proyectos/martin-pescador.jpg",
+    image: "/proyectos/martin-pescador.webp",
+    folder: "modulos/martin pescador",
     tags: [],
   },
   {
     id: 20,
+    slug: "ombu",
     title: "Ombú",
     category: "modulo",
     location: "",
@@ -95,10 +93,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/ombu.webp",
+    folder: "modulos/ombu/ombu web",
     tags: [],
   },
   {
     id: 21,
+    slug: "pequeno-paraiso",
     title: "Pequeño Paraíso",
     category: "modulo",
     location: "Cnel. Rosales",
@@ -106,11 +106,13 @@ export const projects: Project[] = [
     area: "16,50m² + deck 4,50m²",
     description: "",
     image: "/proyectos/pequeno-paraiso.webp",
+    folder: "modulos/pequeño paraiso/pp web 16,50m2 + deck semic._ 4,50m2 - 2026 - Cnel. Rosales",
     tags: [],
   },
   // ── Steel Frame ────────────────────────────────────────────
   {
     id: 22,
+    slug: "bosque",
     title: "Bosque",
     category: "steel-frame",
     location: "",
@@ -118,10 +120,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/bosque.webp",
+    folder: "steel frame/bosque/bosque web",
     tags: [],
   },
   {
     id: 23,
+    slug: "el-patron",
     title: "El Patrón",
     category: "steel-frame",
     location: "",
@@ -129,21 +133,25 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/el-patron.webp",
+    folder: "steel frame/el patron/sich web",
     tags: [],
   },
   {
     id: 24,
+    slug: "espejo",
     title: "Espejo",
     category: "steel-frame",
     location: "",
     year: "",
     area: "",
     description: "",
-    image: "/proyectos/espejo.jpg",
+    image: "/proyectos/espejo.webp",
+    folder: "steel frame/espejo",
     tags: [],
   },
   {
     id: 10,
+    slug: "green",
     title: "Green",
     category: "steel-frame",
     location: "",
@@ -151,10 +159,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/green.webp",
+    folder: "steel frame/green/green web",
     tags: [],
   },
   {
     id: 25,
+    slug: "high",
     title: "High",
     category: "steel-frame",
     location: "",
@@ -162,10 +172,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/high.webp",
+    folder: "steel frame/high/high web",
     tags: [],
   },
   {
     id: 3,
+    slug: "pinar",
     title: "Pinar",
     category: "steel-frame",
     location: "",
@@ -173,10 +185,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/pinar.webp",
+    folder: "steel frame/pinar/pinar web",
     tags: [],
   },
   {
     id: 8,
+    slug: "pino",
     title: "Pino",
     category: "steel-frame",
     location: "",
@@ -184,10 +198,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/pino.webp",
+    folder: "steel frame/pino/pino web",
     tags: [],
   },
   {
     id: 26,
+    slug: "refugio",
     title: "Refugio",
     category: "steel-frame",
     location: "",
@@ -195,10 +211,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/refugio.webp",
+    folder: "steel frame/refugio/refugio web",
     tags: [],
   },
   {
     id: 27,
+    slug: "rou",
     title: "Rou",
     category: "steel-frame",
     location: "",
@@ -206,10 +224,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/rou.webp",
+    folder: "steel frame/rou/rou web",
     tags: [],
   },
   {
     id: 9,
+    slug: "saliente",
     title: "Saliente",
     category: "steel-frame",
     location: "",
@@ -217,10 +237,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/saliente.webp",
+    folder: "steel frame/saliente web",
     tags: [],
   },
   {
     id: 4,
+    slug: "sauce",
     title: "Sauce",
     category: "steel-frame",
     location: "",
@@ -228,10 +250,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/sauce.webp",
+    folder: "steel frame/sauce/sauce web",
     tags: [],
   },
   {
     id: 29,
+    slug: "sunset",
     title: "Sunset",
     category: "steel-frame",
     location: "",
@@ -239,11 +263,13 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/sunset.webp",
+    folder: "steel frame/sunset/sunset web",
     tags: [],
   },
   // ── Remodelaciones ─────────────────────────────────────────
   {
     id: 11,
+    slug: "limonero",
     title: "Limonero",
     category: "remodelacion",
     location: "",
@@ -251,10 +277,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/limonero.webp",
+    folder: "remodelaciones/limonero/limonero web",
     tags: [],
   },
   {
     id: 12,
+    slug: "palmera",
     title: "Palmera",
     category: "remodelacion",
     location: "",
@@ -262,10 +290,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/palmera.webp",
+    folder: "remodelaciones/palmera/palmera web",
     tags: [],
   },
   {
     id: 2,
+    slug: "roca",
     title: "Roca",
     category: "remodelacion",
     location: "",
@@ -273,11 +303,13 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/roca.webp",
+    folder: "remodelaciones/roca web",
     tags: [],
   },
   // ── Wood Frame ─────────────────────────────────────────────
   {
     id: 13,
+    slug: "cerro-i",
     title: "Cerro I",
     category: "wood-frame",
     location: "",
@@ -285,10 +317,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/cerro-i.webp",
+    folder: "wood/cerro 1/cerro I web",
     tags: [],
   },
   {
     id: 14,
+    slug: "cerro-ii",
     title: "Cerro II",
     category: "wood-frame",
     location: "",
@@ -296,10 +330,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/cerro-ii.webp",
+    folder: "wood/cerro 2/cerro II web",
     tags: [],
   },
   {
     id: 5,
+    slug: "lavanda",
     title: "Lavanda",
     category: "wood-frame",
     location: "",
@@ -307,11 +343,13 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/lavanda.webp",
+    folder: "wood/lavanda web",
     tags: [],
   },
   // ── Tradicional ────────────────────────────────────────────
   {
     id: 6,
+    slug: "milano",
     title: "Milano",
     category: "tradicional",
     location: "",
@@ -319,10 +357,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/milano.webp",
+    folder: "tradicional/milano web",
     tags: [],
   },
   {
     id: 15,
+    slug: "nutria",
     title: "Nutria",
     category: "tradicional",
     location: "",
@@ -330,10 +370,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/nutria.webp",
+    folder: "tradicional/nutria/nutria web",
     tags: [],
   },
   {
     id: 16,
+    slug: "oasis",
     title: "Oasis",
     category: "tradicional",
     location: "",
@@ -341,10 +383,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/oasis.webp",
+    folder: "tradicional/oasis/oasis web",
     tags: [],
   },
   {
     id: 1,
+    slug: "proyecto-v",
     title: "Proyecto V",
     category: "tradicional",
     location: "",
@@ -352,10 +396,12 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/proyecto-v.webp",
+    folder: "tradicional/proyecto V/proyecto v web",
     tags: [],
   },
   {
     id: 7,
+    slug: "rubik",
     title: "Rubik",
     category: "tradicional",
     location: "",
@@ -363,6 +409,7 @@ export const projects: Project[] = [
     area: "",
     description: "",
     image: "/proyectos/rubik.webp",
+    folder: "tradicional/rubik web",
     tags: [],
   },
 ];
