@@ -33,7 +33,6 @@ export function ProjectGalleryClient({
   const prev = () => goTo((current - 1 + photos.length) % photos.length);
   const next = () => goTo((current + 1) % photos.length);
 
-  // Scroll thumbnail into view
   useEffect(() => {
     const container = thumbsRef.current;
     if (!container) return;
@@ -41,7 +40,6 @@ export function ProjectGalleryClient({
     if (thumb) thumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
   }, [current]);
 
-  // Keyboard navigation
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") prev();
@@ -60,38 +58,38 @@ export function ProjectGalleryClient({
   return (
     <div className="select-none" onContextMenu={prevent}>
       {/* ── Foto principal + flechas ── */}
-      <div className="flex items-stretch bg-white" {...protectProps}>
+      {/* justify-center para que el grupo (flechas + foto) quede centrado */}
+      <div className="flex items-center justify-center bg-white" {...protectProps}>
 
         {/* Flecha izquierda */}
         {photos.length > 1 && (
           <button
             onClick={prev}
-            className="flex-shrink-0 flex items-center justify-center px-2.5 bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-800 transition-all duration-200"
-            style={{ minWidth: 40 }}
+            className="flex-shrink-0 self-stretch flex items-center justify-center px-3 bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-800 transition-all duration-200"
             aria-label="Anterior"
           >
             <ArrowLeft size={17} />
           </button>
         )}
 
-        {/* Imagen + overlays */}
-        <div className="relative flex-1 min-w-0 overflow-hidden" {...protectProps}>
+        {/* Wrapper que se ajusta al tamaño real de la imagen */}
+        <div className="relative" style={{ display: "table" }} {...protectProps}>
           <Image
             src={photos[current]}
             alt={`${title} — foto ${current + 1}`}
             width={0}
             height={0}
-            sizes="(max-width: 1024px) 100vw, 55vw"
+            sizes="(max-width: 768px) calc(100vw - 4rem), 55vw"
             quality={90}
             priority={current === 0}
             draggable={false}
-            className="w-full h-auto block"
+            className="block w-auto h-auto"
             style={{
               pointerEvents: "none",
               opacity: visible ? 1 : 0,
               transition: "opacity 0.18s ease",
-              maxHeight: "58vh",
-              objectFit: "contain",
+              maxHeight: "60vh",
+              maxWidth: "min(calc(100vw - 8rem), 680px)",
             }}
           />
 
@@ -113,7 +111,7 @@ export function ProjectGalleryClient({
             </span>
           </div>
 
-          {/* Dots sobre la foto */}
+          {/* Dots */}
           {photos.length > 1 && (
             <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
               {photos.map((_, i) => (
@@ -134,7 +132,7 @@ export function ProjectGalleryClient({
           )}
 
           {/* Contador */}
-          <div className="absolute bottom-2.5 right-3 z-10 font-sans text-white text-[10px] tracking-widest pointer-events-none select-none bg-black/30 px-1.5 py-0.5 backdrop-blur-sm">
+          <div className="absolute bottom-2.5 right-2 z-10 font-sans text-white text-[10px] tracking-widest pointer-events-none select-none bg-black/30 px-1.5 py-0.5 backdrop-blur-sm">
             {current + 1} / {photos.length}
           </div>
         </div>
@@ -143,8 +141,7 @@ export function ProjectGalleryClient({
         {photos.length > 1 && (
           <button
             onClick={next}
-            className="flex-shrink-0 flex items-center justify-center px-2.5 bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-800 transition-all duration-200"
-            style={{ minWidth: 40 }}
+            className="flex-shrink-0 self-stretch flex items-center justify-center px-3 bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-800 transition-all duration-200"
             aria-label="Siguiente"
           >
             <ArrowRight size={17} />
@@ -152,19 +149,18 @@ export function ProjectGalleryClient({
         )}
       </div>
 
-      {/* ── Thumbnails (ventana de 5 alrededor de la foto actual) ── */}
+      {/* ── Thumbnails (ventana de 5) ── */}
       {photos.length > 1 && (
         <div
           ref={thumbsRef}
-          className="flex gap-1.5 mt-2 overflow-x-auto pb-1"
+          className="flex gap-1.5 mt-2 justify-center overflow-x-auto pb-1"
           style={{ scrollbarWidth: "none" }}
           {...protectProps}
         >
           {(() => {
             const WINDOW = 5;
             const start = Math.max(0, Math.min(current - 2, photos.length - WINDOW));
-            const slice = photos.slice(start, start + WINDOW);
-            return slice.map((src, j) => {
+            return photos.slice(start, start + WINDOW).map((src, j) => {
               const i = start + j;
               return (
                 <button
