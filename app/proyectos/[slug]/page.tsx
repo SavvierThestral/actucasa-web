@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ProjectGalleryClient } from "@/components/project-gallery-client";
 import { projects, categoryLabels } from "@/data/projects";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
 
@@ -193,6 +193,30 @@ export default async function ProjectPage({
           </div>
         </section>
 
+
+        {/* CTA */}
+        <section className="border-t py-14" style={{ borderColor: "var(--color-bg-border)" }}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <p className="font-display font-bold text-text-primary text-2xl tracking-tight mb-1">
+                ¿Te interesa un proyecto similar?
+              </p>
+              <p className="font-sans text-text-secondary text-sm">
+                Consultanos sin compromiso.
+              </p>
+            </div>
+            <a
+              href="/#contacto"
+              className="relative overflow-hidden inline-flex items-center gap-2.5 bg-brand-blue text-white px-8 py-4 font-sans font-medium text-sm tracking-[0.06em] uppercase group flex-shrink-0"
+            >
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white" />
+              <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-brand-blue">
+                Contactar
+                <ArrowUpRight size={16} />
+              </span>
+            </a>
+          </div>
+        </section>
 
       </main>
       <Footer />
