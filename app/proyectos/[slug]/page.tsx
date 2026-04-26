@@ -110,21 +110,13 @@ export default async function ProjectPage({
           </div>
         </div>
 
-        {/* Main: galería izquierda + info derecha */}
+        {/* Main: info izquierda + galería derecha */}
         <section className="py-8 md:py-12">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.45fr_1fr] gap-10 lg:gap-16 items-start">
-
-              {/* ── Galería (sticky en desktop) ── */}
-              <div className="lg:sticky lg:top-24">
-                <ProjectGalleryClient
-                  photos={photos.length > 0 ? photos : [project.image]}
-                  title={project.title}
-                />
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-14 items-start">
 
               {/* ── Panel de info ── */}
-              <div className="flex flex-col">
+              <div className="flex flex-col lg:sticky lg:top-24">
 
                 {/* Encabezado */}
                 <p className="section-label mb-3">{categoryLabels[project.category]}</p>
@@ -189,6 +181,15 @@ export default async function ProjectPage({
                 </div>
 
               </div>
+
+              {/* ── Galería ── */}
+              <div>
+                <ProjectGalleryClient
+                  photos={photos.length > 0 ? photos : [project.image]}
+                  title={project.title}
+                />
+              </div>
+
             </div>
           </div>
         </section>

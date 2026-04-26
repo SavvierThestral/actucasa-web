@@ -53,8 +53,8 @@ export function ProjectGalleryClient({
     <div className="select-none" onContextMenu={prevent}>
       {/* ── Foto principal ── */}
       <div
-        className="relative w-full overflow-hidden bg-zinc-950"
-        style={{ aspectRatio: "16/10" }}
+        className="relative w-full overflow-hidden bg-zinc-100"
+        style={{ aspectRatio: "4/3" }}
         {...protectProps}
       >
         <AnimatePresence mode="wait">
@@ -70,7 +70,7 @@ export function ProjectGalleryClient({
               src={photos[current]}
               alt={`${title} — foto ${current + 1}`}
               fill
-              className="object-contain"
+              className="object-cover"
               style={{ pointerEvents: "none" }}
               quality={90}
               priority={current === 0}
@@ -85,13 +85,12 @@ export function ProjectGalleryClient({
           aria-hidden
         >
           <span
-            className="font-sans text-white font-light tracking-[0.25em] uppercase"
+            className="font-sans text-white font-bold tracking-[0.3em] uppercase"
             style={{
-              fontSize: "clamp(0.8rem, 2vw, 1.1rem)",
-              opacity: 0.13,
+              fontSize: "clamp(1.1rem, 4vw, 2.2rem)",
+              opacity: 0.28,
               transform: "rotate(-18deg)",
               whiteSpace: "nowrap",
-              letterSpacing: "0.3em",
             }}
           >
             {WATERMARK}
