@@ -137,7 +137,7 @@ export function Contact() {
                       name="nombre"
                       type="text"
                       required
-                      placeholder="Juan García"
+                      placeholder="Nicolás Ferreyra"
                       className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200"
                       style={{
                         backgroundColor: "#044282",
@@ -161,7 +161,7 @@ export function Contact() {
                       name="email"
                       type="email"
                       required
-                      placeholder="juan@ejemplo.com"
+                      placeholder="by.teddiur@gmail.com"
                       className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200"
                       style={{
                         backgroundColor: "#044282",
