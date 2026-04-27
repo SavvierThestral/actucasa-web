@@ -202,9 +202,10 @@ export function Hero() {
           src={HERO_PHOTO}
           alt="Proyecto ACTuCasa"
           fill
-          className="object-cover object-center opacity-10"
+          className="object-cover object-center"
           priority
         />
+        <div className="absolute inset-0 bg-white/55" />
       </div>
     </section>
   );
