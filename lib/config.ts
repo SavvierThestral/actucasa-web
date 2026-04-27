@@ -5,7 +5,7 @@
 export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar",
 
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5492932578585",
   whatsappMessage:
     process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
     "Hola! Vi su web y quiero consultar sobre un proyecto",

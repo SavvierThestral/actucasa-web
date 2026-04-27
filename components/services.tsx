@@ -36,7 +36,6 @@ const services: {
     description: <>Espacios de trabajo profesionales que se fabrican en {b("taller")} y se instalan en tu predio {b("sin obra húmeda")}. Ideales para empresas que necesitan {b("ampliar su infraestructura")} o expandirse en otros sitios de forma rápida, ordenada y sin frenar su operación.</>,
     features: [
       "Distribución flexible: open space, oficinas privadas o configuraciones mixtas según tu operación.",
-      "Preparadas para cableado estructurado, red de datos y sistema de climatización.",
       "Relocalizables: si tu operación cambia de ubicación, la oficina se mueve con vos.",
       "Entrega en plazos cortos para que puedas empezar a operar lo antes posible.",
     ],
@@ -156,16 +155,6 @@ function ServiceRow({
             ))}
           </ul>
 
-          <a
-            href="#contacto"
-            className="relative overflow-hidden inline-flex items-center gap-2 border border-brand-blue text-brand-blue px-6 py-3 font-sans text-sm tracking-[0.06em] uppercase group self-start"
-          >
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 group-active:translate-x-0 transition-transform duration-300 ease-out bg-brand-blue" />
-            <span className="relative z-10 inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-white group-active:text-white">
-              Consultar
-              <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-          </a>
         </FadeIn>
       </div>
     </div>
