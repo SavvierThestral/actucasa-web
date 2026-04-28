@@ -73,12 +73,12 @@ export function WhatModules() {
               ¿Qué son los módulos?
             </h2>
 
-            <p className="font-sans text-text-secondary text-lg leading-snug max-w-[52ch] mb-8">
+            <p className="font-sans text-text-secondary text-sm md:text-base leading-snug max-w-[52ch] mb-8 tracking-wide uppercase" style={{ letterSpacing: "0.05em" }}>
               Espacios completos, fabricados en taller y listos para habitar
             </p>
 
             <FadeIn delay={0.1}>
-              <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] max-w-[56ch]">
+              <p className="font-sans text-text-secondary leading-relaxed text-[0.95rem] max-w-[56ch]">
                 Nuestros módulos son estructuras construidas íntegramente en{" "}
                 <strong className="font-medium text-text-primary">steel frame</strong>{" "}
                 — perfiles de <strong className="font-medium text-text-primary">acero galvanizado</strong> — que se fabrican en un{" "}
