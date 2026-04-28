@@ -26,7 +26,7 @@ const reasons: {
     num: "01",
     icon: Lightning,
     title: "Construcción rápida",
-    body: <>Los perfiles llegan {b("prefabricados")} a obra. Reducimos hasta un {b("40%")} los tiempos frente a construcción tradicional con hormigón y ladrillos.</>,
+    body: <>Al contar con todos los materiales en fábrica y no depender directamente del clima, reducimos hasta un {b("40%")} los tiempos frente a construcción tradicional con hormigón y ladrillos.</>,
     stat: "−40%",
     statLabel: "tiempo vs. construcción tradicional",
     numClass: "text-amber-500/25",
