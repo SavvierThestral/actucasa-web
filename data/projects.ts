@@ -100,7 +100,7 @@ export const projects: Project[] = [
   {
     id: 30,
     slug: "espejo",
-    title: "Espejo",
+    title: "Lila",
     category: "steel-frame",
     location: "",
     year: "",
