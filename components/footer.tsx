@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { InstagramLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
-import { whatsappUrlPlain, instagramUrl, siteConfig } from "@/lib/config";
+import { InstagramLogo, WhatsappLogo, PinterestLogoIcon as PinterestLogo } from "@phosphor-icons/react/dist/ssr";
+import { whatsappUrlPlain, instagramUrl, pinterestUrl, siteConfig } from "@/lib/config";
 
 const services = [
   { label: "Módulos habitacionales", href: "/#servicios" },
@@ -52,6 +52,15 @@ export function Footer() {
                 className="p-2.5 border border-bg-border text-text-muted hover:text-text-primary hover:border-white/20 transition-all duration-200"
               >
                 <WhatsappLogo size={18} />
+              </a>
+              <a
+                href={pinterestUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest ACTuCasa"
+                className="p-2.5 border border-bg-border text-text-muted hover:text-text-primary hover:border-white/20 transition-all duration-200"
+              >
+                <PinterestLogo size={18} />
               </a>
             </div>
           </div>

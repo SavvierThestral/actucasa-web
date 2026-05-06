@@ -7,12 +7,13 @@ import emailjs from "@emailjs/browser";
 import {
   WhatsappLogo,
   InstagramLogo,
+  PinterestLogoIcon as PinterestLogo,
   PaperPlaneTilt,
   CheckCircle,
   EnvelopeSimple,
   MapPin,
 } from "@phosphor-icons/react";
-import { whatsappUrl, instagramUrl, siteConfig } from "@/lib/config";
+import { whatsappUrl, instagramUrl, pinterestUrl, siteConfig } from "@/lib/config";
 
 const PROJECT_TYPES = ["Estructura de hierro", "Obra in situ", "Módulo", "Otro"];
 
@@ -303,6 +304,14 @@ export function Contact() {
                       <InstagramLogo size={18} weight="fill" />
                     </div>
                     <span className="font-sans text-sm" style={{ color: "#62A0C7" }}>@{siteConfig.instagramHandle}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href={pinterestUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                    <div className="p-2 flex-shrink-0" style={{ border: "1px solid rgba(98,160,199,0.35)", color: "#ef4444" }}>
+                      <PinterestLogo size={18} weight="fill" />
+                    </div>
+                    <span className="font-sans text-sm" style={{ color: "#62A0C7" }}>Pinterest</span>
                   </a>
                 </li>
               </ul>

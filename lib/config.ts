@@ -11,6 +11,7 @@ export const siteConfig = {
     "Hola! Vi su web y quiero consultar sobre un proyecto",
 
   instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE || "ac.tucasa",
+  pinterestUrl: process.env.NEXT_PUBLIC_PINTEREST_URL || "https://pin.it/4VcQ75FRy",
 
   email: process.env.NEXT_PUBLIC_EMAIL || "ac-tucasa@hotmail.com",
   phone: process.env.NEXT_PUBLIC_PHONE || "+54 9 2932 578585",
@@ -32,3 +33,4 @@ export const whatsappUrlPlain = siteConfig.whatsappNumber
   : "#contacto";
 
 export const instagramUrl = `https://instagram.com/${siteConfig.instagramHandle}`;
+export const pinterestUrl = siteConfig.pinterestUrl;
