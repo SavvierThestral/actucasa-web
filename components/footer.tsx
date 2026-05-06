@@ -101,7 +101,7 @@ export function Footer() {
       <div className="border-t border-bg-border">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-sans text-text-muted text-xs tracking-wide">
-            &copy; {new Date().getFullYear()} ACTuCasa. Todos los derechos reservados.
+            &copy; 2004&ndash;{new Date().getFullYear()} ACTuCasa. Todos los derechos reservados.
           </p>
           <p className="font-sans text-text-muted text-xs">
             Steel Framing &middot; Construcción en Seco &middot; Argentina

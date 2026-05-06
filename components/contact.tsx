@@ -73,10 +73,10 @@ export function Contact() {
 
     try {
       await emailjs.send(
-        "service_0lcepw8",
-        "template_hcq2e8s",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE!,
         data,
-        { publicKey: "l7A4T1Yo1E8euNiXM" }
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
       );
       setSent(true);
     } catch {
