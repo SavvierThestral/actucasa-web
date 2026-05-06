@@ -92,12 +92,13 @@ export function WhySteelFrame() {
             viewport={{ once: true }}
           >
             <p className="font-sans text-text-secondary leading-relaxed text-[1.02rem] mb-4 max-w-[48ch]">
-              El steel framing redefine la construcción moderna: <strong className="font-medium text-text-primary">precisión
-              milimétrica</strong>, menor desperdicio y <strong className="font-medium text-text-primary">durabilidad incomparable</strong>.
+              El steel framing redefine la construcción moderna: Cuenta con distintas capas de materiales que juntos contribuyen a generar la <strong className="font-medium text-text-primary">mejor aislación</strong> dentro del ambiente.
+            </p>
+            <p className="font-sans text-text-muted leading-relaxed text-sm max-w-[48ch] mb-3">
+              El <strong className="font-medium text-text-primary">acero galvanizado</strong> como protagonista y alma de la estructura de este sistema posee una capa protectora anti óxido con <strong className="font-medium text-text-primary">décadas de vida útil garantizada</strong>.
             </p>
             <p className="font-sans text-text-muted leading-relaxed text-sm max-w-[48ch]">
-              Soluciones de acero estructural diseñadas para construir mejor,
-              más rápido y con <strong className="font-medium text-text-primary">décadas de vida útil garantizada</strong>.
+              Construí mejor, más rápido y más eficiente.
             </p>
           </motion.div>
         </div>
