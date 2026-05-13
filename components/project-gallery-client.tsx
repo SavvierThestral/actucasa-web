@@ -88,8 +88,8 @@ export function ProjectGalleryClient({
               pointerEvents: "none",
               opacity: visible ? 1 : 0,
               transition: "opacity 0.18s ease",
-              maxHeight: "60vh",
-              maxWidth: "min(calc(100vw - 8rem), 680px)",
+              maxHeight: "82vh",
+              maxWidth: "min(calc(100vw - 5rem), 860px)",
             }}
           />
 
