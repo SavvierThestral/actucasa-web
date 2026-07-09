@@ -40,7 +40,7 @@ export function Hero() {
       {/* ── Columna izquierda — contenido ── */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 flex flex-col justify-center w-full md:w-[54%] px-6 md:px-14 lg:px-20 xl:px-28 pt-28 pb-16"
+        className="relative z-10 flex flex-col justify-center w-full md:w-[54%] px-6 md:px-10 lg:px-20 xl:px-28 pt-28 pb-16"
       >
         {/* Eyebrow con línea */}
         <motion.div
@@ -95,7 +95,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.82, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap gap-4 items-center mb-14"
+          className="flex flex-wrap gap-4 items-center mb-8 md:mb-12"
         >
           <a
             href="#servicios"
@@ -113,6 +113,25 @@ export function Hero() {
           >
             Contactanos
           </a>
+        </motion.div>
+
+        {/* Stats — solo visible en móvil */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="flex md:hidden gap-8 mb-8"
+        >
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col">
+              <span className="font-display font-bold text-brand-blue text-2xl leading-none">
+                {stat.value}
+              </span>
+              <span className="font-sans text-text-muted text-[0.58rem] tracking-[0.2em] uppercase mt-1">
+                {stat.label}
+              </span>
+            </div>
+          ))}
         </motion.div>
 
         {/* Instagram link */}
@@ -134,7 +153,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="absolute bottom-8 left-6 md:left-14 lg:left-20 xl:left-28 flex items-center gap-2.5 text-text-muted text-[0.62rem] tracking-[0.25em] uppercase font-sans"
+          className="absolute bottom-8 left-6 md:left-10 lg:left-20 xl:left-28 flex items-center gap-2.5 text-text-muted text-[0.62rem] tracking-[0.25em] uppercase font-sans"
         >
           <motion.div
             animate={{ y: [0, 4, 0] }}
@@ -157,7 +176,7 @@ export function Hero() {
             alt="Proyecto ACTuCasa — steel framing en construcción"
             fill
             sizes="50vw"
-            className="object-cover object-top"
+            className="object-cover [object-position:center_80%]"
             priority
             quality={80}
           />
@@ -204,7 +223,7 @@ export function Hero() {
           alt="Proyecto ACTuCasa"
           fill
           sizes="100vw"
-          className="object-cover object-top"
+          className="object-cover [object-position:center_80%]"
           priority
         />
         <div className="absolute inset-0 bg-white/55" />
