@@ -6,13 +6,7 @@ const nextConfig: NextConfig = {
     "**": ["./public/proyectos/**/*"],
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
   },
 };
 
