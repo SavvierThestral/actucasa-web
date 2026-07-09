@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const SPRING = { stiffness: 300, damping: 30, mass: 0.5 };
-const MAX_TILT = 10; // grados máximos de inclinación
+const MAX_TILT = 6;
 
 export function TiltCard({
   children,
@@ -43,7 +43,7 @@ export function TiltCard({
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
-        perspective: 800,
+        perspective: 1200,
       }}
       className={className}
     >

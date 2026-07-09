@@ -186,9 +186,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${dmSans.variable} ${playfair.variable} ${merriweather.variable}`}>
       <head>
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href="/gallery/img_4754.webp" fetchPriority="high" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -156,9 +156,10 @@ export function Hero() {
             src={HERO_PHOTO}
             alt="Proyecto ACTuCasa — steel framing en construcción"
             fill
-            className="object-cover object-center"
+            sizes="50vw"
+            className="object-cover object-top"
             priority
-            quality={90}
+            quality={80}
           />
 
           {/* Difuminado suave desde la izquierda (blanco → transparente) */}
@@ -202,7 +203,8 @@ export function Hero() {
           src={HERO_PHOTO}
           alt="Proyecto ACTuCasa"
           fill
-          className="object-cover object-center"
+          sizes="100vw"
+          className="object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-white/55" />
