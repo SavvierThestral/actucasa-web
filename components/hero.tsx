@@ -40,7 +40,7 @@ export function Hero() {
       {/* ── Columna izquierda — contenido ── */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 flex flex-col justify-center w-full md:w-[54%] px-6 md:px-10 lg:px-20 xl:px-28 pt-28 pb-16"
+        className="relative z-10 flex flex-col justify-center w-full md:w-[54%] px-6 md:px-10 lg:px-20 xl:px-28 pt-28 pb-16 bg-bg-base"
       >
         {/* Eyebrow con línea */}
         <motion.div
@@ -186,7 +186,7 @@ export function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.96) 8%, rgba(255,255,255,0.75) 20%, rgba(255,255,255,0.35) 36%, rgba(255,255,255,0.1) 52%, rgba(255,255,255,0.02) 68%, transparent 80%)",
+                "linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.65) 18%, rgba(255,255,255,0.3) 35%, rgba(255,255,255,0.08) 55%, transparent 72%)",
             }}
           />
         </motion.div>
