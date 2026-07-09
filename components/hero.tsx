@@ -12,8 +12,9 @@ import { instagramUrl, siteConfig } from "@/lib/config";
 //  2. Reemplazá HERO_PHOTO con "/hero-foto.jpg"
 //  Tamaño recomendado: 1200×900px mínimo
 // ─────────────────────────────────────────────────────────────
-const HERO_PHOTO =
-  "/hero.webp";
+const HERO_PHOTO = "/hero.webp";
+const HERO_BLUR =
+  "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoKAA4ABUB8JaAC7AEDGC7MIAAA/e963CArEKeiwNYCbdrkky2gO4BhUNTe7zaaz7SAAA==";
 
 const stats = [
   { value: "+30", label: "Proyectos" },
@@ -179,6 +180,8 @@ export function Hero() {
             className="object-cover [object-position:center_80%]"
             priority
             quality={80}
+            placeholder="blur"
+            blurDataURL={HERO_BLUR}
           />
 
           {/* Difuminado suave desde la izquierda (blanco → transparente) */}
@@ -225,6 +228,8 @@ export function Hero() {
           sizes="100vw"
           className="object-cover [object-position:center_80%]"
           priority
+          placeholder="blur"
+          blurDataURL={HERO_BLUR}
         />
         <div className="absolute inset-0 bg-white/55" />
       </div>
