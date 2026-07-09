@@ -61,7 +61,7 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.95, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="font-display leading-[1.05] text-text-primary"
-            style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 900 }}
+            style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 900 }}
           >
             Construcción modular en
           </motion.h1>
@@ -72,7 +72,7 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.95, delay: 0.44, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif italic leading-[1.05] text-brand-blue"
-            style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 700 }}
+            style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 700 }}
           >
             Steel Frame.
           </motion.h1>
