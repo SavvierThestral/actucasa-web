@@ -13,7 +13,7 @@ import { instagramUrl, siteConfig } from "@/lib/config";
 //  Tamaño recomendado: 1200×900px mínimo
 // ─────────────────────────────────────────────────────────────
 const HERO_PHOTO =
-  "/hero.webp";
+  "/gallery/img_4754.webp";
 
 const stats = [
   { value: "+30", label: "Proyectos" },
