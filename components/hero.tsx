@@ -28,7 +28,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.5], ["0%", "-5%"]);
 
@@ -150,7 +150,7 @@ export function Hero() {
       <div className="hidden md:block absolute right-0 top-0 w-[50%] h-full overflow-hidden">
         <motion.div
           style={{ y: imageY }}
-          className="absolute inset-0 scale-[1.1]"
+          className="absolute inset-0"
         >
           <Image
             src={HERO_PHOTO}
