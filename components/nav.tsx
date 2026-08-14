@@ -7,10 +7,10 @@ import { useState } from "react";
 import { List, X } from "@phosphor-icons/react";
 
 const links = [
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#servicios", label: "Servicios" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/#servicios", label: "Servicios" },
   { href: "/proyectos", label: "Proyectos" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export function Nav() {
@@ -76,7 +76,7 @@ export function Nav() {
 
             {/* Consultanos: blanco sobre azul, azul sobre blanco */}
             <a
-              href="#contacto"
+              href="/#contacto"
               className={`px-5 py-2.5 font-sans text-sm tracking-wide transition-all duration-300 active:scale-[0.97] ${
                 scrolled
                   ? "bg-brand-blue text-white hover:bg-brand-blue-hover"
@@ -128,7 +128,7 @@ export function Nav() {
                 </motion.div>
               ))}
               <motion.a
-                href="#contacto"
+                href="/#contacto"
                 onClick={() => setMenuOpen(false)}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
