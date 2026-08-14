@@ -188,7 +188,7 @@ export function Contact() {
                     name="from_email"
                     type="email"
                     required
-                    placeholder="juan@ejemplo.com"
+                    placeholder="by.teddiur@gmail.com"
                     className="font-sans text-sm px-4 py-3.5 focus:outline-none transition-colors duration-200"
                     style={inputStyle}
                     onFocus={focusOn}
