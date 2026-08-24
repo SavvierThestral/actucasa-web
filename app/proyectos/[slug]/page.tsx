@@ -10,7 +10,7 @@ import { ProjectGalleryClient } from "@/components/project-gallery-client";
 import { projects, categoryLabels } from "@/data/projects";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ac-tucasa.com";
 
 function getPhotos(folder: string): string[] {
   const dir = path.join(process.cwd(), "public", "proyectos", folder);

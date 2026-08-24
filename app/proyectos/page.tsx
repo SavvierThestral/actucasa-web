@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ProjectsClient } from "@/components/projects-client";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ac-tucasa.com";
 
 export const metadata: Metadata = {
   title: "Proyectos",
