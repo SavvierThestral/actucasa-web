@@ -3,8 +3,9 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ProjectsClient } from "@/components/projects-client";
+import { siteConfig } from "@/lib/config";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ac-tucasa.com";
+const BASE_URL = siteConfig.siteUrl;
 
 export const metadata: Metadata = {
   title: "Proyectos",

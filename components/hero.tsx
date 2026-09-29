@@ -56,28 +56,30 @@ export function Hero() {
         </motion.div>
 
         {/* Headline serif editorial */}
-        <div className="mb-0 overflow-hidden">
-          <motion.h1
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.95, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display leading-[1.05] text-text-primary"
-            style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 900 }}
-          >
-            Construcción modular en
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-8">
-          <motion.h1
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.95, delay: 0.44, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif italic leading-[1.05] text-brand-blue"
-            style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 700 }}
-          >
-            Steel Frame.
-          </motion.h1>
-        </div>
+        <h1 className="m-0 font-normal" style={{ fontSize: "inherit" }}>
+          <span className="block mb-0 overflow-hidden">
+            <motion.span
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.95, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-display leading-[1.05] text-text-primary"
+              style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 900 }}
+            >
+              Construcción modular en
+            </motion.span>
+          </span>
+          <span className="block mb-8 overflow-hidden">
+            <motion.span
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.95, delay: 0.44, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-serif italic leading-[1.05] text-brand-blue"
+              style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.5rem)", fontWeight: 700 }}
+            >
+              Steel Frame.
+            </motion.span>
+          </span>
+        </h1>
 
         {/* Descripción */}
         <motion.p

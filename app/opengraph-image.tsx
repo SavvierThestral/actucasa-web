@@ -101,7 +101,7 @@ export default function OgImage() {
             letterSpacing: "0.06em",
           }}
         >
-          actucasa.com.ar
+          ac-tucasa.com
         </div>
       </div>
     ),

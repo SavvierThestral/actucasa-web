@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display, Merriweather } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
-import { siteConfig, instagramUrl } from "@/lib/config";
+import { siteConfig, instagramUrl, pinterestUrl } from "@/lib/config";
 
 const BASE_URL = siteConfig.siteUrl;
+const phoneE164 = `+${siteConfig.whatsappNumber}`;
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -108,7 +109,9 @@ const jsonLd = {
         width: 120,
         height: 120,
       },
-      sameAs: [instagramUrl],
+      email: siteConfig.email,
+      telephone: phoneE164,
+      sameAs: [instagramUrl, pinterestUrl],
     },
     {
       "@type": "LocalBusiness",
@@ -117,23 +120,28 @@ const jsonLd = {
       description:
         "Construcción modular en steel framing: módulos habitacionales, oficinas anexas y ampliaciones. Fabricados en taller e instalados en tu terreno.",
       url: BASE_URL,
-      image: `${BASE_URL}/og-image.jpg`,
+      image: `${BASE_URL}/logo.webp`,
+      telephone: phoneE164,
+      email: siteConfig.email,
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Buenos Aires",
+        addressLocality: "Villa General Arias",
         addressRegion: "Buenos Aires",
         addressCountry: "AR",
       },
+      // Coordenadas aproximadas de la localidad (no de la puerta del taller).
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -38.8102,
+        longitude: -62.0999,
+      },
+      hasMap: siteConfig.mapsUrl,
       areaServed: [
-        {
-          "@type": "AdministrativeArea",
-          name: "Buenos Aires",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Gran Buenos Aires",
-        },
+        { "@type": "City", name: "Villa General Arias" },
+        { "@type": "AdministrativeArea", name: "Partido de Coronel Rosales" },
+        { "@type": "City", name: "Bahía Blanca" },
+        { "@type": "AdministrativeArea", name: "Provincia de Buenos Aires" },
       ],
       knowsAbout: [
         "Steel Framing",

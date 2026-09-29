@@ -1,0 +1,26 @@
+# ACTuCasa
+
+> ACTuCasa es una empresa de construcción modular en steel framing (acero galvanizado) con base en Villa General Arias, partido de Coronel Rosales, provincia de Buenos Aires, Argentina. Fabrica en taller módulos habitacionales, oficinas modulares y ampliaciones, y los instala en el terreno del cliente sin obra húmeda.
+
+## Qué hacemos
+- Módulos habitacionales: espacios para vivir, con terminaciones interiores y exteriores, instalaciones certificadas y aislación termoacústica.
+- Oficinas modulares: espacios de trabajo relocalizables, fabricados en taller y listos para operar.
+- Ampliaciones de viviendas existentes en steel framing.
+
+## Por qué steel framing
+- Los tiempos de construcción se reducen hasta un 40% frente a la construcción tradicional, porque se fabrica en taller y no depende del clima.
+- Estructura de acero galvanizado con protección anticorrosión y más de 50 años de vida útil estructural.
+- El acero es 100% reciclable y se genera menos escombro en obra.
+
+## Contacto
+- Sitio web: https://www.ac-tucasa.com
+- WhatsApp / teléfono: +54 9 2932 64-8335
+- Email: ac-tucasa@hotmail.com
+- Ubicación: Villa Gral. Arias, provincia de Buenos Aires, Argentina
+- Instagram: https://instagram.com/ac.tucasa
+
+## Páginas principales
+- [Inicio](https://www.ac-tucasa.com/): qué es un módulo, por qué steel frame, servicios y equipo.
+- [Preguntas frecuentes](https://www.ac-tucasa.com/#preguntas-frecuentes): tiempos, durabilidad, zonas de trabajo y presupuesto.
+- [Proyectos](https://www.ac-tucasa.com/proyectos): obras realizadas con fotos.
+- [Contacto](https://www.ac-tucasa.com/#contacto): formulario, WhatsApp y mapa.

@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/config";
 import { projects } from "@/data/projects";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
+const BASE_URL = siteConfig.siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

@@ -8,9 +8,10 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ProjectGalleryClient } from "@/components/project-gallery-client";
 import { projects, categoryLabels } from "@/data/projects";
+import { siteConfig } from "@/lib/config";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ac-tucasa.com";
+const BASE_URL = siteConfig.siteUrl;
 
 function getPhotos(folder: string): string[] {
   const dir = path.join(process.cwd(), "public", "proyectos", folder);

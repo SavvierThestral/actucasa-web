@@ -5,6 +5,7 @@ import { WhySteelFrame } from "@/components/why-steel";
 import { Services } from "@/components/services";
 import { Gallery } from "@/components/gallery";
 import { About } from "@/components/about";
+import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <Gallery />
         <About />
+        <Faq />
         <Contact />
       </main>
       <Footer />

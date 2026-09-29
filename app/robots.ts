@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/config";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://actucasa.com.ar";
+const BASE_URL = siteConfig.siteUrl;
 
 export default function robots(): MetadataRoute.Robots {
   return {

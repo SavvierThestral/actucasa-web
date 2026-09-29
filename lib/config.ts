@@ -3,7 +3,7 @@
 // Nunca hardcodeés datos de contacto o URLs sensibles directamente en los componentes.
 
 export const siteConfig = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://ac-tucasa.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.ac-tucasa.com",
 
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5492932648335",
   whatsappMessage:
