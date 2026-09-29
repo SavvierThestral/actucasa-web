@@ -5,7 +5,7 @@
 export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://ac-tucasa.com",
 
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5492932578585",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5492932648335",
   whatsappMessage:
     process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
     "Hola! Vi su web y quiero consultar sobre un proyecto",
@@ -14,7 +14,7 @@ export const siteConfig = {
   pinterestUrl: process.env.NEXT_PUBLIC_PINTEREST_URL || "https://pin.it/4VcQ75FRy",
 
   email: process.env.NEXT_PUBLIC_EMAIL || "ac-tucasa@hotmail.com",
-  phone: process.env.NEXT_PUBLIC_PHONE || "+54 9 2932 578585",
+  phone: process.env.NEXT_PUBLIC_PHONE || "+54 9 2932 64-8335",
   address: process.env.NEXT_PUBLIC_ADDRESS || "Villa Gral. Arias, Pcia. de Buenos Aires",
   mapsUrl: process.env.NEXT_PUBLIC_MAPS_URL || "https://maps.app.goo.gl/a6LTnqtQ4ZhWQvuy7",
   mapsEmbed: process.env.NEXT_PUBLIC_MAPS_EMBED ||
